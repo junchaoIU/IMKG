@@ -1,0 +1,45 @@
+@import '~antd/es/style/themes/default.less';
+.input {
+  width: 20%;
+  margin: 15px 0;
+  text-align: left;
+}
+.button {
+  margin: 15px 0;
+}
+.icon {
+  margin-right: 0;
+  font-size: 20px;
+  line-height: 70px;
+}
+
+.indexSearch {
+  margin: 5% 0 0 0;
+  text-align: center;
+}
+
+.search {
+  text-align: center;
+  :global(.ant-input-group.ant-input-group-compact > *:not(:last-child)) {
+    border-right-width: 1px;
+  }
+
+  .content {
+    height: 600px;
+    margin-top: 20px;
+  }
+}
+.cardContainer {
+  height: 576px;
+  margin: 0 20px 20px;
+  padding-top: 10px;
+  box-shadow: 3px 3px 7px 2px #d9dee38c;
+
+  .outCard {
+    margin: 5px 10px;
+    .book {
+      height: 500px;
+      overflow: auto;
+    }
+  }
+}

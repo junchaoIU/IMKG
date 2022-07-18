@@ -1,0 +1,70 @@
+@import '~antd/es/style/themes/default.less';
+.search {
+  display: flex;
+
+  .content {
+    display: flex;
+    margin: 10px auto;
+  }
+}
+.indexSearch {
+  margin: 5% 0 0 0;
+  text-align: center;
+}
+.outside {
+}
+
+.cardContainer {
+  min-height: 100%;
+  margin: 0 20px 20px;
+  padding-top: 10px;
+  //box-shadow: 3px 3px 7px 2px #d9dee38c;
+  .outCard {
+    margin: 5px 10px;
+    :global(.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn) {
+      color: #1890ff;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .innerCard {
+      padding: 0 5%;
+    }
+  }
+}
+
+.time {
+  font-size: 20px;
+  p {
+    margin-bottom: 3px;
+    .icon {
+      margin: 0 4px;
+      font-size: 16px;
+    }
+  }
+
+  .detail {
+    padding: 2px;
+    background: #e6f7ff;
+    border: 1px #91d5ff solid;
+    border-radius: 4px;
+  }
+}
+
+.substanceDiv {
+  overflow: auto;
+
+  :global(.ant-card-bordered) {
+    margin: 10px 0;
+    background: none;
+    border: 1px solid #b3ceee;
+    border-radius: 5px;
+  }
+
+  .card {
+    text-align: center;
+
+    .bookImage {
+      float: left;
+    }
+  }
+}
