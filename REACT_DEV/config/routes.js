@@ -14,7 +14,16 @@ export default [
             routes: [
               {
                 path: '/',
-                redirect: '/welcome',
+                redirect: '/home',
+                headerRender:false
+              },
+              {
+                path: '/home',
+                name: 'home',
+                icon: 'home',
+                component: './Home',
+                headerRender:false,
+                menuRender: false,
               },
               {
                 path: '/welcome',
@@ -22,12 +31,12 @@ export default [
                 icon: 'home',
                 component: './Welcome',
               },
-              {
-                path: '/use',
-                name: 'use',
-                component: './Welcome/use.jsx',
-                hideInMenu: true,
-              },
+              // {
+              //   path: '/use',
+              //   name: 'use',
+              //   component: './Welcome/use.jsx',
+              //   hideInMenu: true,
+              // },
               {
                 path: '/knowledgeSearch',
                 name: 'knowledgeSearch',

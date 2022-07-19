@@ -1,0 +1,120 @@
+@header2: header2;
+.@{header2} {
+  background: @template-nav-bg-color;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 5px 8px fade(#000, 15);
+  position: relative;
+  top: 0;
+  .home-page {
+    padding: 0 24px;
+  }
+  &-logo {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    line-height: 64px;
+    & img {
+      vertical-align: middle;
+      display: inline-block;
+    }
+    & a {
+      display: block;
+    }
+  }
+  &-menu {
+    float: right;
+    >.menu-item {
+      line-height: 62px;
+      display: inline-block;
+      padding: 0 20px;
+      cursor: pointer;
+      background: transparent;
+      color: @template-text-color-light;
+      height: 64px;
+      border-bottom-color: transparent;
+      position: relative;
+      transition: color .3s @ease-in-out, border .3s @ease-in-out;
+      &.active,
+      &:hover {
+        color: @primary-color;
+        border-bottom: 2px solid @primary-color;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{header2} {
+    &-logo {
+      z-index: 101;
+    }
+    &.home-page-wrapper .home-page {
+      padding: 0 24px;
+    }
+    &-menu {
+      height: auto;
+      float: inherit;
+      position: relative;
+      left: -24px;
+      width: ~"calc(100% + 48px)";
+      opacity: 0;
+      overflow: hidden;
+      transition: opacity .3s @ease-in-out;
+      .menu-item {
+        display: block;
+        width: 100%;
+        padding: 0 24px;
+        border-bottom: none;
+        line-height: 40px;
+        height: 40px;
+        margin: 4px 0 8px;
+        &.active, &:hover {
+          border: none;
+          background: @primary-color;
+          color: @template-text-color-light;
+        }
+      }
+    }
+    &-mobile-menu {
+      width: 16px;
+      height: 14px;
+      cursor: pointer;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      z-index: 100;
+      em {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        margin-top: 4px;
+        transition: transform .3s @ease-in-out, opacity .3s @ease-in-out;
+      }
+      :first-child {
+        margin-top: 0;
+      }
+    }
+    & .open {
+      height: auto;
+      .@{header2}-mobile-menu {
+        em {
+          &:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+          }
+        }
+      }
+      .@{header2}-menu {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+}

@@ -2,15 +2,15 @@
 /* eslint arrow-parens: 0 */
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
-
-import Banner4 from './Banner4';
-import Teams2 from './Teams2';
-import Content9 from './Content9';
+import scrollScreen from 'rc-scroll-anim/lib/ScrollScreen';
+import Banner0 from './Banner0';
+import Content3 from './Content3';
+import Footer1 from './Footer1';
 
 import {
-  Banner40DataSource,
-  Teams20DataSource,
-  Content90DataSource,
+  Banner00DataSource,
+  Content30DataSource,
+  Footer10DataSource,
 } from './data.source';
 import './less/antMotionStyle.less';
 
@@ -31,6 +31,10 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
+    /* 如果不是 dva 2.0 请使用以下代码
+    // 实现整屏滚动
+    scrollScreen.init({ location: ['Banner0_0', 'Content3_0', 'Footer1_0'] });
+    */
     // 适配手机屏幕;
     enquireScreen((b) => {
       this.setState({ isMobile: !!b });
@@ -43,6 +47,10 @@ export default class Home extends React.Component {
         this.setState({
           show: true,
         });
+        // 实现整屏滚动
+        scrollScreen.init({
+          location: ['Banner0_0', 'Content3_0', 'Footer1_0'],
+        });
       }, 500);
     }
     /* 如果不是 dva 2.0 请删除 end */
@@ -50,22 +58,22 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      <Banner4
-        id="Banner4_0"
-        key="Banner4_0"
-        dataSource={Banner40DataSource}
+      <Banner0
+        id="Banner0_0"
+        key="Banner0_0"
+        dataSource={Banner00DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Teams2
-        id="Teams2_0"
-        key="Teams2_0"
-        dataSource={Teams20DataSource}
+      <Content3
+        id="Content3_0"
+        key="Content3_0"
+        dataSource={Content30DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Content9
-        id="Content9_0"
-        key="Content9_0"
-        dataSource={Content90DataSource}
+      <Footer1
+        id="Footer1_0"
+        key="Footer1_0"
+        dataSource={Footer10DataSource}
         isMobile={this.state.isMobile}
       />,
     ];

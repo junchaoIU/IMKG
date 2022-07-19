@@ -103,7 +103,7 @@ const BasicLayout = (props) => {
   const { formatMessage } = useIntl();
   return (
     <ProLayout
-      logo={<img src={logo} style={{ height: '68px' }} />}
+      logo={<img src='https://os.alipayobjects.com/rmsportal/mlcYmsRilwraoAe.svg' style={{ height: '20px' }} />}
       formatMessage={formatMessage}
       contentStyle={{ background: 'white', margin: '0' }}
       {...props}
@@ -139,8 +139,9 @@ const BasicLayout = (props) => {
           <span>{route.breadcrumbName}</span>
         );
       }}
-      footerRender={() => defaultFooterDom}
+      // footerRender={() => defaultFooterDom}
       menuDataRender={menuDataRender}
+      // headerRender={false}
       rightContentRender={() => <RightContent />}
       postMenuData={(menuData) => {
         menuDataRef.current = menuData || [];
