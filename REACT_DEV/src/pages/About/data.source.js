@@ -38,17 +38,17 @@ export const Banner40DataSource = {
     children: 'https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg',
   },
 };
-export const Teams20DataSource = {
+export const Teams21DataSource = {
   wrapper: { className: 'home-page-wrapper teams2-wrapper' },
-  page: { className: 'home-page teams2 l5rwlvu5c4c-editor_css' },
+  page: { className: 'home-page teams2' },
   OverPack: { playScale: 0.3, className: '' },
   titleWrapper: {
     className: 'title-wrapper',
     children: [{ name: 'title', children: '团队成员' }],
   },
   block: {
-    className: 'block-wrapper l5rwlk256xc-editor_css',
-    gutter: 50,
+    className: 'block-wrapper',
+    gutter: 72,
     children: [
       {
         name: 'block0',
@@ -69,11 +69,7 @@ export const Teams20DataSource = {
               className: 'teams2-title',
               children: (
                 <span>
-                  <span>
-                    <span>
-                      <p>吴俊潮</p>
-                    </span>
-                  </span>
+                  <p>吴俊潮</p>
                 </span>
               ),
             },
@@ -83,7 +79,7 @@ export const Teams20DataSource = {
               children: (
                 <span>
                   <span>
-                    <p>澳门大学 数据科学（计算语言学）硕士在读</p>
+                    <p>澳门大学 计算语言学 硕士在读</p>
                   </span>
                 </span>
               ),
@@ -119,11 +115,7 @@ export const Teams20DataSource = {
               className: 'teams2-title',
               children: (
                 <span>
-                  <span>
-                    <span>
-                      <p>陈鑫</p>
-                    </span>
-                  </span>
+                  <p>陈鑫</p>
                 </span>
               ),
             },
@@ -267,9 +259,7 @@ export const Teams20DataSource = {
               className: 'teams2-title',
               children: (
                 <span>
-                  <span>
-                    <p>梁展帆</p>
-                  </span>
+                  <p>梁展帆</p>
                 </span>
               ),
             },

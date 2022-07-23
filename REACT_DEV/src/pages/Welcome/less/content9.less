@@ -1,0 +1,146 @@
+@content9: content9;
+@text-color: rgba(0, 0, 0, 0.85);
+@text-color2: #697b8c;
+.@{content9}-wrapper {
+  padding-bottom: 64px;
+  &.home-page-wrapper {
+    overflow: initial;
+  }
+  .@{content9} {
+    //height: 500px;
+    min-height: 1000px;
+    padding: 10px 0 0;
+  }
+  .timeline {
+    position: relative;
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      left: 40%;
+      top: 0;
+      width: 0;
+      height: ~"calc(100% - 108px)";
+      margin: 10px 0;
+      border-left: 2px #ebedf0 dashed;
+    }
+  }
+  .block-wrapper {
+    color: @text-color;
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+    min-height: 100px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .image-wrapper,
+  .text-wrapper {
+    width: 40%;
+  }
+  .image-wrapper {
+    text-align: center;
+    .block-img,
+    .name-wrapper {
+      float: left;
+      clear: both;
+      width: 500px;
+      margin: auto;
+    }
+    .block-img {
+      height: 150px;
+      img {
+        height: 100%;
+      }
+    }
+    .name-wrapper {
+      margin: 16px 0 0;
+      .block-name {
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .block-post {
+        font-size: 12px;
+        color: @text-color2;
+      }
+    }
+  }
+  .text-wrapper {
+    padding-left: 30px;
+    .block-time {
+      font-size: 12px;
+      color: @text-color2;
+      line-height: 18px;
+      min-height: 18px;
+    }
+    .block-title {
+      margin: 8px 0 12px;
+      font-size: 14px;
+      position: relative;
+      min-height: 18px;
+    }
+    .block-icon {
+      position: absolute;
+      left: -40px;
+      transform: translateX(~"calc(-40% + 1px)");
+    }
+    .block-content {
+      width: 300px;
+      color: #314659;
+      font-size: 12px;
+      min-height: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{content9}-wrapper {
+    padding-bottom: 0;
+    .@{content9} {
+      padding: 32px 12px;
+    }
+    .timeline {
+      &:before {
+        left: 0;
+        height: 100%;
+        margin: 0;
+      }
+    }
+    .block-wrapper {
+      display: block;
+      min-height: 100px;
+      margin-bottom: 54px;
+    }
+    .image-wrapper,
+    .text-wrapper {
+      width: 100%;
+    }
+    .image-wrapper {
+      .block-img {
+        display: none;
+      }
+      .name-wrapper {
+        text-align: left;
+        float: left;
+        width: 100%;
+        padding-left: 40px;
+        margin: auto;
+      }
+      .block-name, .block-post {
+        display: inline-block;
+      }
+      .block-name {
+        margin-right: 8px;
+      }
+    }
+    .text-wrapper {
+      .block-content {
+        display: none;
+      }
+      .block-title {
+        font-size: 16px;
+      }
+    }
+  }
+}

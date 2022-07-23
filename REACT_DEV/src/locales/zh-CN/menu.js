@@ -1,6 +1,7 @@
 export default {
-  'menu.welcome': '欢迎',
+  'menu.welcome': '知识探索',
   'menu.use': '使用文档',
+  'menu.figVedioGraden': '图频廊院',
   'menu.knowledgeSearch': '知识检索',
   'menu.relationSearch': '关系检索',
   'menu.timespacesEarch': '时空检索',

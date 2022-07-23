@@ -20,7 +20,7 @@
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "precommit": "lint-staged",
     "prettier": "prettier -c --write \"src/**/*\"",
-    "start": "cross-env UMI_ENV=dev umi dev",
+    "start": "cross-env UMI_ENV=dev umi dev --port=8009",
     "start:dev": "cross-env REACT_APP_ENV=dev MOCK=none UMI_ENV=dev umi dev",
     "start:no-mock": "cross-env MOCK=none UMI_ENV=dev umi dev",
     "start:no-ui": "cross-env UMI_UI=none UMI_ENV=dev umi dev",
@@ -74,6 +74,7 @@
     "react-dom": "^17.0.0",
     "react-helmet-async": "^1.0.4",
     "react-markdown": "^6.0.0",
+    "react-player": "^2.10.1",
     "remark-gfm": "^2.0.0",
     "umi": "^3.2.14",
     "umi-request": "^1.0.8"

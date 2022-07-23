@@ -9,7 +9,7 @@ import Content9 from './Content9';
 
 import {
   Banner40DataSource,
-  Teams20DataSource,
+  Teams21DataSource,
   Content90DataSource,
 } from './data.source';
 import './less/antMotionStyle.less';
@@ -57,9 +57,9 @@ export default class Home extends React.Component {
         isMobile={this.state.isMobile}
       />,
       <Teams2
-        id="Teams2_0"
-        key="Teams2_0"
-        dataSource={Teams20DataSource}
+        id="Teams2_1"
+        key="Teams2_1"
+        dataSource={Teams21DataSource}
         isMobile={this.state.isMobile}
       />,
       <Content9

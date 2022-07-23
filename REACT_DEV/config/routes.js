@@ -28,7 +28,8 @@ export default [
               {
                 path: '/welcome',
                 name: 'welcome',
-                icon: 'home',
+                icon: 'search',
+                headerRender:false,
                 component: './Welcome',
               },
               // {
@@ -36,20 +37,28 @@ export default [
               //   name: 'use',
               //   component: './Welcome/use.jsx',
               //   hideInMenu: true,
+              //   headerRender:false,
               // },
               {
-                path: '/knowledgeSearch',
-                name: 'knowledgeSearch',
-                icon: 'search',
-                component: './KnowledgeSearch',
+                path: '/figVedioGraden',
+                name: 'figVedioGraden',
+                icon: 'videoCamera',
+                component: './FigVedioGraden',
+                headerRender:false,
               },
-              {
-                path: '/relationSearch',
-                name: 'relationSearch',
-                icon: 'node-index',
-
-                component: './RelationSearch',
-              },
+              // {
+              //   path: '/knowledgeSearch',
+              //   name: 'knowledgeSearch',
+              //   icon: 'search',
+              //   component: './KnowledgeSearch',
+              //   headerRender:false,
+              // },
+              // {
+              //   path: '/relationSearch',
+              //   name: 'relationSearch',
+              //   icon: 'node-index',
+              //   component: './RelationSearch',
+              // },
               {
                 path: '/timespacesEarch',
                 name: 'timespacesEarch',
