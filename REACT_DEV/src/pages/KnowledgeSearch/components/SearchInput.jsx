@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import catalogData from '@/pages/KnowledgeSearch/components/catalog';
-import { Cascader, Button } from 'antd';
+import { Input, Button } from 'antd';
 
 class SearchInput extends PureComponent {
   filter = (inputValue, path) => {
@@ -20,15 +20,12 @@ class SearchInput extends PureComponent {
     const { className, searchValue, onChange, search } = this.props;
     return (
       <div>
-        <Cascader
+        <Input
           allowClear={this.clear}
           className={className}
-          options={catalogData}
           onChange={onChange}
-          placeholder="试一试输入孙中山检索一下~"
-          displayRender={this.displayRender}
+          placeholder="试一试输入感兴趣的单字检索一下~"
           size="large"
-          showSearch={{ filter: this.filter, matchInputWidth: false }}
           value={searchValue}
         />
         <Button type="primary" size={'large'} onClick={search}>

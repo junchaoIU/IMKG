@@ -1,58 +1,58 @@
 const categories = [
   {
-    name: '人物',
+    name: '碑帖',
     itemStyle: {
-      normal: {
-        color: '#A5E7F0',
-      },
+      // normal: {
+      //   color: '#A5E7F0',
+      // },
     },
   },
   {
-    name: '历史事件',
+    name: '书体',
     itemStyle: {
-      normal: {
-        color: '#59C4E6',
-      },
+      // normal: {
+      //   color: '#59C4E6',
+      // },
     },
   },
   {
-    name: '旧址文物',
+    name: '名家',
     itemStyle: {
-      normal: {
-        color: '#EDAFDA',
-      },
+      // normal: {
+      //   color: '#EDAFDA',
+      // },
     },
   },
   {
-    name: '文书条款',
+    name: '朝代',
     itemStyle: {
-      normal: {
-        color: '#93BCE3',
-      },
+      // normal: {
+      //   color: '#93BCE3',
+      // },
     },
   },
   {
-    name: '事件标识',
+    name: '版本类型',
     itemStyle: {
-      normal: {
-        color: '#516B91',
-      },
+      // normal: {
+      //   color: '#516B91',
+      // },
     },
   },
   {
     name: '时间',
     itemStyle: {
-      normal: {
-        color: '#CBB0E3',
-      },
+      // normal: {
+      //   color: '#CBB0E3',
+      // },
     },
   },
   {
     name: '地点',
     itemStyle: {
-      normal: {
-        color: '#C4EBAD',
-      },
+      // normal: {
+      //   color: '#C4EBAD',
+      // },
     },
   },
 ];

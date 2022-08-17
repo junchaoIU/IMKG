@@ -1,38 +1,36 @@
 import React, { Component } from 'react';
 // eslint-disable-next-line no-unused-vars
 import 'rc-banner-anim/assets/index.css';
-import Texty from 'rc-texty';
 import 'rc-texty/assets/index.css';
-import {BackTop, Button, Card, Col, Row, Tabs, Typography} from 'antd';
-import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import {BackTop, Button, Card, Tabs, Tag,} from 'antd';
+import {FireOutlined} from '@ant-design/icons';
 import styles from './index.less';
-import Knowledge from '@/pages/Welcome/components/Knowledge';
-import NumService from '@/pages/Welcome/components/NumService';
-import TweenOne from "rc-tween-one";
-import SubText from "@/pages/Welcome/components/SubText";
 import QueueAnim from 'rc-queue-anim';
 import Banner from '@/pages/Welcome/components/Banner'
-import Avatar from "antd/es/avatar";
-import MainSearch from "@/components/MainSearch";
-import {SearchOutlined} from "@ant-design/icons";
-import SearchInput from "@/pages/KnowledgeSearch/components/SearchInput";
-import Content9 from './Content9';
 
-import {
-  Content90DataSource,
-} from './data.source';
 import './less/antMotionStyle.less';
-import AppleOutlined from "@ant-design/icons/lib/icons/AppleOutlined";
-import UserOutlined from "@ant-design/icons/lib/icons/UserOutlined";
-import GlobalOutlined from "@ant-design/icons/lib/icons/GlobalOutlined";
-import ApartmentOutlined from "@ant-design/icons/lib/icons/ApartmentOutlined";
-const { Meta } = Card;
-const { TabPane } = Tabs;
+import SearchResult from "@/pages/Welcome/components/SearchResult";
+import {PageContainer} from "@ant-design/pro-layout";
+import IntroCharts from "@/pages/Welcome/components/IntroCharts";
+import SearchInput from "@/pages/Welcome/components/SearchInput";
 class home extends Component {
 
   state = {
-    show: true
+    searchValue:"",
+    show: true,
+    val:true
+  };
+
+  search = () => {
+    this.setState({
+      val: false,
+    });
+  };
+
+  onChange = (value) => {
+    this.setState({
+      searchValue: value,
+    });
   };
 
   onClick = () => {
@@ -40,6 +38,40 @@ class home extends Component {
       show: !this.state.show
     });
   }
+
+  searchHot = (value) => {
+    this.setState({
+      searchValue: value,
+      val: false,
+    })
+  }
+
+  computedSearchValue = (value) => {
+    let arr = [];
+    if (typeof value === 'string') {
+      arr[0] = value;
+    } else {
+      arr = value;
+    }
+    this.setState({
+      searchValue: arr,
+    });
+    this.search(arr);
+  };
+
+  searchIntro = (v) => {
+    if (v.length !== undefined) {
+      this.setState({
+        searchValue: v,
+      });
+    }
+    const { searchValue } = this.state;
+    this.computedSearchValue(searchValue);
+    this.setState({
+      chartsData: [],
+      val: false,
+    });
+  };
 
   geInterval = (e) => {
     switch (e.index) {
@@ -71,130 +103,126 @@ class home extends Component {
   }
 
   render() {
-
+    const { searchValue, val } = this.state;
     return (
       <div>
-        <QueueAnim delay={300} className="queue-simple">
-          <div key="a">
-            <Banner/>
-          </div>
-          <div key="b">
-            <div className={styles.indexSearch}>
-              <SearchInput
-                className={styles.centerCascader}
-                onChange={this.onChange}
-                search={this.search}
-                searchValue={this.state.searchValue}
-              />
-            </div>
-          </div>
-          <div key="d">
-            <Row>
-              <Col span={11} >
-                <div className={styles.card} style={{border: 20,opacity: 0.8,backgroundImage:"url('http://5b0988e595225.cdn.sohucs.com/images/20191221/6c5b70a3d19a45fe9b91cae18e99ba46.JPG')", textAlign:'center'}}>
-                  <div style={{height:200, borderRadius: 20,opacity: 0.8,backgroundColor:"black"}}>
-                    <br/>
-                    <p style={{color:"white", fontSize: 20}}>历史今天 - 4月12日</p>
-                    <p style={{color:"white", fontSize: 15}}>1927年4月12日，以蒋介石为首的国民党新右派在上海发动反对国民党左派和共产党的武装政变，大肆屠杀共产党员、国民党左派及革命群众。</p>
-                    <br/>
-                  </div>
+        {val === true ? (
+          <div>
+            <QueueAnim delay={300} className="queue-simple">
+              <div key="a" style={{height:150}}>
+                <Banner/>
+              </div>
+              <div key="b">
+                <div className={styles.indexSearch}>
+                  <SearchInput
+                    className={styles.centerCascader}
+                    onChange={this.onChange}
+                    search={this.search}
+                    searchValue={this.state.searchValue}
+                  />
                 </div>
-              </Col>
-              <Col span={1}/>
-              <Col span={11} >
-                <div className={styles.card} style={{border: 20,backgroundImage:"url('https://static.allhistory.com/online/view/Index/img/big-relation.e61f.png')", textAlign:'center'}}>
-                  <div style={{height:200, borderRadius: 20}}>
-                    <br/><p style={{color:"white", margin:20, fontSize: 20}}>用AI图谱，探索一切 未知关系</p><br/>
-                    <Button style={{width:150}} type="primary" shape="round" size={"large"}>
-                      关系图谱
-                    </Button>
-                  <br/>
-                  </div>
-                </div>
-              </Col>
-            </Row>
+              </div>
+              <div key="c" style={{textAlign: 'center'}}>
+                <Button size="small" type="text" onClick={() => this.searchHot("欧阳询")}>
+                  <FireOutlined/>欧阳询
+                </Button>
+                <Button size="small" type="text" onClick={() => this.searchHot("楷书")}>
+                  <FireOutlined/>楷书
+                </Button>
+                <Button size="small" type="text" onClick={() => this.searchHot("王")}>
+                  <FireOutlined/>王
+                </Button>
+                <Button size="small" type="text" onClick={() => this.searchHot("欧阳询楷书 魏征撰文")}>
+                  <FireOutlined/>欧阳询楷书 魏征撰文
+                </Button>
+                <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师")}>
+                  <FireOutlined/>化度寺邕禅师
+                </Button>
+                <Button size="small" type="text" onClick={() => this.searchHot("李世民")}>
+                  <FireOutlined/>李世民
+                </Button>
+              </div>
+              <br/>
+              <div key="e" style={{textAlign: 'center'}}>
+                <IntroCharts clickWord={this.searchIntro}/>
+              </div>
+              {/*<div key="d">*/}
+              {/*  <Row gutter={16} justify="space-evenly">*/}
+              {/*    <Col span={11}>*/}
+              {/*      /!*<div className={styles.card} style={{border: 20,opacity: 0.8,backgroundImage:"url('http://5b0988e595225.cdn.sohucs.com/images/20191221/6c5b70a3d19a45fe9b91cae18e99ba46.JPG')", textAlign:'center'}}>*!/*/}
+              {/*      /!*  <div style={{height:200, borderRadius: 20,opacity: 0.8,backgroundColor:"black"}}>*!/*/}
+              {/*      /!*    <br/>*!/*/}
+              {/*      /!*    <p style={{color:"white", fontSize: 20}}>历史今天 - 4月12日</p>*!/*/}
+              {/*      /!*    <p style={{color:"white", fontSize: 15}}>1927年4月12日，以蒋介石为首的国民党新右派在上海发动反对国民党左派和共产党的武装政变，大肆屠杀共产党员、国民党左派及革命群众。</p>*!/*/}
+              {/*      /!*    <br/>*!/*/}
+              {/*      /!*  </div>*!/*/}
+              {/*      /!*</div>*!/*/}
+              {/*      <div className={styles.card} style={{border: 20,backgroundImage:"url('https://static.allhistory.com/online/view/Index/img/big-relation.e61f.png')", textAlign:'center'}}>*/}
+              {/*        <div style={{height:150, borderRadius: 20}}>*/}
+              {/*          <br/><p style={{color:"white", margin:20, fontSize: 20}}>用AI图谱，探索一切 未知关系</p>*/}
+              {/*          <Button style={{width:150}} ghost size={"large"}>*/}
+              {/*            关系图谱*/}
+              {/*          </Button>*/}
+              {/*          <br/>*/}
+              {/*        </div>*/}
+              {/*      </div>*/}
+              {/*    </Col>*/}
+              {/*    <Col span={11} >*/}
+              {/*      <div className={styles.card} style={{border: 20,backgroundImage:"url('https://static.allhistory.com/online/view/Index/img/big-map.d1b0.png')", textAlign:'center'}}>*/}
+              {/*        <div style={{height:150, borderRadius: 20}}>*/}
+              {/*          <br/><p style={{color:"white", margin:20, fontSize: 20}}>跨越时空界限，探索历史文明</p>*/}
+              {/*          <Button style={{width:150}} ghost size={"large"}>*/}
+              {/*            时空检索*/}
+              {/*          </Button>*/}
+              {/*        <br/>*/}
+              {/*        </div>*/}
+              {/*      </div>*/}
+              {/*    </Col>*/}
+              {/*  </Row>*/}
+              {/*</div>*/}
+              {/*<div key="c">*/}
+              {/*  <div className={styles.tabs}>*/}
+              {/*    <Tabs defaultActiveKey="1" type="card" size='large' centered>*/}
+              {/*      <TabPane tab={<span><GlobalOutlined />事件</span>} key="1">*/}
+              {/*        <div className={styles.listContainer}>*/}
+              {/*          <Content9*/}
+              {/*            id="Content9_0"*/}
+              {/*            key="Content9_0"*/}
+              {/*            dataSource={Content90DataSource}*/}
+              {/*          />*/}
+              {/*        </div>*/}
+              {/*      </TabPane>*/}
+              {/*      <TabPane tab={<span><UserOutlined />人物</span>} key="2">*/}
+              {/*        Content of card tab 2*/}
+              {/*      </TabPane>*/}
+              {/*      <TabPane tab={<span><ApartmentOutlined />机构</span>} key="3">*/}
+              {/*        Content of card tab 3*/}
+              {/*      </TabPane>*/}
+              {/*    </Tabs>*/}
+              {/*  </div>*/}
+              {/*</div>*/}
+            </QueueAnim>
+            <BackTop>
+              <div style={{
+                height: 40,
+                width: 40,
+                lineHeight: '40px',
+                borderRadius: 4,
+                backgroundColor: 'red',
+                color: '#fff',
+                textAlign: 'center',
+                fontSize: 14
+              }}>UP
+              </div>
+            </BackTop>
           </div>
-          <div key="c">
-            <div className={styles.tabs}>
-              <Tabs defaultActiveKey="1" type="card" size='large' centered>
-                <TabPane tab={<span><GlobalOutlined />事件</span>} key="1">
-                  <div className={styles.listContainer}>
-                    <Content9
-                      id="Content9_0"
-                      key="Content9_0"
-                      dataSource={Content90DataSource}
-                    />
-                  </div>
-                </TabPane>
-                <TabPane tab={<span><UserOutlined />人物</span>} key="2">
-                  Content of card tab 2
-                </TabPane>
-                <TabPane tab={<span><ApartmentOutlined />机构</span>} key="3">
-                  Content of card tab 3
-                </TabPane>
-              </Tabs>
-            </div>
-          </div>
-        </QueueAnim>
-        {/*<Card className={styles.header}>*/}
-        {/*  <Typography className={styles.title}>*/}
-        {/*    <div className="texty-demo" style={{ marginTop: 64 }}>*/}
-        {/*      <Texty*/}
-        {/*        className="title"*/}
-        {/*        type="mask-top"*/}
-        {/*        delay={400}*/}
-        {/*        enter={this.getEnter}*/}
-        {/*        interval={this.geInterval}*/}
-        {/*        component={TweenOne}*/}
-        {/*        componentProps={{*/}
-        {/*          animation: [*/}
-        {/*            { x: 130, type: 'set' },*/}
-        {/*            { x: 100, delay: 500, duration: 450 },*/}
-        {/*            {*/}
-        {/*              ease: 'easeOutQuart',*/}
-        {/*              duration: 300,*/}
-        {/*              x: 0,*/}
-        {/*            },*/}
-        {/*            {*/}
-        {/*              letterSpacing: 0,*/}
-        {/*              delay: -300,*/}
-        {/*              scale: 0.9,*/}
-        {/*              ease: 'easeInOutQuint',*/}
-        {/*              duration: 1000,*/}
-        {/*            },*/}
-        {/*            { scale: 1, width: '100%', delay: -300, duration: 1000, ease: 'easeInOutQuint' },*/}
-        {/*          ],*/}
-        {/*        }}>忆见芳华</Texty>*/}
-        {/*    </div>*/}
-        {/*  </Typography>*/}
-        {/*  <Typography className={styles.text}>*/}
-        {/*    <div className="texty-demo" style={{ marginTop: 64, height: 25 }}>*/}
-        {/*      <SubText />*/}
-        {/*    </div>*/}
-        {/*  </Typography>*/}
-        {/*</Card>*/}
-        {/*<Typography className={styles.text}>*/}
-        {/*  <Card style={{ paddingLeft:100, width: "100%", marginTop: 16 }}>*/}
-        {/*    <Meta*/}
-        {/*      avatar={<Avatar src="http://t10.baidu.com/it/u=283995355,1605075388&fm=179&app=42&f=JPEG?w=120&h=120&s=86CBB45229F0C9EB14F9AC57030040F6" />}*/}
-        {/*      title="通知-From: Canton Knowledge Graph Development Team"*/}
-        {/*      description="注意：目前知识抽取平台模块及知识问答平台模块为开发测试阶段，无法访问&提供服务！！！"*/}
-        {/*    />*/}
-        {/*  </Card>*/}
-        {/*</Typography>*/}
-        {/*<Knowledge />*/}
-        {/*<NumService />*/}
-        <BackTop>
-          <div style={{
-            height: 40,
-            width: 40,
-            lineHeight: '40px',
-            borderRadius: 4,
-            backgroundColor: 'red',
-            color: '#fff',
-            textAlign: 'center',
-            fontSize: 14}}>UP</div>
-        </BackTop>
+          ) :
+          (
+            <PageContainer>
+              <SearchResult parentSearch={searchValue} />
+            </PageContainer>
+          )
+        }
       </div>
     );
   }

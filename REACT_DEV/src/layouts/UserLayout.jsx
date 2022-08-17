@@ -41,14 +41,14 @@ const UserLayout = (props) => {
           <div className={styles.top}>
             <div className={styles.header}>
               <Link to="/">
-                <img alt="logo" className={styles.logo} src={logo} />
-                <span className={styles.title}>Ant Design</span>
+                <img alt="logo" className={styles.logo} src="https://image.gzknowledge.cn/logo_cn.png" />
+                <span className={styles.title}>碑帖.记忆</span>
               </Link>
             </div>
             <div className={styles.desc}>
               <FormattedMessage
                 id="pages.layouts.userLayout.title"
-                defaultMessage="Ant Design 是西湖区最具影响力的 Web 设计规范"
+                defaultMessage="碑帖.记忆"
               />
             </div>
           </div>

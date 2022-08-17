@@ -3,7 +3,7 @@ import { PageContainer } from '@ant-design/pro-layout';
 import Search from './components/Search';
 import styles from '@/pages/Back/index.less';
 import { Input, Button, Row, Col } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import {FireTwoTone, InteractionTwoTone, UserOutlined} from '@ant-design/icons';
 import MainSearch from '@/components/MainSearch';
 
 class peopleBack extends Component {
@@ -18,6 +18,13 @@ class peopleBack extends Component {
     });
   };
 
+  searchHot = (value) => {
+    this.setState({
+      searchValue: value,
+      val: false,
+    })
+  }
+
   onChange = (e) => {
     this.setState({
       searchValue: e.target.value,
@@ -27,29 +34,51 @@ class peopleBack extends Component {
   render() {
     const { val, searchValue } = this.state;
     return (
-      <PageContainer>
+      <div>
         {val === true ? (
           <div className={styles.indexSearch}>
             <MainSearch
-              logo={<UserOutlined />}
-              text={'人物时空演化·检索'}
-              engText={'People Back Retrieval'}
+              logo={<InteractionTwoTone twoToneColor="#60c3ffa6" />}
+              text={'时空·演化'}
+              engText={'Spatiotemporal Evolution'}
             />
             <Input
               size={'large'}
               className={styles.input}
-              placeholder={'请输入人物实体：（例如：孙中山）'}
+              placeholder={'请输入想要演化的实体：（例如：孙中山）'}
               allowClear
               onChange={this.onChange}
             />
             <Button type="primary" className={styles.button} size={'large'} onClick={this.search}>
               开始检索
             </Button>
+            <div key="c" style={{textAlign: 'center',paddingBottom:40}}>
+              <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+              </Button>
+            </div>
           </div>
         ) : (
-          <Search state={'people'} parentSearch={searchValue} />
+          <PageContainer>
+            <Search state={'people'} parentSearch={searchValue} />
+          </PageContainer>
         )}
-      </PageContainer>
+      </div>
     );
   }
 }

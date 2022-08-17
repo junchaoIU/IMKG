@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react';
-import { Row, Col, message, Spin } from 'antd';
+import {Row, Col, message, Spin, Select, Card} from 'antd';
 import styles from '../index.less';
 import { connect } from 'dva';
 import Charts from './Charts';
 import Empty from '../../../components/Empty/index';
 import Information from './Information';
 import SearchInput from '@/pages/KnowledgeSearch/components/SearchInput';
+import {UserOutlined} from "@ant-design/icons";
+import {Option} from "antd/es/mentions";
+const { Meta } = Card;
 
 @connect(({ knowledge, loading }) => ({
   knowledge,
@@ -18,6 +21,9 @@ class SearchResult extends PureComponent {
     val: false,
     propSearch: [],
     detailData: [],
+    mingjia:["欧阳询","张公礼","王羲之","颜真卿","上官灵芝","于志宁","寇谦之","张从申","敦复","敬客","李世民","李儇","李百药","李阳冰","柳识","欧阳通","王献之","米芾","虞世南","魏征","黄庭坚","赵孟頫","李邕","诸遂良","岑文本","盛彪","周绅","周砥"],
+    ziti:["楷书","行书","隶书"],
+    beitie:["旧拓魏志五种","化度寺邕禅师舍利塔铭","太室西阙铭","虞恭公温彦博碑","鲜于光祖墓志","十七帖","司马昞妻孟敬训墓志","道因法师碑","龙藏寺碑","王居士砖塔铭","麓山寺碑并阴","鲁峻碑","许真人井铭","唐俭碑","淳化阁帖","黄庭堅青原山诗刻石","争座位帖","麻姑山仙坛记","礼器碑并阴","晋唐小楷九种","孔羡碑","九成宫醴泉铭","張從申書李玄靖碑","圭峰定慧禪師碑","皇甫诞碑","史晨前碑","章吉老墓志","瘗鹤铭","集王羲之书三藏圣教序","崔敬邕墓誌","张猛龙碑并阴","中岳嵩高灵庙碑并额","张从申书李玄靖碑"],
   };
 
   componentDidMount() {
@@ -25,6 +31,30 @@ class SearchResult extends PureComponent {
     if (parentSearch.length !== 0) {
       this.computedSearchValue(parentSearch);
     }
+  }
+
+  getmingjia = () =>{
+    const mingjialist = []
+    for(var i = 0; i < this.state.mingjia.length; i++) {
+      mingjialist.push(<Option key={this.state.mingjia[i]}>{this.state.mingjia[i]}</Option>)
+    }
+    return mingjialist
+  }
+
+  getziti = () =>{
+    const zitilist = []
+    for(var i = 0; i < this.state.ziti.length; i++) {
+      zitilist.push(<Option key={this.state.ziti[i]}>{this.state.ziti[i]}</Option>)
+    }
+    return zitilist
+  }
+
+  getbeitie = () =>{
+    const beitielist = []
+    for(var i = 0; i < this.state.beitie.length; i++) {
+      beitielist.push(<Option key={this.state.beitie[i]}>{this.state.beitie[i]}</Option>)
+    }
+    return beitielist
   }
 
   onChange = (value) => {
@@ -105,19 +135,74 @@ class SearchResult extends PureComponent {
             search={this.search}
             searchValue={searchValue}
           />
+          <div style={{margin:10}}>
+            <span style={{ width: '100',textAlign:'left',margin:30}}>名&emsp; &ensp; 家</span>
+            <Select  style={{ width: '60%'}} mode="tags" placeholder="Tags Mode" onChange={this.handleChange}>
+              {this.getmingjia()}
+            </Select>
+          </div>
+          <div style={{margin:10}}>
+            <span style={{ width: '100',textAlign:'left',margin:30}}>字&emsp; &ensp; 体</span>
+            <Select  style={{ width: '60%'}} mode="tags" placeholder="Tags Mode" onChange={this.handleChange}>
+              {this.getziti()}
+            </Select>
+          </div>
+          <div style={{margin:10}}>
+            <span style={{ width: '100',textAlign:'left',margin:30}}>来源碑帖</span>
+            <Select  style={{ width: '60%'}} mode="tags" placeholder="Tags Mode" onChange={this.handleChange}>
+              {this.getbeitie()}
+            </Select>
+          </div>
+
           <Spin spinning={loadings}>
             {val && chartsData.length !== 0 && detailData.length !== 0 ? (
-              <Row className={styles.content}>
-                <Col span={14}>
-                  <Charts chartsData={chartsData} propSearch={propSearch} clickWord={this.search} />
+              <Row className={styles.content} gutter={[32, 24]}>
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img style={{padding:10}} alt="example" src="https://iiif.library.sh.cn/i/3/b9faa5888573c3e801ef150f7f006f9b/1037,1155,279,279/full/0/default.jpg"/>}
+                  >
+                    <Meta title="Europe Street beat" description={<UserOutlined />+"www.instagram.com"} />
+                  </Card>
                 </Col>
-                <Col span={10}>
-                  <Information
-                    chartsData={chartsData}
-                    propSearch={propSearch}
-                    detailData={detailData}
-                  />
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img style={{padding:10}} alt="example" src="https://iiif.library.sh.cn/i/3/b9faa5888573c3e801ef150f7f006f9b/1037,1155,279,279/full/0/default.jpg"/>}
+                  >
+                    <Meta title="Europe Street beat" description="www.instagram.com" />
+                  </Card>
                 </Col>
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img style={{padding:10}} alt="example" src="https://iiif.library.sh.cn/i/3/b9faa5888573c3e801ef150f7f006f9b/1037,1155,279,279/full/0/default.jpg" />}
+                  >
+                    <Meta title="龙藏寺碑" description="张公礼(撰文)" />
+                  </Card>
+                </Col>
+                <Col span={6}>
+                  <Card
+                    hoverable
+                    style={{ width: 240 }}
+                    cover={<img style={{padding:10}} alt="example" src="https://iiif.library.sh.cn/i/3/b9faa5888573c3e801ef150f7f006f9b/1037,1155,279,279/full/0/default.jpg"/>}
+                  >
+                    <Meta title="Europe Street beat" description="www.instagram.com" />
+                  </Card>
+                </Col>
+                {/*<Col span={14}>*/}
+                {/*  <Charts chartsData={chartsData} propSearch={propSearch} clickWord={this.search} />*/}
+                {/*</Col>*/}
+                {/*<Col span={10}>*/}
+                {/*  <Information*/}
+                {/*    chartsData={chartsData}*/}
+                {/*    propSearch={propSearch}*/}
+                {/*    detailData={detailData}*/}
+                {/*  />*/}
+                {/*</Col>*/}
               </Row>
             ) : (
               <Empty />

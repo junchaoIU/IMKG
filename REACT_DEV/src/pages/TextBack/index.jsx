@@ -3,7 +3,7 @@ import { Input, Button } from 'antd';
 import styles from './index.less';
 import { PageContainer } from '@ant-design/pro-layout';
 import Search from './components/Search';
-import { FileSearchOutlined } from '@ant-design/icons';
+import {BookTwoTone, FileSearchOutlined} from '@ant-design/icons';
 import MainSearch from '@/components/MainSearch';
 
 class textBack extends Component {
@@ -31,7 +31,7 @@ class textBack extends Component {
         {val === true ? (
           <div className={styles.indexSearch}>
             <MainSearch
-              logo={<FileSearchOutlined />}
+              logo={<BookTwoTone twoToneColor="#60c3ffa6" />}
               text={'语料关联·检索'}
               engText={'Corpus Back Retrieval'}
             />

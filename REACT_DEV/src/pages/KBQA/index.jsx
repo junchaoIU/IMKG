@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
-import styles from "@/pages/InformationExtraction/index.less";
+import styles from "@/pages/KBQA/index.less";
 import MainSearch from "@/components/MainSearch";
-import {CommentOutlined} from "@ant-design/icons";
-import {Button, Input} from "antd";
+import {CommentOutlined, FireOutlined, FireTwoTone, MessageTwoTone} from "@ant-design/icons";
+import {Button, Input, Tag} from "antd";
 import Search from "@/pages/KBQA/components/Search";
 
 class kbqa extends Component {
@@ -25,14 +25,21 @@ class kbqa extends Component {
     });
   };
 
+  searchHot = (value) => {
+    this.setState({
+      question: value,
+      val: false,
+    })
+  }
+
   render() {
     const { val, question } = this.state;
     return (
-      <PageContainer >
+      <div>
         {val === true ? (
           <div className={styles.indexSearch}>
             <MainSearch
-              logo={<CommentOutlined />}
+              logo={<MessageTwoTone twoToneColor="#60c3ffa6"/>}
               text={'智能知识·问答'}
               engText={'KBQA·Platform'}
             />
@@ -46,12 +53,32 @@ class kbqa extends Component {
             <Button type="primary" className={styles.button} size={'large'} onClick={this.search}>
               知识问答
             </Button>
+            <br/>
+            <div key="c" style={{textAlign: 'center',paddingBottom:40}}>
+              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              </Button>
+              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              </Button>
+            </div>
           </div>
         ) : (
-          <Search state={'question'} parentSearch={question} />
+          <PageContainer>
+            <Search state={'question'} parentSearch={question} />
+          </PageContainer>
         )}
 
-      </PageContainer>
+      </div>
     );
   }
 }

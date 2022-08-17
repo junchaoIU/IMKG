@@ -1,17 +1,19 @@
 import React from 'react';
+import logo_en from '../../assets/logo_en.png'
 export const Banner00DataSource = {
   wrapper: { className: 'banner0' },
   textWrapper: { className: 'banner0-text-wrapper' },
   title: {
     className: 'banner0-title',
-    children: 'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+    // children: 'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+    children: "https://image.gzknowledge.cn/logo_cn.png",
   },
   content: {
     className: 'banner0-content',
     children: (
       <span>
         <p>
-          以AI多模态知识图谱作为核心引擎，对近代革命历史知识及文献进行深层开发，通过高度知识文献映射、关联化、时空化，进行数字人文历史的沉浸式探索体验
+          以AI多模态知识图谱作为核心引擎，对碑帖及碑帖名家知识进行深层开发，通过高度知识映射、关联化、时空化，进行历史文明的见证 —— 碑帖 的沉浸式探索体验
         </p>
       </span>
     ),
@@ -40,7 +42,7 @@ export const Content30DataSource = {
             <span>
               <span>
                 <span>
-                  <p>“忆见中华” 提供丰富的知识服务</p>
+                  <p>“碑帖记忆” 提供丰富的知识服务</p>
                 </span>
               </span>
             </span>
@@ -78,7 +80,7 @@ export const Content30DataSource = {
             className: 'content3-title',
             children: (
               <span>
-                <p>知识探索</p>
+                <p>知识检索</p>
               </span>
             ),
           },
@@ -86,7 +88,7 @@ export const Content30DataSource = {
             className: 'content3-content',
             children: (
               <span>
-                <p>知识探索</p>
+                <p>知识图谱带你走进碑帖的家族世代</p>
               </span>
             ),
           },
@@ -110,7 +112,7 @@ export const Content30DataSource = {
               <span>
                 <span>
                   <span>
-                    <p>画廊频院</p>
+                    <p>单字检索</p>
                   </span>
                 </span>
               </span>
@@ -120,7 +122,7 @@ export const Content30DataSource = {
             className: 'content3-content',
             children: (
               <span>
-                <p>画廊频院</p>
+                <p>见字如面，探索文字的万种风情</p>
               </span>
             ),
           },
@@ -143,7 +145,7 @@ export const Content30DataSource = {
             children: (
               <span>
                 <span>
-                  <p>文献探索</p>
+                  <p>时空探索</p>
                 </span>
               </span>
             ),
@@ -152,7 +154,7 @@ export const Content30DataSource = {
             className: 'content3-content',
             children: (
               <span>
-                <p>文献探索</p>
+                <p>基于可视化地图的碑帖沉浸式探索体验</p>
               </span>
             ),
           },
@@ -188,7 +190,7 @@ export const Content30DataSource = {
               <span>
                 <span>
                   <span>
-                    <p>时空检索</p>
+                    <p>探索碑帖的漫长岁月和时空关联</p>
                   </span>
                 </span>
               </span>
@@ -224,7 +226,7 @@ export const Content30DataSource = {
             className: 'content3-content',
             children: (
               <span>
-                <p>时空演化</p>
+                <p>ArcGIS，回顾碑帖的一生踪迹</p>
               </span>
             ),
           },
@@ -254,7 +256,7 @@ export const Content30DataSource = {
             className: 'content3-content',
             children: (
               <span>
-                <p>知识问答</p>
+                <p>碑帖小百科，问你所问，皆有回音</p>
               </span>
             ),
           },
@@ -287,7 +289,8 @@ export const Footer10DataSource = {
               name: 'content0',
               children: (
                 <span>
-                  <p>弘扬中华红色文化</p>
+                  <p>碑，竖石也。</p>
+                  <p>帖，以帛作书，书于帛者曰帖。</p>
                 </span>
               ),
             },
@@ -390,7 +393,7 @@ export const Footer10DataSource = {
       <span>
         <span>
           <span>
-            <span>©2022 by 忆见芳华&nbsp;All Rights Reserved</span>
+            <span>©2022 by 碑帖记忆&nbsp;All Rights Reserved</span>
           </span>
         </span>
       </span>

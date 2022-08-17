@@ -1,14 +1,14 @@
 const proSettings = {
-  navTheme: 'dark',
+  navTheme: 'light',
   // 拂晓蓝
   // primaryColor: '#1890ff',
-  primaryColor: '#ff1b44',
-  layout: 'side',
+  primaryColor: '#60c3ffa6',
+  layout: 'top',
   contentWidth: 'Fluid',
   fixedHeader: true,
   fixSiderbar: true,
   colorWeak: false,
-  title: '忆见芳华',
+  title: '碑帖记忆',
   pwa: false,
   iconfontUrl: '',
   headerHeight:60,

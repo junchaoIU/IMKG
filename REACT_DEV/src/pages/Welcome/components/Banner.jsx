@@ -26,12 +26,12 @@ class banner extends Component {
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-            沪上花开
+            碑帖记忆
           </TweenOne>
           <TweenOne className="banner-user-text"
                     animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            品味上海文化
+            品味人类文明的证明
           </TweenOne>
         </Element>
         <Element
@@ -48,12 +48,12 @@ class banner extends Component {
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-            上海历史
+            浅识碑帖
           </TweenOne>
           <TweenOne className="banner-user-text"
                     animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            走进 | 你未曾见过的上海
+            碑，竖石也。帖，以帛作书，书于帛者曰帖。
           </TweenOne>
         </Element>
       </BannerAnim>

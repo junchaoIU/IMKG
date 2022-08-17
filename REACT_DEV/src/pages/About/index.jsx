@@ -3,14 +3,14 @@
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
 
-import Banner4 from './Banner4';
+import Content4 from './Content4';
 import Teams2 from './Teams2';
-import Content9 from './Content9';
+import Content13 from './Content13';
 
 import {
-  Banner40DataSource,
-  Teams21DataSource,
-  Content90DataSource,
+  Content40DataSource,
+  Teams20DataSource,
+  Content130DataSource,
 } from './data.source';
 import './less/antMotionStyle.less';
 
@@ -50,22 +50,22 @@ export default class Home extends React.Component {
 
   render() {
     const children = [
-      <Banner4
-        id="Banner4_0"
-        key="Banner4_0"
-        dataSource={Banner40DataSource}
+      <Content4
+        id="Content4_0"
+        key="Content4_0"
+        dataSource={Content40DataSource}
         isMobile={this.state.isMobile}
       />,
       <Teams2
-        id="Teams2_1"
-        key="Teams2_1"
-        dataSource={Teams21DataSource}
+        id="Teams2_0"
+        key="Teams2_0"
+        dataSource={Teams20DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Content9
-        id="Content9_0"
-        key="Content9_0"
-        dataSource={Content90DataSource}
+      <Content13
+        id="Content13_0"
+        key="Content13_0"
+        dataSource={Content130DataSource}
         isMobile={this.state.isMobile}
       />,
     ];

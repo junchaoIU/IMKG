@@ -1,0 +1,814 @@
+{
+  "nodes": [
+    {
+      "id": "旧拓魏志五种",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/旧拓魏志五种.jpg",
+      "size": 0
+    },
+    {
+      "id": "化度寺邕禅师舍利塔铭",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/化度寺邕禅师舍利塔铭.jpg",
+      "size": 7
+    },
+    {
+      "id": "唐原石北宋拓本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "李百药",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/李百药.jpg",
+      "size": 1
+    },
+    {
+      "id": "太室西阙铭",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/太室西阙铭.jpg",
+      "size": 4
+    },
+    {
+      "id": "河南登封嵩山太室山下中岳庙前",
+      "category": "地点",
+      "symbol": "image://https://image.gzknowledge.cn/河南登封嵩山太室山下中岳庙前.jpg",
+      "size": 1
+    },
+    {
+      "id": "虞恭公温彦博碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/虞恭公温彦博碑.jpg",
+      "size": 4
+    },
+    {
+      "id": "鲜于光祖墓志",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/鲜于光祖墓志.jpg",
+      "size": 2
+    },
+    {
+      "id": "司马昞妻孟敬训墓志",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/司马昞妻孟敬训墓志.jpg",
+      "size": 1
+    },
+    {
+      "id": "乾隆初拓本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "道因法师碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/道因法师碑.jpg",
+      "size": 8
+    },
+    {
+      "id": "北宋拓本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "长安怀德坊慧日寺",
+      "category": "地点",
+      "symbol": "image://https://image.gzknowledge.cn/长安怀德坊慧日寺.jpg",
+      "size": 1
+    },
+    {
+      "id": "欧阳通",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/欧阳通.jpg",
+      "size": 1
+    },
+    {
+      "id": "李儇",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/李儇.jpg",
+      "size": 1
+    },
+    {
+      "id": "隋",
+      "category": "朝代",
+      "symbol": "image://https://image.gzknowledge.cn/隋.jpg",
+      "size": 1
+    },
+    {
+      "id": "明代中期拓本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "河北正定龙兴寺",
+      "category": "地点",
+      "symbol": "image://https://image.gzknowledge.cn/河北正定龙兴寺.jpg",
+      "size": 1
+    },
+    {
+      "id": "王居士砖塔铭",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/王居士砖塔铭.jpg",
+      "size": 7
+    },
+    {
+      "id": "明末清初本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "陕西西安终南山楩梓谷之百塔寺",
+      "category": "地点",
+      "symbol": "image://https://image.gzknowledge.cn/陕西西安终南山楩梓谷之百塔寺.jpg",
+      "size": 1
+    },
+    {
+      "id": "敬客",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/敬客.jpg",
+      "size": 1
+    },
+    {
+      "id": "书",
+      "category": "书体",
+      "size": 1
+    },
+    {
+      "id": "上官灵芝",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/上官灵芝.jpg",
+      "size": 1
+    },
+    {
+      "id": "制文",
+      "category": "书体",
+      "size": 1
+    },
+    {
+      "id": "篆书阳文二行，行二字",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/篆书阳文二行，行二字.jpg",
+      "size": 1
+    },
+    {
+      "id": "汉故司隶校尉鲁君碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/汉故司隶校尉鲁君碑.jpg",
+      "size": 3
+    },
+    {
+      "id": "汉",
+      "category": "朝代",
+      "symbol": "image://https://image.gzknowledge.cn/汉.jpg",
+      "size": 2
+    },
+    {
+      "id": "许真人井铭",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/许真人井铭.jpg",
+      "size": 0
+    },
+    {
+      "id": "唐俭碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/唐俭碑.jpg",
+      "size": 2
+    },
+    {
+      "id": "明拓本",
+      "category": "版本类型",
+      "size": 4
+    },
+    {
+      "id": "淳化阁帖",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/淳化阁帖.jpg",
+      "size": 2
+    },
+    {
+      "id": "宋拓泉州本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "黄庭堅青原山诗刻石",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/黄庭堅青原山诗刻石.jpg",
+      "size": 1
+    },
+    {
+      "id": "黄庭坚",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/黄庭坚.jpg",
+      "size": 1
+    },
+    {
+      "id": "争座位帖",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/争座位帖.jpg",
+      "size": 3
+    },
+    {
+      "id": "龙藏寺碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/龙藏寺碑.jpg",
+      "size": 8
+    },
+    {
+      "id": "明初拓“张公礼未泐本”",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "张公礼",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/张公礼.jpg",
+      "size": 2
+    },
+    {
+      "id": "麻姑山仙坛记",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/麻姑山仙坛记.jpg",
+      "size": 4
+    },
+    {
+      "id": "宋拓“宋精刻大字本”",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "颜真卿",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/颜真卿.jpg",
+      "size": 2
+    },
+    {
+      "id": "礼器碑并阴",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/礼器碑并阴.jpg",
+      "size": 2
+    },
+    {
+      "id": "明末拓本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "晋唐小楷九种",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/晋唐小楷九种.jpg",
+      "size": 0
+    },
+    {
+      "id": "十七帖",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/十七帖.jpg",
+      "size": 2
+    },
+    {
+      "id": "孔羡碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/孔羡碑.jpg",
+      "size": 2
+    },
+    {
+      "id": "明中后期拓本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "九成宫醴泉铭",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/九成宫醴泉铭.jpg",
+      "size": 6
+    },
+    {
+      "id": "南宋拓本",
+      "category": "版本类型",
+      "size": 2
+    },
+    {
+      "id": "魏征",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/魏征.jpg",
+      "size": 1
+    },
+    {
+      "id": "张从申书李玄靖碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/张从申书李玄靖碑.jpg",
+      "size": 4
+    },
+    {
+      "id": "唐",
+      "category": "朝代",
+      "symbol": "image://https://image.gzknowledge.cn/唐.jpg",
+      "size": 6
+    },
+    {
+      "id": "宋拓本",
+      "category": "版本类型",
+      "size": 3
+    },
+    {
+      "id": "江苏句容玉晨观",
+      "category": "地点",
+      "symbol": "image://https://image.gzknowledge.cn/江苏句容玉晨观.jpg",
+      "size": 1
+    },
+    {
+      "id": "圭峰定慧禅师碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/圭峰定慧禅师碑.jpg",
+      "size": 2
+    },
+    {
+      "id": "明代淡墨精拓本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "隋柱国弘义明公皇甫府君碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/隋柱国弘义明公皇甫府君碑.jpg",
+      "size": 7
+    },
+    {
+      "id": "宋",
+      "category": "朝代",
+      "symbol": "image://https://image.gzknowledge.cn/宋.jpg",
+      "size": 10
+    },
+    {
+      "id": "宋拓未断本",
+      "category": "版本类型",
+      "size": 1
+    },
+    {
+      "id": "长安鸣犊镇皇甫川",
+      "category": "地点",
+      "symbol": "image://https://image.gzknowledge.cn/长安鸣犊镇皇甫川.jpg",
+      "size": 1
+    },
+    {
+      "id": "于志宁",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/于志宁.jpg",
+      "size": 1
+    },
+    {
+      "id": "撰文",
+      "category": "书体",
+      "size": 4
+    },
+    {
+      "id": "欧阳询",
+      "category": "名家",
+      "symbol": "image://https://image.gzknowledge.cn/欧阳询.jpg",
+      "size": 4
+    },
+    {
+      "id": "楷书",
+      "category": "书体",
+      "size": 4
+    },
+    {
+      "id": "史晨前碑",
+      "category": "碑帖",
+      "symbol": "image://https://image.gzknowledge.cn/史晨前碑.jpg",
+      "size": 2
+    },
+    {
+      "id": "明",
+      "category": "朝代",
+      "symbol": "image://https://image.gzknowledge.cn/明.jpg",
+      "size": 11
+    },
+    {
+      "id": "明中叶前拓本",
+      "category": "版本类型",
+      "size": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "化度寺邕禅师舍利塔铭",
+      "target": "唐",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "化度寺邕禅师舍利塔铭",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "化度寺邕禅师舍利塔铭",
+      "target": "唐原石北宋拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "化度寺邕禅师舍利塔铭",
+      "target": "李百药",
+      "category": "责任人"
+    },
+    {
+      "source": "化度寺邕禅师舍利塔铭",
+      "target": "撰文",
+      "category": "书体"
+    },
+    {
+      "source": "化度寺邕禅师舍利塔铭",
+      "target": "欧阳询",
+      "category": "责任人"
+    },
+    {
+      "source": "化度寺邕禅师舍利塔铭",
+      "target": "楷书",
+      "category": "书体"
+    },
+    {
+      "source": "太室西阙铭",
+      "target": "汉",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "太室西阙铭",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "太室西阙铭",
+      "target": "明拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "太室西阙铭",
+      "target": "河南登封嵩山太室山下中岳庙前",
+      "category": "刻立地点"
+    },
+    {
+      "source": "虞恭公温彦博碑",
+      "target": "唐",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "虞恭公温彦博碑",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "虞恭公温彦博碑",
+      "target": "南宋拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "虞恭公温彦博碑",
+      "target": "欧阳询",
+      "category": "责任人"
+    },
+    {
+      "source": "鲜于光祖墓志",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "鲜于光祖墓志",
+      "target": "明拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "司马昞妻孟敬训墓志",
+      "target": "乾隆初拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "唐",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "北宋拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "长安怀德坊慧日寺",
+      "category": "刻立地点"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "欧阳通",
+      "category": "责任人"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "楷书",
+      "category": "书体"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "李儇",
+      "category": "责任人"
+    },
+    {
+      "source": "道因法师碑",
+      "target": "撰文",
+      "category": "书体"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "隋",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "明代中期拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "河北正定龙兴寺",
+      "category": "刻立地点"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "张公礼",
+      "category": "责任人"
+    },
+    {
+      "source": "王居士砖塔铭",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "王居士砖塔铭",
+      "target": "明末清初本",
+      "category": "版本类型"
+    },
+    {
+      "source": "王居士砖塔铭",
+      "target": "陕西西安终南山楩梓谷之百塔寺",
+      "category": "出土地点"
+    },
+    {
+      "source": "王居士砖塔铭",
+      "target": "敬客",
+      "category": "责任人"
+    },
+    {
+      "source": "王居士砖塔铭",
+      "target": "书",
+      "category": "书体"
+    },
+    {
+      "source": "王居士砖塔铭",
+      "target": "上官灵芝",
+      "category": "责任人"
+    },
+    {
+      "source": "王居士砖塔铭",
+      "target": "制文",
+      "category": "书体"
+    },
+    {
+      "source": "篆书阳文二行，行二字",
+      "target": "唐",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "汉故司隶校尉鲁君碑",
+      "target": "汉",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "汉故司隶校尉鲁君碑",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "汉故司隶校尉鲁君碑",
+      "target": "明拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "唐俭碑",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "唐俭碑",
+      "target": "明拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "淳化阁帖",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "淳化阁帖",
+      "target": "宋拓泉州本",
+      "category": "版本类型"
+    },
+    {
+      "source": "黄庭堅青原山诗刻石",
+      "target": "黄庭坚",
+      "category": "责任人"
+    },
+    {
+      "source": "争座位帖",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "争座位帖",
+      "target": "宋拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "争座位帖",
+      "target": "颜真卿",
+      "category": "责任人"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "明初拓“张公礼未泐本”",
+      "category": "版本类型"
+    },
+    {
+      "source": "龙藏寺碑",
+      "target": "张公礼",
+      "category": "责任人"
+    },
+    {
+      "source": "麻姑山仙坛记",
+      "target": "唐",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "麻姑山仙坛记",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "麻姑山仙坛记",
+      "target": "宋拓“宋精刻大字本”",
+      "category": "版本类型"
+    },
+    {
+      "source": "麻姑山仙坛记",
+      "target": "颜真卿",
+      "category": "责任人"
+    },
+    {
+      "source": "礼器碑并阴",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "礼器碑并阴",
+      "target": "明末拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "十七帖",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "十七帖",
+      "target": "宋拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "孔羡碑",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "孔羡碑",
+      "target": "明中后期拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "九成宫醴泉铭",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "九成宫醴泉铭",
+      "target": "南宋拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "九成宫醴泉铭",
+      "target": "欧阳询",
+      "category": "责任人"
+    },
+    {
+      "source": "九成宫醴泉铭",
+      "target": "楷书",
+      "category": "书体"
+    },
+    {
+      "source": "九成宫醴泉铭",
+      "target": "魏征",
+      "category": "责任人"
+    },
+    {
+      "source": "九成宫醴泉铭",
+      "target": "撰文",
+      "category": "书体"
+    },
+    {
+      "source": "张从申书李玄靖碑",
+      "target": "唐",
+      "category": "刻立朝代"
+    },
+    {
+      "source": "张从申书李玄靖碑",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "张从申书李玄靖碑",
+      "target": "宋拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "张从申书李玄靖碑",
+      "target": "江苏句容玉晨观",
+      "category": "刻立地点"
+    },
+    {
+      "source": "圭峰定慧禅师碑",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "圭峰定慧禅师碑",
+      "target": "明代淡墨精拓本",
+      "category": "版本类型"
+    },
+    {
+      "source": "隋柱国弘义明公皇甫府君碑",
+      "target": "宋",
+      "category": "版本朝代"
+    },
+    {
+      "source": "隋柱国弘义明公皇甫府君碑",
+      "target": "宋拓未断本",
+      "category": "版本类型"
+    },
+    {
+      "source": "隋柱国弘义明公皇甫府君碑",
+      "target": "长安鸣犊镇皇甫川",
+      "category": "刻立地点"
+    },
+    {
+      "source": "隋柱国弘义明公皇甫府君碑",
+      "target": "于志宁",
+      "category": "责任人"
+    },
+    {
+      "source": "隋柱国弘义明公皇甫府君碑",
+      "target": "撰文",
+      "category": "书体"
+    },
+    {
+      "source": "隋柱国弘义明公皇甫府君碑",
+      "target": "欧阳询",
+      "category": "责任人"
+    },
+    {
+      "source": "隋柱国弘义明公皇甫府君碑",
+      "target": "楷书",
+      "category": "书体"
+    },
+    {
+      "source": "史晨前碑",
+      "target": "明",
+      "category": "版本朝代"
+    },
+    {
+      "source": "史晨前碑",
+      "target": "明中叶前拓本",
+      "category": "版本类型"
+    }
+  ]
+}

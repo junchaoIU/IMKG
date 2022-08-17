@@ -8,10 +8,11 @@ import {
   PushpinTwoTone,
   TagsOutlined,
   EnvironmentTwoTone,
-  CloudTwoTone,
+  CloudTwoTone, FireTwoTone,
 } from '@ant-design/icons';
 import Emptys from '../../../components/Empty/index';
 import LineDrawer from '@/pages/Common/LineDrawer';
+import QueueAnim from "rc-queue-anim";
 
 @connect(({ knowledge, loading }) => ({
   knowledge,
@@ -48,10 +49,10 @@ class information extends PureComponent {
         {detail.slice(page.minValue, page.maxValue).map((item, index) => {
           return (
             <Timeline.Item key={index} dot={<TagsOutlined style={{ fontSize: '20px' }} />}>
-              <p>
-                <PushpinTwoTone twoToneColor="#eb2f96" className={styles.icon} />
-                {item[0]}
-              </p>
+              {/*<p>*/}
+              {/*  <PushpinTwoTone twoToneColor="#eb2f96" className={styles.icon} />*/}
+              {/*  {item[0]}*/}
+              {/*</p>*/}
               <p>
                 <ClockCircleTwoTone twoToneColor="#52c41a" className={styles.icon} />
                 {item[1] === '未知' ? item[1] : item[1].substr(1)}
@@ -61,7 +62,7 @@ class information extends PureComponent {
                 {item[2]}
               </p>
               <Tooltip
-                color={'#2db7f5'}
+                color={'#ff969f'}
                 placement="topLeft"
                 title="点击事件语料关联"
                 arrowPointAtCenter
@@ -152,7 +153,7 @@ class information extends PureComponent {
             <Timeline.Item
               label={label}
               key={index}
-              dot={<CrownOutlined style={{ fontSize: '18px' }} />}
+              dot={<FireTwoTone twoToneColor="#60c3ffa6" style={{ fontSize: '18px' }} />}
             >
               {item.source}
             </Timeline.Item>

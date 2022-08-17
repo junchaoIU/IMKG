@@ -19,7 +19,7 @@ class Banner extends React.PureComponent {
           delay={200}
           {...dataSource.textWrapper}
         >
-          <div key="title" {...dataSource.title}>
+          <div style={{textAlign:'center'}} key="title" {...dataSource.title}>
             {typeof dataSource.title.children === 'string' &&
             dataSource.title.children.match(isImg) ? (
               <img src={dataSource.title.children} width="100%" alt="img" />
@@ -30,6 +30,7 @@ class Banner extends React.PureComponent {
           <div key="content" {...dataSource.content}>
             {dataSource.content.children}
           </div>
+          <br/>
           <Button ghost key="button" {...dataSource.button}>
             {dataSource.button.children}
           </Button>

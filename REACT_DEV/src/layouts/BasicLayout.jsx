@@ -103,9 +103,9 @@ const BasicLayout = (props) => {
   const { formatMessage } = useIntl();
   return (
     <ProLayout
-      logo={<img src='https://os.alipayobjects.com/rmsportal/mlcYmsRilwraoAe.svg' style={{ height: '20px' }} />}
+      logo={<img src='https://image.gzknowledge.cn/logo_cn.png' style={{ height: '50px' }} />}
       formatMessage={formatMessage}
-      contentStyle={{ background: 'white', margin: '0' }}
+      contentStyle={{margin: '0' }}
       {...props}
       {...settings}
       disableContentMargin={true}

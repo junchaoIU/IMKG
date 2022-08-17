@@ -91,7 +91,7 @@ class charts extends Component {
         },
         legend: {
           show: true,
-          data: ['人物', '历史事件', '旧址文物', '文书条款', '时间', '地点', '事件标识'],
+          data: ['碑帖', '名家', '书体', '朝代', '版本类型', '地点', '时间'],
         },
         series: [
           {

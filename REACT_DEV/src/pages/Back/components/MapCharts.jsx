@@ -92,11 +92,12 @@ class mapCharts extends Component {
             top: 10,
             textStyle: {
               fontSize: 20,
-              color: 'rgba(255, 255, 255, 0.7)',
+              // color: 'rgba(255, 255, 255, 0.7)',
+              color: 'rgb(255, 255, 255)',
             },
           },
         ],
-        backgroundColor: '#013954',
+        backgroundColor: 'rgb(255,255,255)',
         geo: {
           map: 'route',
           show: true,
@@ -108,7 +109,7 @@ class mapCharts extends Component {
             normal: {
               show: true,
               textStyle: {
-                color: '#1DE9B6',
+                color: 'rgb(0,0,0)',
               },
             },
             emphasis: {
@@ -127,18 +128,18 @@ class mapCharts extends Component {
                 colorStops: [
                   {
                     offset: 0,
-                    color: '#09132c', // 0% 处的颜色
+                    color: 'rgb(255,251,240)', // 0% 处的颜色
                   },
                   {
                     offset: 1,
-                    color: '#072460', // 100% 处的颜色
+                    color: 'rgb(255,251,240)', // 100% 处的颜色
                   },
                 ],
                 globalCoord: true, // 缺省为 false
               },
               shadowColor: 'rgb(58,115,192)',
-              shadowOffsetX: 1,
-              shadowOffsetY: 1,
+              shadowOffsetX: 0,
+              shadowOffsetY: 0,
             },
           },
           silent: true, // 鼠标经过地图不高亮
@@ -160,7 +161,8 @@ class mapCharts extends Component {
             hoverAnimation: true,
             itemStyle: {
               normal: {
-                color: '#4ab2e5',
+                // color: '#4ab2e5',
+                color: '#60c3ffa6',
                 shadowBlur: 10,
                 shadowColor: '#333',
               },
@@ -179,16 +181,18 @@ class mapCharts extends Component {
               show: true,
               period: 5, //箭头指向速度，值越小速度越快
               trailLength: 0, //特效尾迹长度[0,1]值越大，尾迹越长重
-              color: '#fffa16',
+              color: '#60c3ffa6',
+              // color: '#fffa16',
               symbol:
                 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z',
               symbolSize: 17, //图标大小
             },
             lineStyle: {
               normal: {
-                color: '#1DE9B6',
+                // color: '#1DE9B6',
+                color: '#60c3ffa6',
                 width: 2, //线条宽度
-                opacity: 0.6, //尾迹线条透明度
+                opacity: 0.8, //尾迹线条透明度
                 curveness: 0.3, //尾迹线条曲直度
               },
             },
@@ -229,11 +233,14 @@ class mapCharts extends Component {
                   return `${params.name}\n${params.data.event}`;
                 },
                 lineHeight: 20,
-                backgroundColor: '#003F5E',
+                // backgroundColor: '#003F5E',
+                backgroundColor: 'rgb(255,255,255)',
                 borderRadius: 5,
-                borderColor: '#67F0EF',
+                // borderColor: '#67F0EF',
+                borderColor:'rgb(0,0,0)',
                 borderWidth: 1,
-                color: '#67F0EF',
+                // color: '#67F0EF',
+                color:'rgb(0,0,0)',
                 position: 'right',
                 offset: [15, 0],
                 padding: [4, 8],
@@ -251,12 +258,14 @@ class mapCharts extends Component {
             labelLine: {
               show: true,
               lineStyle: {
-                color: '#bbb',
+                color:'rgb(0,0,0)'
+                // color: '#bbb',
               },
             },
             itemStyle: {
               normal: {
-                color: '#4ab2e5',
+                color: '#60c3ffa6',
+                // color: '#4ab2e5',
                 shadowBlur: 10,
                 shadowColor: '#333',
               },
@@ -273,7 +282,8 @@ class mapCharts extends Component {
             symbolSize: 16,
             itemStyle: {
               normal: {
-                color: '#F4E925',
+                color: '#60c3ffa6',
+                // color: '#F4E925',
               },
             },
           },
@@ -287,14 +297,16 @@ class mapCharts extends Component {
               show: true,
               period: 5, // 箭头指向速度，值越小速度越快
               trailLength: 0, // 特效尾迹长度[0,1]值越大，尾迹越长重
-              color: '#fffa16',
+              // color: '#fffa16',
+              color: '#60c3ffa6',
               symbol:
                 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z',
               symbolSize: 17, // 图标大小
             },
             lineStyle: {
               normal: {
-                color: '#1DE9B6',
+                // color: '#1DE9B6',
+                color: '#60c3ffa6',
                 width: 2, // 线条宽度
                 opacity: 0.6, // 尾迹线条透明度
                 curveness: 0.3, // 尾迹线条曲直度
@@ -309,7 +321,7 @@ class mapCharts extends Component {
   };
 
   render() {
-    return <div id="main" style={{ width: '100%', height: '598px' }}></div>;
+    return <div id="main" style={{ width: '100%', height: '70vh' }}></div>;
   }
 }
 

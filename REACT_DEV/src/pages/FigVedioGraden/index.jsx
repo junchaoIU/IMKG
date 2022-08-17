@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // eslint-disable-next-line no-unused-vars
 import 'rc-banner-anim/assets/index.css';
 import 'rc-texty/assets/index.css';
-import {Button, Card, Col, Row, Tabs, Typography} from 'antd';
+import {BackTop, Button, Card, Col, Row, Tabs, Typography} from 'antd';
 import { Image } from 'antd';
 import styles from './index.less';
 import TweenOne from "rc-tween-one";
@@ -324,7 +324,7 @@ class figVedioGraden extends Component {
         {/*            },*/}
         {/*            { scale: 1, width: '100%', delay: -300, duration: 1000, ease: 'easeInOutQuint' },*/}
         {/*          ],*/}
-        {/*        }}>忆见芳华</Texty>*/}
+        {/*        }}>碑帖记忆</Texty>*/}
         {/*    </div>*/}
         {/*  </Typography>*/}
         {/*  <Typography className={styles.text}>*/}
@@ -344,6 +344,17 @@ class figVedioGraden extends Component {
         {/*</Typography>*/}
         {/*<Knowledge />*/}
         {/*<NumService />*/}
+        <BackTop>
+          <div style={{
+            height: 40,
+            width: 40,
+            lineHeight: '40px',
+            borderRadius: 4,
+            backgroundColor: 'red',
+            color: '#fff',
+            textAlign: 'center',
+            fontSize: 14}}>UP</div>
+        </BackTop>
       </div>
     );
   }
