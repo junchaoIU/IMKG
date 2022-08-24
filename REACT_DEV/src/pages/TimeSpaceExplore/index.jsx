@@ -56,6 +56,12 @@ class timeSpaceExplore extends Component {
 
   }
 
+  click = (value) => {
+    this.props.history.push({pathname :"/welcome", query:{
+      dotData: value //需要传递的参数
+    }});
+  }
+
   state={
     markers: mapData,
     center: [108.939645,34.343207],
@@ -92,7 +98,7 @@ class timeSpaceExplore extends Component {
                 {this.state.info.dynasty?<p>朝代：{this.state.info.dynasty}</p>:null}
                 {this.state.info.hometown?<p>家乡：{this.state.info.hometown}</p>:null}
                 {this.state.info.address?<p>地点：{this.state.info.address}</p>:null}
-                <Button type="primary" ghost>
+                <Button type="primary" ghost onClick={() => this.click(this.state.index)}>
                   查看详情
                 </Button>
               </Card>

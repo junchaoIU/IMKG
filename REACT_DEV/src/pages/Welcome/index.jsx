@@ -21,6 +21,16 @@ class home extends Component {
     val:true
   };
 
+  componentDidMount() {
+    const messages = this.props.location.query.dotData
+    if(messages){
+      this.setState({
+        searchValue:messages,
+        val: false,
+      })
+    }
+  }
+
   search = () => {
     this.setState({
       val: false,
@@ -106,7 +116,7 @@ class home extends Component {
     const { searchValue, val } = this.state;
     return (
       <div>
-        {val === true ? (
+        {val === true? (
           <div>
             <QueueAnim delay={300} className="queue-simple">
               <div key="a" style={{height:150}}>
