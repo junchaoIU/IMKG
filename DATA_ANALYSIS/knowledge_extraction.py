@@ -177,7 +177,7 @@ def getTimeLine(entitiesDic, txt):
                 else:
                     organizationLineListDic.update({organization: [organizationItem]})
                 continue
-    return personLineListDic, eventLineListDic, organizationLineListDic
+    return lineList, personLineListDic, eventLineListDic, organizationLineListDic
 
 
 def fileTransformer(book_url):
@@ -185,6 +185,7 @@ def fileTransformer(book_url):
     personLineDic = {}
     eventLineDic = {}
     organizationLineDic = {}
+    allLine = []
     print("正在文本清洗....请稍等")
     txtList = bookContentProcess(book_url)
     print("正在实体抽取....请稍等")
@@ -210,27 +211,33 @@ def fileTransformer(book_url):
             for item in date_list:
                 entitiesDic["DATE"].remove(item)
 
-            personLineListDic, eventLineListDic, organizationLineListDic = getTimeLine(entitiesDic, txt)
+            allLineList, personLineListDic, eventLineListDic, organizationLineListDic = getTimeLine(entitiesDic, txt)
+
+            allLine = allLine + allLineList
             personLineDic.update(personLineListDic)
             eventLineDic.update(eventLineListDic)
             organizationLineDic.update(organizationLineListDic)
         except:
             pass
 
+    allLine = list(set(allLine)),
     print("全部类别实体entitiesDic:{}".format(entitiesDic))
     print("实体抽取完毕，共抽取ORGANIZATION:{}，PERSON：{}，LOCATION：{}，DATE：{}，EVENT:{}"
           .format(len(entitiesDic["ORGANIZATION"]), len(entitiesDic["PERSON"]), len(entitiesDic["LOCATION"]),
                   len(entitiesDic["DATE"]), len(entitiesDic["EVENT"])))
     print("personLineDic:{}".format(personLineDic))
-    print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items())))
-    print("eventLineDic:{}".format(eventLineDic))
-    print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items())))
-    print("organizationLineDic:{}".format(organizationLineDic))
-    print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items())))
-    dataDic = {"entitiesDic": entitiesDic,
+    print("总时空线:{}".format(allLine)),
+    print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items()))),
+    print("eventLineDic:{}".format(eventLineDic)),
+    print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items()))),
+    print("organizationLineDic:{}".format(organizationLineDic)),
+    print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items()))),
+    dataDic = {"allLine": allLine,
+               "entitiesDic": entitiesDic,
                "personLineDic": personLineDic,
                "eventLineDic": eventLineDic,
-               "organizationLineDic": organizationLineDic}
+               "organizationLineDic": organizationLineDic
+               }
     return dataDic
 
 
@@ -240,6 +247,7 @@ def textTransformer(txt):
     personLineDic = {}
     eventLineDic = {}
     organizationLineDic = {}
+    allLine = []
     print("正在文本清洗....请稍等")
     txtList = textProcess(str(txt))
     print("正在实体抽取....请稍等")
@@ -254,6 +262,20 @@ def textTransformer(txt):
 
         # 日期清洗
         date_list = []
+
+        # 数字补齐
+        for i in range(len(entitiesDic["DATE"])):
+            item_list = txt.split(entitiesDic["DATE"][i])
+            if item_list[1][0] == "(" or item_list[1][0] == "（":
+                if item_list[1][5] == ")" or item_list[1][5] == "）":
+                    entitiesDic["DATE"][i] = entitiesDic["DATE"][i] + item_list[1][0:6]
+                elif item_list[1][4] == ")" or item_list[1][4] == "）":
+                    entitiesDic["DATE"][i] = entitiesDic["DATE"][i] + item_list[1][0:5]
+                else:
+                    date_list.append(entitiesDic["DATE"][i])
+            else:
+                date_list.append(entitiesDic["DATE"][i])
+
         for x in entitiesDic["DATE"]:
             for y in entitiesDic["DATE"]:
                 if x in y and x != y:
@@ -264,26 +286,31 @@ def textTransformer(txt):
         for item in date_list:
             entitiesDic["DATE"].remove(item)
 
-        personLineListDic, eventLineListDic, organizationLineListDic = getTimeLine(entitiesDic, txt)
+        allLineList, personLineListDic, eventLineListDic, organizationLineListDic = getTimeLine(entitiesDic, txt)
         personLineDic.update(personLineListDic)
         eventLineDic.update(eventLineListDic)
         organizationLineDic.update(organizationLineListDic)
+        allLine = allLine + allLineList
 
+    # allLine = list(set(allLine)),
     print("全部类别实体entitiesDic:{}".format(entitiesDic))
-    print("实体抽取完毕，共抽取ORGANIZATION:{}，PERSON：{}，LOCATION：{}，DATE：{}，EVENT:{}，名家:{}，碑帖:{}，括本:{}".format(
+    print("实体抽取完毕，共抽取ORGANIZATION:{}，PERSON：{}，LOCATION：{}，DATE：{}，EVENT:{}，名家:{}，碑帖:{}，拓本:{}".format(
         len(entitiesDic["ORGANIZATION"]), len(entitiesDic["PERSON"]), len(entitiesDic["LOCATION"]),
         len(entitiesDic["DATE"]), len(entitiesDic["EVENT"]), len(entitiesDic["名家"]), len(entitiesDic["碑帖"]),
-        len(entitiesDic["括本"])))
+        len(entitiesDic["拓本"])))
     print("personLineDic:{}".format(personLineDic))
-    print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items())))
-    print("eventLineDic:{}".format(eventLineDic))
-    print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items())))
-    print("organizationLineDic:{}".format(organizationLineDic))
-    print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items())))
-    dataDic = {"entitiesDic": entitiesDic,
+    print("总时空线:{}".format(allLine)),
+    print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items()))),
+    print("eventLineDic:{}".format(eventLineDic)),
+    print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items()))),
+    print("organizationLineDic:{}".format(organizationLineDic)),
+    print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items()))),
+    dataDic = {"allLine": allLine,
+               "entitiesDic": entitiesDic,
                "personLineDic": personLineDic,
                "eventLineDic": eventLineDic,
-               "organizationLineDic": organizationLineDic}
+               "organizationLineDic": organizationLineDic
+               }
     return dataDic
 
 
