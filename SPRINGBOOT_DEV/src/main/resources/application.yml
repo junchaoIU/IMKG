@@ -1,6 +1,6 @@
 #???
 server:
-  port: 3333
+  port: 8010
 
 spring:
   mvc:

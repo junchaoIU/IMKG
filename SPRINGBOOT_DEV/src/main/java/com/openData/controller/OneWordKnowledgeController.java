@@ -1,5 +1,6 @@
 package com.openData.controller;
 
+import com.openData.dao.entity.OneWord;
 import com.openData.service.OneWordKnowledgeService;
 import io.swagger.annotations.ApiOperation;
 import net.sf.json.JSONObject;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -19,9 +21,10 @@ public class OneWordKnowledgeController {
     @PostMapping("postStoneOneWord")
     @ApiOperation(value = "获取碑帖单字", notes = "传入freetext,")
     @ResponseBody
-    public JSONObject postStoneOneWord(@RequestParam("freetext") String freetext, @RequestParam(name = "facet",required = false) Map facet) {
+    public List<OneWord> postStoneOneWord(@RequestParam("freetext") String freetext, @RequestParam(name = "facet",required = false) Map facet) {
         String key = "a04228e7acda94233da8afd453142430a8a3adee";
         String url = "https://data1.library.sh.cn/webapi/beitie/danzi/search?key=" + key;
+        //String facetString = facet.toString();
         String json = "{ \n" +
                 "    \"searchType\": \"1\", \n" +
                 "    \"freetext\": \""+freetext+"\", \n" +
@@ -41,7 +44,8 @@ public class OneWordKnowledgeController {
                 "    }, \n" +
                 "    \"hasFacet\": true \n" +
                 "}";
-        return oneWordKnowledgeService.postStoneOneWord(url,json);
+        System.out.println(json);
+        return oneWordKnowledgeService.postOneWord(url,json);
     }
     @GetMapping("getStoneBackground")
     @ApiOperation(value = "获取碑帖背景", notes = "传入pagesize与pageth")

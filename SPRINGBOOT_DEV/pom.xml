@@ -223,6 +223,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.5.RELEASE</version>
             </plugin>
 
             <!--添加配置跳过测试-->

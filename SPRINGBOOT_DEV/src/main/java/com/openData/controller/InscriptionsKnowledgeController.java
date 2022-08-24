@@ -1,16 +1,29 @@
 package com.openData.controller;
 
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.openData.dao.entity.EchartsData;
+import com.openData.dao.entity.EchartsLink;
+import com.openData.dao.entity.EchartsNode;
 import com.openData.service.InscriptionsKnowledgeService;
 import io.swagger.annotations.ApiOperation;
-import net.sf.json.JSONObject;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import com.alibaba.fastjson.JSON;
+
+import java.io.*;
+
+
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.*;
 
 
 //1. freetextt （三元组）2. id 3. freetext+facet（三元组） 4. pagesize+pageth
@@ -49,12 +62,68 @@ public class InscriptionsKnowledgeController {
         return inscriptionsKnowledgeService.postInscriptionsKnowledge(url,json);
     }
 
-    @GetMapping("getInscriptionsDetail")
-    @ApiOperation(value = "获取碑帖详情", notes = "传入id")
+    private static JSONObject readerMethod(File file) throws IOException {
+        FileReader fileReader = new FileReader(file);
+        Reader reader = new InputStreamReader(Files.newInputStream(file.toPath()), StandardCharsets.UTF_8);
+        int ch = 0;
+        StringBuilder sb = new StringBuilder();
+        while ((ch = reader.read()) != -1) {
+            sb.append((char) ch);
+        }
+        fileReader.close();
+        reader.close();
+        String jsonStr = sb.toString();
+        System.out.println(JSON.parseObject(jsonStr));
+        return JSON.parseObject(jsonStr);
+    }
+
+    @PostMapping("postKnowledgeSearch")
+    @ApiOperation(value = "获取碑帖知识", notes = "传入freetext")
     @ResponseBody
-    public JSONObject getInscriptionsDetail(@RequestParam("id") String id) {
-        String key = "a04228e7acda94233da8afd453142430a8a3adee";
-        String url = "https://data1.library.sh.cn/webapi/beitie/info?uri="+id+"&key=" + key;
-        return inscriptionsKnowledgeService.getInscriptionsDetail(url);
+    public List<EchartsData> postKnowledgeSearch(@RequestParam("freetext") String freetext) throws IOException {
+
+        String[] celebritiesList = {"欧阳询", "张公礼", "王羲之", "颜真卿", "上官灵芝", "于志宁", "寇谦之", "张从申", "敦复", "敬客", "李世民", "李儇", "李百药", "李阳冰", "柳识", "欧阳通", "王献之", "米芾", "虞世南", "魏征", "黄庭坚", "赵孟頫", "李邕", "诸遂良", "岑文本", "盛彪", "周绅", "周砥"};
+        JSONArray listValue = null;
+        Resource resource = new ClassPathResource("dic_data.json");
+        InputStream stream = resource.getInputStream();
+        JSONObject dicJson = JSON.parseObject(IOUtils.toString(stream));
+        for (String key : dicJson.keySet()) {
+            if (freetext.equals(key)) {
+                System.out.println(key);
+                listValue = dicJson.getJSONArray(key);
+            }
+        }
+        if(listValue != null){
+            List<EchartsData> datas = new ArrayList<>();
+            Set<EchartsNode> nodes = new HashSet<>();
+            Set<EchartsLink> links = new HashSet<>();
+            EchartsData data = new EchartsData();
+            for(int i = 0; i < listValue.size(); i++){
+                EchartsNode node = new EchartsNode();
+                EchartsLink link = new EchartsLink();
+                node.setId((String) ((JSONObject)listValue.get(i)).get("key"));
+                node.setLabel((String) ((JSONObject)listValue.get(i)).get("key"));
+                node.setCategory((String) ((JSONObject)listValue.get(i)).get("value"));
+                link.setSource(freetext);
+                link.setTarget((String) ((JSONObject)listValue.get(i)).get("value"));
+                link.setCategory((String) ((JSONObject)listValue.get(i)).get("key"));
+                link.setLabel((String) ((JSONObject)listValue.get(i)).get("key"));
+                link.setSymbol((String) ((JSONObject)listValue.get(i)).get("value") + ".jpg");
+                nodes.add(node);
+                links.add(link);
+                data.setNodes(nodes);
+                data.setLinks(links);
+            }
+            datas.add(data);
+
+            return datas;
+        }else if(Arrays.asList(celebritiesList).contains(freetext)){
+            //人物检索
+            return null;
+        }else {
+            //碑帖检索
+            return postInscriptionsKnowledge(freetext);
+
+        }
     }
 }

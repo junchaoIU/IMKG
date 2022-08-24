@@ -17,7 +17,7 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
     @Override
     public List<EchartsData> postInscriptionsKnowledge(String url, String json) {
         HttpClientService httpClient = new HttpClientService();
-        JSONObject json_raw = httpClient.postMethod(url,json);
+        JSONObject json_raw = httpClient.postMethod(url, json);
         JSONArray ja = json_raw.getJSONArray("datas");
         List<EchartsData> datas = new ArrayList<>();
         String subject = "";
@@ -34,18 +34,19 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             //首题 {@type=Title, label=化度寺邕禅师舍利塔铭, variantType=首题}
             //写这行代码的时候 内心已经喷了某个程序员n遍S
             String bfTitleX = "";
-            if(jo.get("bfTitle") instanceof Map){
-                bfTitleX = String.valueOf("["+jo.get("bfTitle")+"]");
+            if (jo.get("bfTitle") instanceof Map) {
+                bfTitleX = String.valueOf("[" + jo.get("bfTitle") + "]");
+            } else {
+                bfTitleX = String.valueOf(jo.get("bfTitle"));
             }
-            else {bfTitleX = String.valueOf(jo.get("bfTitle"));}
             List<Map<String, Object>> bfTitle = JSONArray.fromObject(bfTitleX);
             System.out.println(bfTitle);
-            subject = String.valueOf(bfTitle.get(bfTitle.size()-1).get("label"));
-            for (Map<String, Object> title:bfTitle) {
+            subject = String.valueOf(bfTitle.get(bfTitle.size() - 1).get("label"));
+            for (Map<String, Object> title : bfTitle) {
                 node.setId((String) title.get("label"));
                 node.setLabel((String) title.get("label"));
                 node.setCategory((String) title.get("variantType"));
-                link.setSource((String) title.get(subject));
+                link.setSource(subject);
                 link.setTarget((String) title.get("label"));
                 link.setCategory((String) title.get("variantType"));
                 link.setLabel((String) title.get("variantType"));
@@ -54,30 +55,6 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 links.add(link);
             }
             System.out.println(links);
-
-//            //写这行代码的时候 内心已经喷了某个程序员n遍S
-//            String contributionX = "";
-//            if(jo.get("contribution") instanceof Map){
-//                contributionX = String.valueOf("["+jo.get("contribution")+"]");
-//            }
-//            else {contributionX = String.valueOf(jo.get("contribution"));}
-//            List<Map<String, Object>> contribution = JSONArray.fromObject(contributionX);
-//            System.out.println(contribution);
-//            subject = String.valueOf(contribution.get(contribution.size()-1).get("label"));
-//            for (Map<String, Object> title:bfTitle) {
-//                node.setId((String) title.get("agentLabel"));
-//                node.setLabel((String) title.get("agentLabel"));
-//                node.setCategory((String) title.get("role"));
-//                link.setSource((String) title.get(subject));
-//                link.setTarget((String) title.get("agentLabel"));
-//                link.setCategory((String) title.get("role"));
-//                link.setLabel((String) title.get("role"));
-//                link.setSymbol((String) title.get("agentLabel") + ".jpg");
-//                nodes.add(node);
-//                links.add(link);
-//            }
-//            System.out.println(links);
-
             //责任者 李百药撰文，欧阳询楷书
             node = new EchartsNode();
             link = new EchartsLink();
@@ -94,8 +71,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(creator + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            }catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             System.out.println(links);
             //书体 {@id: "http://data.library.sh.cn/vocab/calligraphy/kai-shu",@type: "Category",categoryType: "calligraphy",label: "楷书"}
             node = new EchartsNode();
@@ -114,8 +92,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(scriptForm + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            }catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             System.out.println(links);
             //刻历年代 temporalValue: "唐贞观五年（31）"
             node = new EchartsNode();
@@ -133,28 +112,30 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(temporalValue + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            }catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             System.out.println(links);
             //数量+尺寸+版本+馆藏地
             List<Map<String, Object>> instance = JSONArray.fromObject(String.valueOf(jo.get("instance")));
             //数量
-            try{
-            String binding = String.valueOf(instance.get(1).get("binding"));
-            System.out.println(binding);
-            node.setId(binding);
-            node.setLabel(binding);
-            node.setCategory("数量");
-            link.setSource(subject);
-            link.setTarget(binding);
-            link.setCategory("数量");
-            link.setLabel("数量");
-            link.setSymbol(binding + ".jpg");
-            nodes.add(node);
-            links.add(link);
-            System.out.println(links);
-            }catch (Exception e)
-            {System.out.println(e);}
+            try {
+                String binding = String.valueOf(instance.get(1).get("binding"));
+                System.out.println(binding);
+                node.setId(binding);
+                node.setLabel(binding);
+                node.setCategory("数量");
+                link.setSource(subject);
+                link.setTarget(binding);
+                link.setCategory("数量");
+                link.setLabel("数量");
+                link.setSymbol(binding + ".jpg");
+                nodes.add(node);
+                links.add(link);
+                System.out.println(links);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             //尺寸
             node = new EchartsNode();
             link = new EchartsLink();
@@ -171,8 +152,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(dimensions + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            } catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             System.out.println(links);
             //版本
             node = new EchartsNode();
@@ -190,8 +172,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(edition + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            } catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             System.out.println(links);
             //馆藏地
             node = new EchartsNode();
@@ -210,8 +193,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(organization + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            } catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             System.out.println(links);
             //来源数目
             node = new EchartsNode();
@@ -229,8 +213,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(noteOfSource + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            } catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             System.out.println(links);
             //收藏经历=流传经历+题记
             //流传经历
@@ -251,8 +236,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 link.setSymbol(note + ".jpg");
                 nodes.add(node);
                 links.add(link);
-            } catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             //题记
             node = new EchartsNode();
             link = new EchartsLink();
@@ -270,8 +256,9 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 nodes.add(node);
                 links.add(link);
                 System.out.println(links);
-            } catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
             //背景故事
             node = new EchartsNode();
             link = new EchartsLink();
@@ -292,12 +279,13 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 data.setNodes(nodes);
                 data.setLinks(links);
                 datas.add(data);
-            }catch (Exception e)
-            {System.out.println(e);}
+            } catch (Exception e) {
+                System.out.println(e);
+            }
         }
         System.out.println(datas);
 
-    return datas;
+        return datas;
     }
 
     @Override
