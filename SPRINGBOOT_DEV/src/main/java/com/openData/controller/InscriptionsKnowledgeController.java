@@ -6,7 +6,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.openData.dao.entity.EchartsData;
 import com.openData.dao.entity.EchartsLink;
 import com.openData.dao.entity.EchartsNode;
+import com.openData.service.CelebritiesKnowledgeService;
 import com.openData.service.InscriptionsKnowledgeService;
+import com.openData.tools.ClassPathUtil;
+import com.openData.tools.JsonUtils;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +36,12 @@ import java.util.*;
 public class InscriptionsKnowledgeController {
     @Autowired
     private InscriptionsKnowledgeService inscriptionsKnowledgeService;
+    @Autowired
+    private CelebritiesKnowledgeService celebritiesKnowledgeService;
 
     // 碑帖详情
     @PostMapping("postInscriptionsKnowledge")
-    @ApiOperation(value = "获取碑帖知识库", notes = "传入freetext")
+    @ApiOperation(value = "碑帖知识检索", notes = "传入freetext")
     @ResponseBody
     public List<EchartsData> postInscriptionsKnowledge(@RequestParam("freetext") String freetext) {
         String key = "a04228e7acda94233da8afd453142430a8a3adee";
@@ -78,15 +83,16 @@ public class InscriptionsKnowledgeController {
     }
 
     @PostMapping("postKnowledgeSearch")
-    @ApiOperation(value = "获取碑帖知识", notes = "传入freetext")
+    @ApiOperation(value = "知识检索", notes = "传入freetext")
     @ResponseBody
     public List<EchartsData> postKnowledgeSearch(@RequestParam("freetext") String freetext) throws IOException {
 
         String[] celebritiesList = {"欧阳询", "张公礼", "王羲之", "颜真卿", "上官灵芝", "于志宁", "寇谦之", "张从申", "敦复", "敬客", "李世民", "李儇", "李百药", "李阳冰", "柳识", "欧阳通", "王献之", "米芾", "虞世南", "魏征", "黄庭坚", "赵孟頫", "李邕", "诸遂良", "岑文本", "盛彪", "周绅", "周砥"};
         JSONArray listValue = null;
-        Resource resource = new ClassPathResource("dic_data.json");
-        InputStream stream = resource.getInputStream();
-        JSONObject dicJson = JSON.parseObject(IOUtils.toString(stream));
+        String jsonPath = ClassPathUtil.getClassPath()+"/dic_data.json";
+        System.out.println(jsonPath);
+        String jsonStr = JsonUtils.readJsonFile(jsonPath);
+        JSONObject dicJson = JSON.parseObject(jsonStr);
         for (String key : dicJson.keySet()) {
             if (freetext.equals(key)) {
                 System.out.println(key);
@@ -119,7 +125,7 @@ public class InscriptionsKnowledgeController {
             return datas;
         }else if(Arrays.asList(celebritiesList).contains(freetext)){
             //人物检索
-            return null;
+            return celebritiesKnowledgeService.postCelebritiesKnowledge(freetext);
         }else {
             //碑帖检索
             return postInscriptionsKnowledge(freetext);

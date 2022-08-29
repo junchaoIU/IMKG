@@ -1,0 +1,41 @@
+{
+    "nativePlace": {
+        "uri": "http://data.library.sh.cn/entity/place/yoim494zwe9q18ps",
+        "@type": "Place",
+        "sameAs": "http://www.cba.ac.cn/point/420112",
+        "long": "114.32",
+        "lat": "30.35",
+        "chtPlc": "江夏",
+        "chsPlc": "江夏",
+        "province": "湖北省",
+        "chsCty": "中国",
+        "chtCty": "中國",
+        "city": "武汉市",
+        "county": "江夏区",
+        "location": "30.35,114.32"
+    },
+    "provinceAbb": "湖北",
+    "@id": "http://data.library.sh.cn/entity/person/3s4qhg2xjmfewws3",
+    "firstChar": "L",
+    "briefBiography": "李邕（678年—747年），字泰和，鄂州江夏（今湖北武汉市江夏区）人。唐朝大臣、书法家，文选学士李善之子。出身江夏李氏，博学多才，少年成名。起家校书郎，迁左拾遗，转户部郎中，调殿中侍御史，迁括州刺史，转北海太守，史称“李北海”、“李括州”。交好宰相李适之，为中书令李林甫构陷，含冤杖死，时年七十。唐代宗即位，追赠秘书监。作为行书碑文大家，书法风格奇伟倜傥，李志敏评价“李北海的《麓山寺碑》，其朴实厚重无疑来自北碑”。李后主称赞“李邕得右将军之气而失于体格”。《宣和书谱》“李邕精于翰墨，行草之名由著。初学王右军行法，既得其妙，乃复摆脱旧习，笔力一新。传世碑刻有《麓山寺碑》《李思训碑》等。",
+    "temporal": "唐",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "李邕"
+    },
+    "birthYear": 678,
+    "deathYear": 747,
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/9kel44w7gqsq56pa",
+            "titleChs": {
+                "@language": "chs",
+                "@value": "麓山寺碑并阴"
+            },
+            "scriptForm": "楷书",
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第三辑，上海图书馆，上海古籍出版社，2012年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/vqe4tdl22e08xgbf.jpg"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "@id": "http://data.library.sh.cn/entity/person/l8llyy4gufwox4ll",
+    "firstChar": "D",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "敦复"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/4lpfhne452yfe8b9",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/l8llyy4gufwox4ll"
+                    },
+                    "agentLabel": "敦复",
+                    "role": "篆盖"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/f5xd35476e0vjcvn"
+                    },
+                    "agentLabel": "米芾",
+                    "role": "行书"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "章吉老墓志"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第一辑，上海图书馆，上海古籍出版社，2006年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/ap9pmvwzidyc9x61.jpg",
+            "edition": "明初拓本"
+        }
+    ]
+}

@@ -20,18 +20,18 @@ public class OneWordKnowledgeServiceImpl implements OneWordKnowledgeService {
         HttpClientService httpClient = new HttpClientService();
         JSONObject json_raw = httpClient.postMethod(url, json);
         JSONArray ja = json_raw.getJSONArray("datas");
-        List<OneWord> stoneOneWords = new ArrayList<>();
+        List<OneWord> OneWords = new ArrayList<>();
         for (int i = 0; i < ja.size(); i++) {
-            OneWord stoneOneWord = new OneWord();
+            OneWord OneWord = new OneWord();
             JSONObject jo = ja.getJSONObject(i);
             System.out.println("jo" + jo);
-            stoneOneWord.setId(String.valueOf(jo.get("@id")));
-            stoneOneWord.setShelfMark(String.valueOf(jo.get("shelfMark")));
-            stoneOneWord.setWork(String.valueOf(jo.get("work")));
-            stoneOneWord.setScriptForm(String.valueOf(jo.get("scriptForm")));
-            stoneOneWord.setCharactor(String.valueOf(jo.get("charactor")));
-            stoneOneWord.setImage(String.valueOf(jo.get("originImage")));
-            stoneOneWord.setPosInTextposInText(String.valueOf(jo.get("posInText")));
+            OneWord.setId(String.valueOf(jo.get("@id")));
+            OneWord.setShelfMark(String.valueOf(jo.get("shelfMark")));
+            OneWord.setWork(String.valueOf(jo.get("work")));
+            OneWord.setScriptForm(String.valueOf(jo.get("scriptForm")));
+            OneWord.setCharactor(String.valueOf(jo.get("charactor")));
+            OneWord.setImage(String.valueOf(jo.get("originImage")));
+            OneWord.setPosInTextposInText(String.valueOf(jo.get("posInText")));
             String contributionss = "";
             System.out.println(jo.get("contribution"));
             if (jo.get("contribution") instanceof Map) {
@@ -43,17 +43,17 @@ public class OneWordKnowledgeServiceImpl implements OneWordKnowledgeService {
             System.out.println(contributionss);
             if (contributionss.equals("null")) {
                 conMap.put("未知", "未知");
-                stoneOneWord.setContribution(conMap);
+                OneWord.setContribution(conMap);
             } else {
                 List<Map<String, Object>> contributions = JSONArray.fromObject(contributionss);
                 for (Map<String, Object> contribute : contributions) {
                     conMap.put(String.valueOf(contribute.get("role")), String.valueOf(contribute.get("agentLabel")));
                 }
-                stoneOneWord.setContribution(conMap);
+                OneWord.setContribution(conMap);
             }
-            stoneOneWords.add(stoneOneWord);
+            OneWords.add(OneWord);
         }
-        return stoneOneWords;
+        return OneWords;
     }
 
     @Override

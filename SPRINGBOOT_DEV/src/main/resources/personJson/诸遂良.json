@@ -1,0 +1,65 @@
+{
+    "nativePlace": {
+        "uri": "http://data.library.sh.cn/entity/place/z4cuegkrgugmdfmc",
+        "@type": "Place",
+        "sameAs": "http://www.cba.ac.cn/point/411006",
+        "long": "113.47",
+        "lat": "34.17",
+        "chtPlc": "禹州",
+        "chsPlc": "禹州",
+        "province": "河南省",
+        "chsCty": "中国",
+        "chtCty": "中國",
+        "city": "许昌市",
+        "county": "禹州市",
+        "location": "34.17,113.47"
+    },
+    "provinceAbb": "河南",
+    "@id": "http://data.library.sh.cn/entity/person/10b1m78eojqhzo0y",
+    "firstChar": "Z",
+    "briefBiography": "褚遂良（596年～658年/659年），字登善，杭州钱唐（今浙江省杭州市）人。唐朝宰相、政治家、书法家，弘文馆学士褚亮之子。出身河南褚氏，博学多才，精通文史。隋末时期，追随西秦霸王薛举，担任通事舍人。归顺唐朝后，得到唐太宗重用，历任谏议大夫、黄门侍郎，累迁中书令，执掌朝政大权。贞观二十三年（649年），与司空长孙无忌同受遗诏辅政。唐高宗继位后，升任右仆射，册封河南郡公，历任同州刺史、吏部尚书，累迁右仆射，参知政事。反对册立武则天为后，贬为潭州（今长沙）都督。武后掌权后，迁桂州（今桂林）都督，再贬爱州（今越南清化）刺史，卒于任上。神龙革命后追赠右仆射，谥号“文忠”。天宝六载（747年），配享唐高宗庙庭，累赠太尉。褚遂良工于书法，初学虞世南，后取法王羲之，与欧阳询、虞世南、薛稷并称“初唐四大家”，传世墨迹有《孟法师碑》《雁塔圣教序》等。",
+    "temporal": "唐",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "诸遂良"
+    },
+    "birthYear": 596,
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/qom3ldedi6o14gnl",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/fd6j18zbxq7i6gfd"
+                    },
+                    "agentLabel": "王羲之",
+                    "role": "小楷书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/4irhb5xey0pffrcx"
+                    },
+                    "agentLabel": "王献之",
+                    "role": "小楷书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/qaeilp53f4s8fohu"
+                    },
+                    "agentLabel": "虞世南",
+                    "role": "小楷书"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "晋唐小楷九种"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第二辑，上海图书馆，上海古籍出版社，2012年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/3do83va8fw2o7wen.jpg"
+        }
+    ]
+}

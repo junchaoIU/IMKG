@@ -21,7 +21,7 @@ public class OneWordKnowledgeController {
     @PostMapping("postStoneOneWord")
     @ApiOperation(value = "获取碑帖单字", notes = "传入freetext,")
     @ResponseBody
-    public List<OneWord> postStoneOneWord(@RequestParam("freetext") String freetext, @RequestParam(name = "facet",required = false) Map facet) {
+    public List<OneWord> postStoneOneWord(@RequestParam("freetext") String freetext, @RequestParam(name = "facet",required = false,defaultValue = "{}") String facet) {
         String key = "a04228e7acda94233da8afd453142430a8a3adee";
         String url = "https://data1.library.sh.cn/webapi/beitie/danzi/search?key=" + key;
         //String facetString = facet.toString();

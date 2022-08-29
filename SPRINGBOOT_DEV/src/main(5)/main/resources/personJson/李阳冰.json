@@ -1,0 +1,65 @@
+{
+    "nativePlace": {
+        "chsCty": "中国",
+        "city": "石家庄市",
+        "@type": "Place",
+        "chtCty": "中國",
+        "chtPlc": "趙縣",
+        "chsPlc": "赵县",
+        "county": "赵县",
+        "uri": "http://data.library.sh.cn/entity/place/wbrlp56vjc4qe4mr",
+        "long": "114.77",
+        "province": "河北省",
+        "location": "37.75,114.77",
+        "lat": "37.75",
+        "sameAs": "http://www.cba.ac.cn/point/130119"
+    },
+    "provinceAbb": "河北",
+    "@id": "http://data.library.sh.cn/entity/person/k5mb7xoioyadv3of",
+    "firstChar": "L",
+    "briefBiography": "书法家。字可温，赵郡(今河北赵县)人。生卒年不详。乾元中，阳冰任缙云县令，著有《刊定说文》（《宣和书谱》卷二）及《翰林禁经》（晁公武《郡斋读书志》卷四），已佚。今存诗一首，载《全唐诗》卷二六二；存文八篇，载《全唐文》卷四三七。存世作品《般若台题记》。",
+    "temporal": "唐",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "李阳冰"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/ljd94x9x6wdlcsfh",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/u4x5imackioclc8s"
+                    },
+                    "agentLabel": "张从申",
+                    "role": "书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/k5mb7xoioyadv3of"
+                    },
+                    "agentLabel": "李阳冰",
+                    "role": "篆额"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/buqvvfryweft5gfj"
+                    },
+                    "agentLabel": "柳识",
+                    "role": "撰"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "张从申书李玄靖碑"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第一辑，上海图书馆，上海古籍出版社，2006年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/u3yl86f8pe6yxfnz.jpg",
+            "edition": "宋拓本"
+        }
+    ]
+}

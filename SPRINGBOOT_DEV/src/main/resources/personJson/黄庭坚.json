@@ -1,0 +1,49 @@
+{
+    "nativePlace": [
+        {
+            "province": "江西省",
+            "chsCty": "中国",
+            "@type": "Place",
+            "chtCty": "中國",
+            "chtPlc": "江西",
+            "chsPlc": "江西",
+            "location": "28.68,115.85",
+            "uri": "http://data.library.sh.cn/entity/place/tfw23i4y6rsqqpx3",
+            "long": "115.85",
+            "lat": "28.68",
+            "sameAs": "http://www.cba.ac.cn/point/360000"
+        }
+    ],
+    "provinceAbb": "江西",
+    "@id": "http://data.library.sh.cn/entity/person/vx6uvezm8d64ztjo",
+    "firstChar": "H",
+    "briefBiography": "书法家、文学家。字鲁直，号山谷道人、涪翁。洪州分宁(今江西修水)人。英宗治平四年（1067）进士，调叶县尉。神宗熙宁五年（1072），除北京国子监教授。元丰三年（1080），改知吉州太和县。六年，移监德州德平镇。哲宗立，召为校书郎、《神宗实录》检讨官。逾年迁著作佐郎，加集贤校理。擢起居舍人，秘书丞。绍圣二年（1095），以元祐党人贬涪州别驾，黔州安置。元符三年（1100），徽宗即位，召还，旋以文字罪除名，羁管宜州。崇宁四年，卒于贬所。黄庭坚是“苏门四学士”之一，江西诗派创始人。为诗推崇唐代杜甫，并强调化用前人成句，有所谓“点铁成金”之说。晚年皈心释氏。著有《山谷集》。",
+    "temporal": "宋",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "黄庭坚"
+    },
+    "birthYear": 1045,
+    "deathYear": 1105,
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/yqhlk3zvpje37f8m",
+            "contribution": {
+                "@type": "Contribution",
+                "agent": {
+                    "@id": "http://data.library.sh.cn/entity/person/vx6uvezm8d64ztjo"
+                },
+                "agentLabel": "黄庭坚",
+                "role": "书"
+            },
+            "titleChs": {
+                "@language": "chs",
+                "@value": "黄庭堅青原山诗刻石"
+            },
+            "scriptForm": "楷书",
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第一辑，上海图书馆，上海古籍出版社，2006年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/tvif6o613oa86bjs.jpg"
+        }
+    ]
+}

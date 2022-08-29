@@ -1,0 +1,39 @@
+{
+    "nativePlace": {
+        "uri": "http://data.library.sh.cn/entity/place/vp42pciueoit333p",
+        "@type": "Place",
+        "sameAs": "http://www.cba.ac.cn/point/330114",
+        "long": "119.72",
+        "lat": "30.23",
+        "chtPlc": "臨安",
+        "chsPlc": "临安",
+        "province": "浙江省",
+        "chsCty": "中国",
+        "chtCty": "中國",
+        "city": "杭州市",
+        "county": "临安区",
+        "location": "30.23,119.72"
+    },
+    "provinceAbb": "浙江",
+    "@id": "http://data.library.sh.cn/entity/person/iug3wdzc0zdx8e37",
+    "firstChar": "S",
+    "briefBiography": "彪字元仁，号虎林，临安人。官至镇江学正。",
+    "temporal": "元",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "盛彪"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/xv5gh9rtdhz3j96x",
+            "titleChs": {
+                "@language": "chs",
+                "@value": "鲜于光祖墓志"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第二辑，上海图书馆，上海古籍出版社，2012年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/mhn0y544cnesptxo.jpg",
+            "edition": "明拓本"
+        }
+    ]
+}

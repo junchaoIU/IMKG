@@ -1,0 +1,60 @@
+{
+    "nativePlace": [
+        {
+            "province": "山西省",
+            "chsCty": "中国",
+            "city": "太原市",
+            "@type": "Place",
+            "chtCty": "中國",
+            "chtPlc": "太原",
+            "chsPlc": "太原",
+            "location": "37.87,112.55",
+            "uri": "http://data.library.sh.cn/entity/place/f1raf7ema46uknxo",
+            "long": "112.55",
+            "lat": "37.87",
+            "sameAs": "http://www.cba.ac.cn/point/140100"
+        }
+    ],
+    "provinceAbb": "山西",
+    "@id": "http://data.library.sh.cn/entity/person/f5xd35476e0vjcvn",
+    "firstChar": "M",
+    "briefBiography": "书画家、文物鉴藏家。初名黻，字元章，号襄阳漫士、鹿门居士、海岳外史等。书法与苏轼、黄庭坚、蔡襄（一说蔡京）并称四大家。以恩补浛光尉。主要著作有《书史》、《宝晋英光集》、《画史》等。",
+    "temporal": "宋",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "米芾"
+    },
+    "birthYear": 1051,
+    "deathYear": 1107,
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/4lpfhne452yfe8b9",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/l8llyy4gufwox4ll"
+                    },
+                    "agentLabel": "敦复",
+                    "role": "篆盖"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/f5xd35476e0vjcvn"
+                    },
+                    "agentLabel": "米芾",
+                    "role": "行书"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "章吉老墓志"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第一辑，上海图书馆，上海古籍出版社，2006年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/ap9pmvwzidyc9x61.jpg",
+            "edition": "明初拓本"
+        }
+    ]
+}

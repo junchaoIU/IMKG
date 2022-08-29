@@ -1,0 +1,63 @@
+{
+    "nativePlace": {
+        "province": "江苏省",
+        "chsCty": "中国",
+        "@type": "Place",
+        "chtCty": "中國",
+        "chtPlc": "江蘇",
+        "chsPlc": "江苏",
+        "location": "32.07,118.78",
+        "uri": "http://data.library.sh.cn/entity/place/ncht8nvulvcrcywm",
+        "long": "118.78",
+        "lat": "32.07",
+        "sameAs": "http://www.cba.ac.cn/point/320000"
+    },
+    "provinceAbb": "江苏",
+    "@id": "http://data.library.sh.cn/entity/person/u4x5imackioclc8s",
+    "firstChar": "Z",
+    "briefBiography": "唐代书法家。官至大理寺司直，人称“张司直”。吴郡(治今江苏苏州)人。活动于大历(766-779)间。传世墨迹有《玄静先生碑》刻本等。",
+    "temporal": "唐",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "张从申"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/ljd94x9x6wdlcsfh",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/u4x5imackioclc8s"
+                    },
+                    "agentLabel": "张从申",
+                    "role": "书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/k5mb7xoioyadv3of"
+                    },
+                    "agentLabel": "李阳冰",
+                    "role": "篆额"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/buqvvfryweft5gfj"
+                    },
+                    "agentLabel": "柳识",
+                    "role": "撰"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "张从申书李玄靖碑"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第一辑，上海图书馆，上海古籍出版社，2006年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/u3yl86f8pe6yxfnz.jpg",
+            "edition": "宋拓本"
+        }
+    ]
+}

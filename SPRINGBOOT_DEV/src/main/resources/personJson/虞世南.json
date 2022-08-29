@@ -1,0 +1,64 @@
+{
+    "nativePlace": {
+        "chsCty": "中国",
+        "city": "宁波市",
+        "@type": "Place",
+        "chtCty": "中國",
+        "chtPlc": "餘姚",
+        "chsPlc": "余姚",
+        "county": "余姚市",
+        "uri": "http://data.library.sh.cn/entity/place/nydpniuan8jo3gtj",
+        "long": "121.15",
+        "province": "浙江省",
+        "location": "30.03,121.15",
+        "lat": "30.03",
+        "sameAs": "http://www.cba.ac.cn/point/330210"
+    },
+    "provinceAbb": "浙江",
+    "@id": "http://data.library.sh.cn/entity/person/qaeilp53f4s8fohu",
+    "firstChar": "Y",
+    "briefBiography": "书法家。字伯施。越州余姚（今浙江余姚）人。陈文帝召为建安王法曹参军。隋大业中任秘书郎，迁起居舍人。入唐，为秦府参军、记室，贞观七年，转秘书监，封永兴县子。后进爵为县公。其书法善正行草书，风格圆融遒逸，与欧阳询齐名，世称“欧虞”。编著有《北堂书抄》，《旧唐书·经籍志》与《新唐书·艺文志》又著录其《帝王略论》五卷、《大唐仪》一○卷（与裴矩合作）、文集三○卷，俱已散佚。《全唐诗》卷三六录存其诗一卷，《全唐诗补编·补逸》卷一补一首。《全唐文》卷一三八录存其文一卷，《唐文拾遗》卷一三辑补九篇。",
+    "temporal": "南北朝",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "虞世南"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/qom3ldedi6o14gnl",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/fd6j18zbxq7i6gfd"
+                    },
+                    "agentLabel": "王羲之",
+                    "role": "小楷书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/4irhb5xey0pffrcx"
+                    },
+                    "agentLabel": "王献之",
+                    "role": "小楷书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/qaeilp53f4s8fohu"
+                    },
+                    "agentLabel": "虞世南",
+                    "role": "小楷书"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "晋唐小楷九种"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第二辑，上海图书馆，上海古籍出版社，2012年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/3do83va8fw2o7wen.jpg"
+        }
+    ]
+}

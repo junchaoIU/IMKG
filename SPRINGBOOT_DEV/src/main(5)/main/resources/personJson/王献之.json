@@ -1,0 +1,62 @@
+{
+    "nativePlace": {
+        "province": "山东省",
+        "chsCty": "中国",
+        "@type": "Place",
+        "chtCty": "中國",
+        "chtPlc": "山東",
+        "chsPlc": "山东",
+        "location": "36.67,116.98",
+        "uri": "http://data.library.sh.cn/entity/place/at9fdkwbjd6jxj73",
+        "long": "116.98",
+        "lat": "36.67",
+        "sameAs": "http://www.cba.ac.cn/point/370000"
+    },
+    "provinceAbb": "山东",
+    "@id": "http://data.library.sh.cn/entity/person/4irhb5xey0pffrcx",
+    "firstChar": "W",
+    "briefBiography": "东晋书法家、散文家、诗人。字子敬，小字官奴。祖籍琅邪临沂（今属山东）。生于山阴会稽（今浙江绍兴）。王羲之第七子。工书善画。入仕为州主簿，官至中书令。有集十卷，佚。明张溥辑其遗文为《王大令集》，在《汉魏六朝百三家集》中。今存文六篇并杂帖八十七条，见《全上古三代秦汉三国六朝文》；存诗《桃叶歌》三首并残句，见《先秦汉魏晋南北朝诗》，书法墨迹有《鸭头丸帖》、《二十九日贴》等。",
+    "temporal": "晋",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "王献之"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/qom3ldedi6o14gnl",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/fd6j18zbxq7i6gfd"
+                    },
+                    "agentLabel": "王羲之",
+                    "role": "小楷书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/4irhb5xey0pffrcx"
+                    },
+                    "agentLabel": "王献之",
+                    "role": "小楷书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/qaeilp53f4s8fohu"
+                    },
+                    "agentLabel": "虞世南",
+                    "role": "小楷书"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "晋唐小楷九种"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第二辑，上海图书馆，上海古籍出版社，2012年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/3do83va8fw2o7wen.jpg"
+        }
+    ]
+}

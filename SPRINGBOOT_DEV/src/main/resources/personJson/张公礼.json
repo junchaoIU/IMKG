@@ -1,0 +1,22 @@
+{
+    "@id": "http://data.library.sh.cn/entity/person/c4ec5amma7iqv0cu",
+    "firstChar": "Z",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "张公礼"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/t24lkn8it28x82tu",
+            "titleChs": {
+                "@language": "chs",
+                "@value": "龙藏寺碑"
+            },
+            "scriptForm": "楷书",
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第一辑，上海图书馆，上海古籍出版社，2006年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/c9elael2uga917f9.jpg",
+            "edition": "明初拓“张公礼未泐本”"
+        }
+    ]
+}

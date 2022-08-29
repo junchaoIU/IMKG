@@ -6,9 +6,6 @@ import net.sf.json.JSONObject;
 import java.util.List;
 
 public interface CelebritiesKnowledgeService {
-
-    JSONObject postCelebritiesKnowledge(String url);
-
-    JSONObject getCelebritiesDetail(String url);
+    List<EchartsData> postCelebritiesKnowledge(String celebritiesName);
 
 }

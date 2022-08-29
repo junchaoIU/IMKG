@@ -1,0 +1,48 @@
+{
+    "@id": "http://data.library.sh.cn/entity/person/buqvvfryweft5gfj",
+    "firstChar": "L",
+    "temporal": "唐",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "柳识"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/ljd94x9x6wdlcsfh",
+            "contribution": [
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/u4x5imackioclc8s"
+                    },
+                    "agentLabel": "张从申",
+                    "role": "书"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/k5mb7xoioyadv3of"
+                    },
+                    "agentLabel": "李阳冰",
+                    "role": "篆额"
+                },
+                {
+                    "@type": "Contribution",
+                    "agent": {
+                        "@id": "http://data.library.sh.cn/entity/person/buqvvfryweft5gfj"
+                    },
+                    "agentLabel": "柳识",
+                    "role": "撰"
+                }
+            ],
+            "titleChs": {
+                "@language": "chs",
+                "@value": "张从申书李玄靖碑"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第一辑，上海图书馆，上海古籍出版社，2006年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/u3yl86f8pe6yxfnz.jpg",
+            "edition": "宋拓本"
+        }
+    ]
+}

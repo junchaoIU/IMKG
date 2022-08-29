@@ -1,0 +1,38 @@
+{
+    "nativePlace": {
+        "uri": "http://data.library.sh.cn/entity/place/afiqycjofxgwcqxm",
+        "@type": "Place",
+        "sameAs": "http://www.cba.ac.cn/point/320500",
+        "long": "120.58",
+        "lat": "31.3",
+        "chtPlc": "蘇州",
+        "chsPlc": "苏州",
+        "province": "江苏省",
+        "chsCty": "中国",
+        "chtCty": "中國",
+        "city": "苏州市",
+        "location": "31.3,120.58"
+    },
+    "provinceAbb": "江苏",
+    "@id": "http://data.library.sh.cn/entity/person/pzbkmyt80wybwctd",
+    "firstChar": "Z",
+    "briefBiography": "周砥（约公元一三六七年前后在世）字履道，号东皋，别号匊溜生。姑苏（今江苏苏州）人，寓无锡（今江苏无锡）。洪武（一三六八至一三九八）时以人才授兴国州判官。归吴与高季迪、杨孟载相和歌。已而之会稽，殁于兵。性宇闲静，学艺淹博，工诗文、书、画。行草书运笔分行匀稳。效苏轼书甚工。祝允明云：“詹（希元）、解（缙）呜于朝，卢（熊）、周（砥）著于野。朝者乃当让野。”善山水，能于王蒙、黄公望两家法度外，独标平淡清远之趣。元至正二十五年（一三六五）作秋山落木图。永乐十四年（一四一六）作宜兴小景卷，曾藏石渠宝笈。",
+    "temporal": "明",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "周砥"
+    },
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/xv5gh9rtdhz3j96x",
+            "titleChs": {
+                "@language": "chs",
+                "@value": "鲜于光祖墓志"
+            },
+            "noteOfSource": "《翰墨瑰宝：上海图书馆藏珍本碑帖丛刊》第二辑，上海图书馆，上海古籍出版社，2012年.",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/mhn0y544cnesptxo.jpg",
+            "edition": "明拓本"
+        }
+    ]
+}

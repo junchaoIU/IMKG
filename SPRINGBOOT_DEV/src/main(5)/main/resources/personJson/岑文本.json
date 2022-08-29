@@ -1,0 +1,50 @@
+{
+    "nativePlace": {
+        "uri": "http://data.library.sh.cn/entity/place/s1v58x1ohn2a4m5p",
+        "@type": "Place",
+        "sameAs": "http://www.cba.ac.cn/point/411312",
+        "long": "112.35",
+        "lat": "32.52",
+        "chtPlc": "新野",
+        "chsPlc": "新野",
+        "province": "河南省",
+        "chsCty": "中国",
+        "chtCty": "中國",
+        "city": "南阳市",
+        "county": "新野县",
+        "location": "32.52,112.35"
+    },
+    "provinceAbb": "河南",
+    "@id": "http://data.library.sh.cn/entity/person/ujlgvhcyt7btlleb",
+    "firstChar": "C",
+    "briefBiography": "岑文本（595-645年），字景仁，邓州棘阳县（今河南省新野县）人。唐朝宰相、文学家，西梁吏部尚书岑善方之孙，隋朝虞部侍郎岑之象之子。聪慧敏捷，博通经史。十四岁，为父申冤，辞情激切，由是知名。萧铣在荆州称帝，以为中书侍郎。武德四年，河间王李孝恭平定荆州，力劝安民，授荆州别驾。贞观元年，授秘书郎，迁中书舍人，掌管机要和诰命，迁中书侍郎。参与撰写《周书》，受封江陵县开国子。累迁中书令，参知政事。贞观十九年，从征辽东，鞠躬尽瘁，卒于途中，享年五十一岁，获赠侍中、广州都督，谥号为宪，陪葬于昭陵。",
+    "temporal": "唐",
+    "nameChs": {
+        "@language": "chs",
+        "@value": "岑文本"
+    },
+    "birthYear": 595,
+    "deathYear": 645,
+    "workAmt": 1,
+    "work": [
+        {
+            "@id": "http://data.library.sh.cn/bt/resource/work/ug9rstykdqwk8o7p",
+            "contribution": {
+                "@type": "Contribution",
+                "agent": {
+                    "@id": "http://data.library.sh.cn/entity/person/ww68ccx56mn7ol4o"
+                },
+                "agentLabel": "欧阳询",
+                "role": "楷书"
+            },
+            "titleChs": {
+                "@language": "chs",
+                "@value": "虞恭公温彦博碑"
+            },
+            "scriptForm": "楷书",
+            "noteOfSource": "翰墨上海图书馆藏珍碑帖丛刊（特辑） 2012年12月",
+            "cover": "https://img.library.sh.cn/hisdata/bt/cover/fiyxjdtb61d54c7a.jpg",
+            "edition": "南宋拓本"
+        }
+    ]
+}
