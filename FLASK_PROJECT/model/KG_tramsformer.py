@@ -36,7 +36,7 @@ def summaryExtract(content, text):
 
 
 def textProcess(txt):
-    data = txt.strip().replace('', '').replace('\r', '').replace(".", "。").replace("<br/>", "")
+    data = txt.strip().replace(' ', '').replace('\r', '').replace(".", "。").replace("<br/>", "").replace("\n","")
     # 按换行来做切分
     dataList = re.split('\n', data)
     print(dataList)
@@ -283,15 +283,18 @@ def textTransformer(txt):
         # 数字补齐
         for i in range(len(entitiesDic["DATE"])):
             item_list = txt.split(entitiesDic["DATE"][i])
-            if item_list[1][0] == "(" or item_list[1][0] == "（":
-                if item_list[1][5] == ")" or item_list[1][5] == "）":
-                    entitiesDic["DATE"][i] = entitiesDic["DATE"][i] + item_list[1][0:6]
-                elif item_list[1][4] == ")" or item_list[1][4] == "）":
-                    entitiesDic["DATE"][i] = entitiesDic["DATE"][i] + item_list[1][0:5]
+            try:
+                if item_list[1][0] == "(" or item_list[1][0] == "（":
+                    if item_list[1][5] == ")" or item_list[1][5] == "）":
+                        entitiesDic["DATE"][i] = entitiesDic["DATE"][i] + item_list[1][0:6]
+                    elif item_list[1][4] == ")" or item_list[1][4] == "）":
+                        entitiesDic["DATE"][i] = entitiesDic["DATE"][i] + item_list[1][0:5]
+                    else:
+                        date_list.append(entitiesDic["DATE"][i])
                 else:
                     date_list.append(entitiesDic["DATE"][i])
-            else:
-                date_list.append(entitiesDic["DATE"][i])
+            except:
+                pass
 
         for x in entitiesDic["DATE"]:
             for y in entitiesDic["DATE"]:
