@@ -31,7 +31,7 @@ class SearchInput extends PureComponent {
                   size={'large'}
                   style={{ width: 400 }}
                   value={value1}
-                  placeholder="请检索需要查询的时空实体,例如：1911年4月"
+                  placeholder="请检索感兴趣的时间实体，如:1926"
                 />
                 <Button type="primary" icon={<SearchOutlined />} size={'large'} onClick={search}>
                   时空检索
@@ -43,16 +43,16 @@ class SearchInput extends PureComponent {
                   onChange={valueChange1}
                   value={value1}
                   size={'large'}
-                  style={{ width: 150 }}
-                  placeholder="例如：1940年"
+                  style={{ width: 200 }}
+                  placeholder="感兴趣的时间起点"
                 />
                 &nbsp;&nbsp;~&nbsp;&nbsp;
                 <Input
                   onChange={valueChange2}
                   value={value2}
                   size={'large'}
-                  style={{ width: 150 }}
-                  placeholder="例如：1941年"
+                  style={{ width: 200 }}
+                  placeholder="感兴趣的时间终点"
                 />
                 <Button type="primary" icon={<SearchOutlined />} size={'large'} onClick={search}>
                   时空检索
@@ -65,7 +65,7 @@ class SearchInput extends PureComponent {
                   size={'large'}
                   value={value1}
                   style={{ width: 400 }}
-                  placeholder="请检索需要查询的时空实体,例如：广州"
+                  placeholder="请检索感兴趣的地点实体，如:吴湖帆"
                 />
                 <Button type="primary" icon={<SearchOutlined />} size={'large'} onClick={search}>
                   时空检索
@@ -78,14 +78,14 @@ class SearchInput extends PureComponent {
                   size={'large'}
                   value={value1}
                   style={{ width: 220, marginRight: '5px' }}
-                  placeholder="时间点：(例如：1911年4月)"
+                  placeholder="时间点，例如：民国"
                 />
                 <Input
                   onChange={valueChange2}
                   value={value2}
                   size={'large'}
                   style={{ width: 220 }}
-                  placeholder="地点：(例如：广州)"
+                  placeholder="地点，例如：吴湖帆"
                 />
                 <Button type="primary" size={'large'} icon={<SearchOutlined />} onClick={search}>
                   时空检索

@@ -15,13 +15,13 @@ export async function getChildEvent(payload) {
 }
 
 export async function getPeople(payload) {
-  let url= '/api/peopleReminiscence/getPeople';
+  let url= '/api/inscriptionsBack/getInscriptionsBack';
   const data = {
     body: payload,
     method: "POST"
   };
   if(payload != null) {
-    url += `?people=${payload}`;
+    url += `?inscriptions=${payload}`;
     return request(url,data);
   }
 }

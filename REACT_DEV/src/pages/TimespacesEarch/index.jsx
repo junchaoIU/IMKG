@@ -23,11 +23,30 @@ class timespacesEarch extends Component {
     });
   };
 
-  searchHot = (value) => {
-    this.setState({
-      value1: value,
-      val: false,
-    })
+  searchHot = (value1,value2,mode) => {
+    if(mode === 1){
+      this.setState({
+        value1: value1,
+        mode: 'time',
+        val: false,
+      })
+
+    }else if(mode === 2){
+      this.setState({
+        value2: value2,
+        mode: 'space',
+        val: false,
+      })
+
+    }else{
+      this.setState({
+        value1: value1,
+        value2: value2,
+        mode: 'timespace',
+        val: false,
+      })
+
+    }
   }
 
   valueChange1 = (e) => {
@@ -68,26 +87,29 @@ class timespacesEarch extends Component {
                 search={this.search}
               />
               <div key="c" style={{textAlign: 'center',paddingBottom:40}}>
-                <Button size="small" type="text" onClick={() => this.searchHot("1911年4月")}>
-                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1911年4月</font>
+                <Button size="small" type="text" onClick={() => this.searchHot("同治三年","",1)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">同治三年</font>
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("1911年4月")}>
-                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1911年4月</font>
+                <Button size="small" type="text" onClick={() => this.searchHot("","龙藏寺",2)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">龙藏寺</font>
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("1911年4月")}>
-                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1911年4月</font>
+                <Button size="small" type="text" onClick={() => this.searchHot("民国十五年","",1)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">民国十五年</font>
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("1911年4月")}>
-                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1911年4月</font>
+                <Button size="small" type="text" onClick={() => this.searchHot("1926","",1)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1926</font>
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("1911年4月")}>
-                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1911年4月</font>
+                <Button size="small" type="text" onClick={() => this.searchHot("民国","吴湖帆",3)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">民国、吴湖帆</font>
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("1911年4月")}>
-                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1911年4月</font>
+                <Button size="small" type="text" onClick={() => this.searchHot("乾隆五十五年","",1)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">乾隆五十五年</font>
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("1911年4月")}>
-                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">1911年4月</font>
+                <Button size="small" type="text" onClick={() => this.searchHot("","吴湖帆",2)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">吴湖帆</font>
+                </Button>
+                <Button size="small" type="text" onClick={() => this.searchHot("贞观五年","",1)}>
+                  <FireTwoTone twoToneColor="#ffffff" /><font color="white">贞观五年</font>
                 </Button>
               </div>
             </div>

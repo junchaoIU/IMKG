@@ -2,13 +2,13 @@
   "nodes": [
     {
       "id": "旧拓魏志五种",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/旧拓魏志五种.jpg",
       "size": 0
     },
     {
       "id": "化度寺邕禅师舍利塔铭",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/化度寺邕禅师舍利塔铭.jpg",
       "size": 7
     },
@@ -25,7 +25,7 @@
     },
     {
       "id": "太室西阙铭",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/太室西阙铭.jpg",
       "size": 4
     },
@@ -37,19 +37,19 @@
     },
     {
       "id": "虞恭公温彦博碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/虞恭公温彦博碑.jpg",
       "size": 4
     },
     {
       "id": "鲜于光祖墓志",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/鲜于光祖墓志.jpg",
       "size": 2
     },
     {
       "id": "司马昞妻孟敬训墓志",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/司马昞妻孟敬训墓志.jpg",
       "size": 1
     },
@@ -60,7 +60,7 @@
     },
     {
       "id": "道因法师碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/道因法师碑.jpg",
       "size": 8
     },
@@ -106,7 +106,7 @@
     },
     {
       "id": "王居士砖塔铭",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/王居士砖塔铭.jpg",
       "size": 7
     },
@@ -145,13 +145,13 @@
     },
     {
       "id": "篆书阳文二行，行二字",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/篆书阳文二行，行二字.jpg",
       "size": 1
     },
     {
       "id": "汉故司隶校尉鲁君碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/汉故司隶校尉鲁君碑.jpg",
       "size": 3
     },
@@ -163,13 +163,13 @@
     },
     {
       "id": "许真人井铭",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/许真人井铭.jpg",
       "size": 0
     },
     {
       "id": "唐俭碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/唐俭碑.jpg",
       "size": 2
     },
@@ -180,7 +180,7 @@
     },
     {
       "id": "淳化阁帖",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/淳化阁帖.jpg",
       "size": 2
     },
@@ -191,7 +191,7 @@
     },
     {
       "id": "黄庭堅青原山诗刻石",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/黄庭堅青原山诗刻石.jpg",
       "size": 1
     },
@@ -203,13 +203,13 @@
     },
     {
       "id": "争座位帖",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/争座位帖.jpg",
       "size": 3
     },
     {
       "id": "龙藏寺碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/龙藏寺碑.jpg",
       "size": 8
     },
@@ -226,7 +226,7 @@
     },
     {
       "id": "麻姑山仙坛记",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/麻姑山仙坛记.jpg",
       "size": 4
     },
@@ -243,7 +243,7 @@
     },
     {
       "id": "礼器碑并阴",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/礼器碑并阴.jpg",
       "size": 2
     },
@@ -254,19 +254,19 @@
     },
     {
       "id": "晋唐小楷九种",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/晋唐小楷九种.jpg",
       "size": 0
     },
     {
       "id": "十七帖",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/十七帖.jpg",
       "size": 2
     },
     {
       "id": "孔羡碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/孔羡碑.jpg",
       "size": 2
     },
@@ -277,7 +277,7 @@
     },
     {
       "id": "九成宫醴泉铭",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/九成宫醴泉铭.jpg",
       "size": 6
     },
@@ -294,7 +294,7 @@
     },
     {
       "id": "张从申书李玄靖碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/张从申书李玄靖碑.jpg",
       "size": 4
     },
@@ -317,7 +317,7 @@
     },
     {
       "id": "圭峰定慧禅师碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/圭峰定慧禅师碑.jpg",
       "size": 2
     },
@@ -328,7 +328,7 @@
     },
     {
       "id": "隋柱国弘义明公皇甫府君碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/隋柱国弘义明公皇甫府君碑.jpg",
       "size": 7
     },
@@ -373,7 +373,7 @@
     },
     {
       "id": "史晨前碑",
-      "category": "碑帖",
+      "category": "碑帖作品",
       "symbol": "image://https://image.gzknowledge.cn/史晨前碑.jpg",
       "size": 2
     },

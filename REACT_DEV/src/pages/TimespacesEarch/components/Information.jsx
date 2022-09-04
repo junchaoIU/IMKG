@@ -14,10 +14,10 @@ import Emptys from '../../../components/Empty/index';
 import LineDrawer from '@/pages/Common/LineDrawer';
 import QueueAnim from "rc-queue-anim";
 
-@connect(({ knowledge, loading }) => ({
-  knowledge,
-  submitting: loading.effects['knowledge/knowledge'],
-}))
+// @connect(({ knowledge, loading }) => ({
+//   knowledge,
+//   submitting: loading.effects['knowledge/knowledge'],
+// }))
 class information extends PureComponent {
   state = {
     cardVisible: false,
@@ -25,53 +25,58 @@ class information extends PureComponent {
     loading: true,
   };
 
-  onDispatch = (backWord) => {
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'knowledge/getSubstance',
-      payload: backWord,
-      callback: (response) => {
-        if (response !== null) {
-          this.setState({
-            substance: response,
-            loading: false,
-          });
-        }
-      },
-    });
-  };
+  // onDispatch = (backWord) => {
+  //   const { dispatch } = this.props;
+  //   dispatch({
+  //     type: 'knowledge/getSubstance',
+  //     payload: backWord,
+  //     callback: (response) => {
+  //       if (response !== null) {
+  //         this.setState({
+  //           substance: response,
+  //           loading: false,
+  //         });
+  //       }
+  //     },
+  //   });
+  // };
 
   // 实体信息
   onInformation = () => {
     const { detail, page, handleChangePage } = this.props;
+    console.log(detail)
     return (
       <Timeline className={styles.time} mode={'left'}>
         {detail.slice(page.minValue, page.maxValue).map((item, index) => {
           return (
             <Timeline.Item key={index} dot={<TagsOutlined style={{ fontSize: '20px' }} />}>
-              {/*<p>*/}
-              {/*  <PushpinTwoTone twoToneColor="#eb2f96" className={styles.icon} />*/}
-              {/*  {item[0]}*/}
-              {/*</p>*/}
+              <p>
+                <PushpinTwoTone twoToneColor="#eb2f96" className={styles.icon} />
+                {item[0]}
+              </p>
               <p>
                 <ClockCircleTwoTone twoToneColor="#52c41a" className={styles.icon} />
-                {item[1] === '未知' ? item[1] : item[1].substr(1)}
+                {item[1]}
               </p>
               <p>
                 <EnvironmentTwoTone twoToneColor="#adc6ff" className={styles.icon} />
                 {item[2]}
               </p>
-              <Tooltip
-                color={'#ff969f'}
-                placement="topLeft"
-                title="点击事件语料关联"
-                arrowPointAtCenter
-              >
-                <p className={styles.detail} onClick={() => this.onBack(item[3])}>
-                  <CloudTwoTone twoToneColor="#87e8de" className={styles.icon} />
-                  {item[3]}
-                </p>
-              </Tooltip>
+              <p className={styles.detail} >
+                <CloudTwoTone twoToneColor="#87e8de" className={styles.icon} />
+                {item[3]}
+              </p>
+              {/*<Tooltip*/}
+              {/*  color={'#ff969f'}*/}
+              {/*  placement="topLeft"*/}
+              {/*  title="点击事件语料关联"*/}
+              {/*  arrowPointAtCenter*/}
+              {/*>*/}
+              {/*  <p className={styles.detail} onClick={() => this.onBack(item[3])}>*/}
+              {/*    <CloudTwoTone twoToneColor="#87e8de" className={styles.icon} />*/}
+              {/*    {item[3]}*/}
+              {/*  </p>*/}
+              {/*</Tooltip>*/}
             </Timeline.Item>
           );
         })}
@@ -164,33 +169,36 @@ class information extends PureComponent {
   };
 
   render() {
+    console.log(this.props.detail)
     const { detail, relation } = this.props;
     const { loading, substance, cardVisible } = this.state;
     return (
       <div className={styles.cardContainer}>
-        {detail.length > 0 && relation.length !== 0 ? (
+        {detail.length > 0 ? (
           <Row>
+            <Col span={4}/>
             <Col span={16}>
               <Tabs type="card" className={styles.outCard} centered>
                 <Tabs.TabPane tab="回溯时空信息" key="1" className={styles.innerCard}>
                   {this.onInformation()}
-                  <LineDrawer
-                    onCloseBack={this.onCloseBack}
-                    cardVisible={cardVisible}
-                    loading={loading}
-                    substance={substance}
-                    width={'35%'}
-                  />
+                  {/*<LineDrawer*/}
+                  {/*  onCloseBack={this.onCloseBack}*/}
+                  {/*  cardVisible={cardVisible}*/}
+                  {/*  loading={loading}*/}
+                  {/*  substance={substance}*/}
+                  {/*  width={'35%'}*/}
+                  {/*/>*/}
                 </Tabs.TabPane>
               </Tabs>
             </Col>
-            <Col span={8}>
-              <Tabs type="card" className={styles.outCard} centered>
-                <Tabs.TabPane tab="相关实体" key="1" className={styles.innerCard}>
-                  {this.onRelation()}
-                </Tabs.TabPane>
-              </Tabs>
-            </Col>
+            <Col span={4}/>
+            {/*<Col span={8}>*/}
+            {/*  <Tabs type="card" className={styles.outCard} centered>*/}
+            {/*    <Tabs.TabPane tab="相关实体" key="1" className={styles.innerCard}>*/}
+            {/*      /!*{this.onRelation()}*!/*/}
+            {/*    </Tabs.TabPane>*/}
+            {/*  </Tabs>*/}
+            {/*</Col>*/}
           </Row>
         ) : (
           <Emptys />

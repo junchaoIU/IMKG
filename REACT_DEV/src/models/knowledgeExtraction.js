@@ -28,6 +28,7 @@ export default {
     },
 
     * getTxtExtraction({payload,callback}, {call, put}) {
+      console.log(payload)
       const response = yield call(txtExtraction,payload);
       yield put({
         type: 'setTxtExtraction',
@@ -35,6 +36,7 @@ export default {
       });
       if(callback) callback(response)
     },
+
 
     // * getAttribute({payload,callback}, {call, put}) {
     //   const response = yield call(attributeSearch,payload);

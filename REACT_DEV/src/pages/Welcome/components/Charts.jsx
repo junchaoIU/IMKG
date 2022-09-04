@@ -6,8 +6,10 @@ class charts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // data: {"nodes":[{"id":"化度寺邕禅师舍利塔铭","label":"化度寺邕禅师舍利塔铭","category":"碑帖"},{"id":"欧阳询","label":"欧阳询","category":"名家"},{"id":"楷体","label":"楷体","category":"书体"},{"id":"唐原石北宋拓本","label":"唐原石北宋拓本","category":"版本类型"}],"links":[{"source":"化度寺邕禅师舍利塔铭","target":"楷体","category":"书体","label":"书体","symbol":"http://localhost:2222/宋嘉树.jpg"},{"source":"化度寺邕禅师舍利塔铭","target":"唐原石北宋拓本","category":"版本类型","label":"版本类型","symbol":"http://localhost:2222/孙中山.jpg"},{"source":"化度寺邕禅师舍利塔铭","target":"欧阳询","category":"责任人","label":"责任人","symbol":"http://localhost:2222/孙中山.jpg"}]},
-      data:this.props.chartsData
+      // data: {"nodes":[{"id":"皇甫诞碑","label":"皇甫诞碑","category":"碑帖作品"},{"id":"书法家。字信本。潭州临湘（今湖南长沙）人。仕隋为太常博士。贞观初，官至太子率更令、弘文馆学士，封渤海县男。武德七年奉诏主修《艺文类聚》，《全唐文》卷一四六录其文八篇，《唐文拾遗》卷一四辑补六篇。《全唐诗》卷一二录其诗二首，《全唐诗补编·续补遗》卷一辑补一首。传世作品有《道因法师碑》和《泉男生墓志》。","label":"书法家。字信本。潭州临湘（今湖南长沙）人。仕隋为太常博士。贞观初，官至太子率更令、弘文馆学士，封渤海县男。武德七年奉诏主修《艺文类聚》，《全唐文》卷一四六录其文八篇，《唐文拾遗》卷一四辑补六篇。《全唐诗》卷一二录其诗二首，《全唐诗补编·续补遗》卷一辑补一首。传世作品有《道因法师碑》和《泉男生墓志》。","category":"名家小传"},{"id":"唐","label":"唐","category":"朝代"},{"id":"化度寺邕禅师舍利塔铭","label":"化度寺邕禅师舍利塔铭","category":"碑帖作品"},{"id":"湖南","label":"湖南","category":"籍贯"},{"id":"虞恭公温彦博碑","label":"虞恭公温彦博碑","category":"碑帖作品"},{"id":"九成宫醴泉铭","label":"九成宫醴泉铭","category":"碑帖作品"}],"links":[{"source":"欧阳询","target":"皇甫诞碑","category":"碑帖作品","label":"碑帖作品","symbol":"皇甫诞碑.jpg"},{"source":"欧阳询","target":"虞恭公温彦博碑","category":"碑帖作品","label":"碑帖作品","symbol":"虞恭公温彦博碑.jpg"},{"source":"欧阳询","target":"化度寺邕禅师舍利塔铭","category":"碑帖作品","label":"碑帖作品","symbol":"化度寺邕禅师舍利塔铭.jpg"},{"source":"欧阳询","target":"九成宫醴泉铭","category":"碑帖作品","label":"碑帖作品","symbol":"九成宫醴泉铭.jpg"},{"source":"欧阳询","target":"书法家。字信本。潭州临湘（今湖南长沙）人。仕隋为太常博士。贞观初，官至太子率更令、弘文馆学士，封渤海县男。武德七年奉诏主修《艺文类聚》，《全唐文》卷一四六录其文八篇，《唐文拾遗》卷一四辑补六篇。《全唐诗》卷一二录其诗二首，《全唐诗补编·续补遗》卷一辑补一首。传世作品有《道因法师碑》和《泉男生墓志》。","category":"名家小传","label":"名家小传","symbol":"书法家。字信本。潭州临湘（今湖南长沙）人。仕隋为太常博士。贞观初，官至太子率更令、弘文馆学士，封渤海县男。武德七年奉诏主修《艺文类聚》，《全唐文》卷一四六录其文八篇，《唐文拾遗》卷一四辑补六篇。《全唐诗》卷一二录其诗二首，《全唐诗补编·续补遗》卷一辑补一首。传世作品有《道因法师碑》和《泉男生墓志》。.jpg"},{"source":"欧阳询","target":"湖南","category":"籍贯","label":"籍贯","symbol":"湖南.jpg"},{"source":"欧阳询","target":"唐","category":"朝代","label":"朝代","symbol":"湖南.jpg"}]},
+      data: props.chartsData,
+      nodes:[],
+      links:[]
     };
   }
 
@@ -34,8 +36,44 @@ class charts extends Component {
       this.state.data.nodes.length > 0 &&
       this.state.data.links !== null
     ) {
+      this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === "数量"), 1)
+      this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.id === ''), 1)
+      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === "背景故事"), 1)
+      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.id === 'null'), 1)
+      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === '额题'), 1)
+      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.label === "数量"), 1)
+      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === "首题"), 1)
+      // this.state.data.links.splice(this.state.data.links.findIndex(item => item.category === "数量"), 1)
+      this.state.data.links.splice(this.state.data.links.findIndex(item => item.category === "首题"), 1)
+      this.state.data.nodes.splice(this.state.data.links.findIndex(item => item.category === '额题'), 1)
+      // this.state.data.nodes.splice(this.state.data.links.findIndex(item => item.target === 'null'), 1)
       this.state.data.nodes.forEach((node) => {
-        node.symbolSize = 40
+        if(node.category === "背景故事" || node.category === "流传经历" || node.category === "题记" || node.label === "背景故事" || node.category === "额题" || node.category === "首题" || node.category === "null" || node.category === "名家小传"){
+
+        }else if(node.id === "null"){
+
+        }
+        else{
+          this.state.nodes.push(node)
+          console.log(this.state.nodes)
+        }
+      })
+      this.state.data.links.forEach((link) => {
+        if(link.category === "背景故事" || link.target === "null"){
+
+        }else{
+          this.state.links.push(link)
+        }
+      })
+      this.state.nodes.forEach((node) => {
+        if(['碑帖作品', '名家', '书体', '朝代', '版本', '地点'].includes(node.category)){
+          node.category = node.category
+        }else if(['楷书',"撰文","撰书"].includes(node.category)){
+          node.category = "名家"
+        }else{
+          node.category = "其他"
+        }
+        node.symbolSize = 30
         node.draggable = true;
         node.label = {
           show: true,
@@ -46,9 +84,9 @@ class charts extends Component {
           opacity: 0.8,
         };
       });
-      this.state.data.links.forEach((link) => {
+      this.state.links.forEach((link) => {
         link.label = {
-          // show: true,
+          show: true,
           formatter: link.category,
         };
         link.tooltip = {
@@ -91,7 +129,7 @@ class charts extends Component {
         },
         legend: {
           show: true,
-          data: ['碑帖', '名家', '书体', '朝代', '版本类型', '地点'],
+          data: ['碑帖作品', '名家', '书体', '朝代', '版本', '地点', '其他'],
         },
         series: [
           {
@@ -104,7 +142,7 @@ class charts extends Component {
               // // 向中心的引力因子
               gravity: 0.5,
               // // 边长
-              edgeLength: 150,
+              edgeLength: 100,
               friction: 0.6,
             },
             label: {
@@ -133,8 +171,8 @@ class charts extends Component {
             // autoCurveness:true,
             roam:true,
             // 数据
-            data: this.state.data.nodes,
-            edges: this.state.data.links,
+            data: this.state.nodes,
+            edges: this.state.links,
             categories,
           },
         ],
@@ -148,7 +186,8 @@ class charts extends Component {
   }
 
   render() {
-    console.log(this.state.data.nodes)
+    console.log(this.state.nodes)
+    console.log(this.state.links)
     return (
       <div>
         <div id="main" style={{ width: '100%', height: '600px'}}></div>

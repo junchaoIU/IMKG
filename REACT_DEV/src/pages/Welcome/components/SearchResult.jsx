@@ -69,25 +69,16 @@ class SearchResult extends PureComponent {
       type: 'knowledge/getKeyword',
       payload: data,
       callback: (response) => {
-        if (response !== null) {
+        if (response !== null || response.length === 0) {
+         response[0].nodes.splice(response[0].nodes.findIndex(item => item.target === "null"), 1)
           this.setState({
-            chartsData: response,
+            chartsData: response[0],
+            detailData: response[0],
             propSearch: data,
             val: true,
           });
         }
-      },
-    });
-    dispatch({
-      type: 'knowledge/getAttribute',
-      payload: data,
-      callback: (response) => {
-        if (response !== null) {
-          this.setState({
-            detailData: response,
-          });
-        }
-        if (response.links === null) {
+        if (response.links === null || response.length === 0) {
           message.warning('找不到您检索的知识点！');
         }
       },
@@ -98,6 +89,7 @@ class SearchResult extends PureComponent {
     const { loading } = this.props;
     const { chartsData, val, searchValue, propSearch, detailData } = this.state;
     const loadings = loading === undefined ? false : loading;
+    console.log(chartsData)
     return (
       <div>
         <div className={styles.search}>

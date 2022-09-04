@@ -20,6 +20,7 @@ class mapCharts extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.childEvents !== this.props.childEvents) {
+      console.log(nextProps.childEvents)
       this.setState({
         data: nextProps.childEvents,
       });
@@ -31,6 +32,13 @@ class mapCharts extends Component {
     const {
       data: { series },
     } = this.state;
+
+    for (let i = 0; i < series.length; i++) {
+      let e = series[i][0][2]
+      series[i][0][2] = series[i][0][4]
+      series[i][0][4] = e
+    }
+    console.log(series)
     echarts.registerMap('route', geoJson);
     const geodata = [];
     // 数组对象浅拷贝
@@ -321,6 +329,7 @@ class mapCharts extends Component {
   };
 
   render() {
+    console.log(this.state.data)
     return <div id="main" style={{ width: '100%', height: '70vh' }}></div>;
   }
 }

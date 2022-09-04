@@ -1,6 +1,6 @@
 const categories = [
   {
-    name: '碑帖',
+    name: '碑帖作品',
     itemStyle: {
       // normal: {
       //   color: '#A5E7F0',
@@ -32,7 +32,7 @@ const categories = [
     },
   },
   {
-    name: '版本类型',
+    name: '版本',
     itemStyle: {
       // normal: {
       //   color: '#516B91',
@@ -55,5 +55,13 @@ const categories = [
       // },
     },
   },
+  {
+    name: '其他',
+    itemStyle: {
+      // normal: {
+      //   color: '#C4EBAD',
+      // },
+    },
+  }
 ];
 export default categories;

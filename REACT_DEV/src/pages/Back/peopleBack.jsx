@@ -57,19 +57,19 @@ class peopleBack extends Component {
                 <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
               </Button>
               <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">虞恭公温彦博碑</font>
               </Button>
               <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">九成宫醴泉铭</font>
               </Button>
               <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">晋唐小楷九种</font>
               </Button>
               <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">麻姑山仙坛记</font>
               </Button>
               <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">化度寺邕禅师舍利塔铭</font>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">龙藏寺碑</font>
               </Button>
             </div>
           </div>

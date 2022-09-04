@@ -101,16 +101,16 @@ class searchResult extends PureComponent {
             }
           },
         });
-        dispatch({
-          type: 'timeSpaces/getTimeDetail',
-          payload: value1 !== null ? value1 : this.state.value1,
-          callback: (response) => {
-            if (response !== null)
-              this.setState({
-                relation: response,
-              });
-          },
-        });
+        // dispatch({
+        //   type: 'timeSpaces/getTimeDetail',
+        //   payload: value1 !== null ? value1 : this.state.value1,
+        //   callback: (response) => {
+        //     if (response !== null)
+        //       this.setState({
+        //         relation: response,
+        //       });
+        //   },
+        // });
         break;
       case 'times':
         const data = {
@@ -136,16 +136,16 @@ class searchResult extends PureComponent {
             }
           },
         });
-        dispatch({
-          type: 'timeSpaces/getPeriodTime',
-          payload: data,
-          callback: (response) => {
-            if (response !== null)
-              this.setState({
-                relation: response,
-              });
-          },
-        });
+        // dispatch({
+        //   type: 'timeSpaces/getPeriodTime',
+        //   payload: data,
+        //   callback: (response) => {
+        //     if (response !== null)
+        //       this.setState({
+        //         relation: response,
+        //       });
+        //   },
+        // });
         break;
       case 'space':
         dispatch({
@@ -161,16 +161,16 @@ class searchResult extends PureComponent {
             }
           },
         });
-        dispatch({
-          type: 'timeSpaces/getSpace',
-          payload: value1 !== null ? value1 : this.state.value1,
-          callback: (response) => {
-            if (response !== null)
-              this.setState({
-                relation: response,
-              });
-          },
-        });
+        // dispatch({
+        //   type: 'timeSpaces/getSpace',
+        //   payload: value1 !== null ? value1 : this.state.value1,
+        //   callback: (response) => {
+        //     if (response !== null)
+        //       this.setState({
+        //         relation: response,
+        //       });
+        //   },
+        // });
         break;
       default:
         const data1 = {
@@ -190,16 +190,16 @@ class searchResult extends PureComponent {
             }
           },
         });
-        dispatch({
-          type: 'timeSpaces/getTimeSpace',
-          payload: data1,
-          callback: (response) => {
-            if (response !== null)
-              this.setState({
-                relation: response,
-              });
-          },
-        });
+        // dispatch({
+        //   type: 'timeSpaces/getTimeSpace',
+        //   payload: data1,
+        //   callback: (response) => {
+        //     if (response !== null)
+        //       this.setState({
+        //         relation: response,
+        //       });
+        //   },
+        // });
     }
   };
 
@@ -217,6 +217,7 @@ class searchResult extends PureComponent {
   };
 
   render() {
+    console.log(this.state.information)
     const { mode, information, relation, page, value1, value2 } = this.state;
     const { loading1, loading2, loading3, loading4 } = this.props;
     const loadings2 = loading2 === undefined ? false : loading2;

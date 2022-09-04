@@ -50,42 +50,41 @@ class search extends PureComponent {
           type: 'back/getPeople',
           payload: value,
         });
-    dispatch({
-      type: 'knowledge/getKeyword',
-      payload: value,
-      callback: (response) => {
-        if (response !== null) {
-          this.setState({
-            chartsData: response,
-            propSearch: value,
-          });
-        }
-        if (response.length === 0) {
-          message.warning('找不到您检索的实体！');
-        }
-      },
-    });
-    dispatch({
-      type: 'knowledge/getAttribute',
-      payload: value,
-      callback: (response) => {
-        if (response !== null) {
-          this.setState({
-            detailData: response,
-          });
-        }
-      },
-    });
+    // dispatch({
+    //   type: 'knowledge/getKeyword',
+    //   payload: value,
+    //   callback: (response) => {
+    //     if (response !== null) {
+    //       this.setState({
+    //         chartsData: response,
+    //         propSearch: value,
+    //       });
+    //     }
+    //     if (response.length === 0) {
+    //       message.warning('找不到您检索的实体！');
+    //     }
+    //   },
+    // });
+    // dispatch({
+    //   type: 'knowledge/getAttribute',
+    //   payload: value,
+    //   callback: (response) => {
+    //     if (response !== null) {
+    //       this.setState({
+    //         detailData: response,
+    //       });
+    //     }
+    //   },
+    // });
   };
 
   onInformation = (childEvent) => {
+    console.log(childEvent)
     const { loading } = this.props;
     const loadings = loading === undefined ? false : loading;
     return (
       <Spin spinning={loadings}>
-        {Object.keys(childEvent).length !== 0 &&
-        this.state.chartsData.length !== 0 &&
-        this.state.detailData.length !== 0 ? (
+        {Object.keys(childEvent).length !== 0? (
           <Row>
             <Col span={17}>
               <MapCharts childEvents={childEvent} />
@@ -112,6 +111,7 @@ class search extends PureComponent {
       allEvent,
       back: { childEvent, people },
     } = this.props;
+    console.log(people)
     return (
       <div className={styles.search}>
         <Input

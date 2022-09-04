@@ -105,7 +105,7 @@ class charts extends Component {
         },
         legend: {
           show: true,
-          data: ['碑帖', '名家', '书体', '朝代', '版本类型', '地点'],
+          data: ['碑帖作品', '名家', '书体', '朝代', '版本类型', '地点'],
         },
         series: [
           {
@@ -162,7 +162,6 @@ class charts extends Component {
   }
 
   render() {
-    console.log(this.state.data.nodes)
     return (
       <div>
         <div id="main" style={{ width: '100%', height: '610px'}}></div>

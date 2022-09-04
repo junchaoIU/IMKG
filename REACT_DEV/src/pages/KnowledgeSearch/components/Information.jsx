@@ -139,7 +139,7 @@ class information extends PureComponent {
       <div className={styles.cardContainer}>
         <Tabs type="card" className={styles.outCard} onChange={this.onClick}>
           {/*<Tabs.TabPane tab="实体信息" key="1" className={styles.innerCard}>*/}
-          {/*  <Information propSearch={propSearch} detailData={detailData} chartsData={chartsData} />*/}
+            <Information propSearch={propSearch} detailData={detailData} chartsData={chartsData} />
           {/*</Tabs.TabPane>*/}
           {/*<Tabs.TabPane tab="实体语料关联" key="2" className={styles.book}>*/}
           {/*  <BookCard colSpan={24} loading={loading} substance={substance} show={true} />*/}
@@ -172,14 +172,6 @@ class information extends PureComponent {
                 </Row>
               </Col>
             </Row>
-          </Tabs.TabPane>
-          <Tabs.TabPane tab="流传经历" key="2" className={styles.book}>
-            <div style={{margin:8}}>明初为王偁（孟扬）所藏，清代经陈崇本（伯恭）、成亲王（皇十一子永瑆、诒晋斋）、荣郡王（皇三孙绵亿、南韵斋）、奕绘（荣郡王之子、观古斋）、沈树镛（郑斋）、潘祖荫（滂喜斋）等人递藏，民国间转归吴湖帆四欧堂</div>
-            {/*<BookCard colSpan={24} loading={loading} substance={substance} show={true} />*/}
-          </Tabs.TabPane>
-          <Tabs.TabPane tab="题记" key="3" className={styles.book}>
-            <div style={{margin:8}}>三叶有民国十五年（1926）吴湖帆绘《勘碑图》并题。五叶有民国二十年（1931）九月叶恭绰题记。册尾有乾隆五十五年（1790）正月十二日翁方纲题跋。册中有罗振玉、王同愈、吴湖帆、潘静淑等题跋。</div>
-            {/*<BookCard colSpan={24} loading={loading} substance={substance} show={true} />*/}
           </Tabs.TabPane>
           <Tabs.TabPane tab="背景故事" key="4">
             <div style={{margin:8,height:500,overflow:'auto'}}>（吴湖帆藏本）
@@ -238,6 +230,14 @@ class information extends PureComponent {
               共二十七开，册高32.9厘米，宽20厘米。碑文九开半，帖芯高24.1厘米，宽14.8 厘米 。
               馆藏号 19A375</div>
             {/*{this.onThree()}*/}
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="流传经历" key="2" className={styles.book}>
+            <div style={{margin:8}}>明初为王偁（孟扬）所藏，清代经陈崇本（伯恭）、成亲王（皇十一子永瑆、诒晋斋）、荣郡王（皇三孙绵亿、南韵斋）、奕绘（荣郡王之子、观古斋）、沈树镛（郑斋）、潘祖荫（滂喜斋）等人递藏，民国间转归吴湖帆四欧堂</div>
+            {/*<BookCard colSpan={24} loading={loading} substance={substance} show={true} />*/}
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="题记" key="3" className={styles.book}>
+            <div style={{margin:8}}>三叶有民国十五年（1926）吴湖帆绘《勘碑图》并题。五叶有民国二十年（1931）九月叶恭绰题记。册尾有乾隆五十五年（1790）正月十二日翁方纲题跋。册中有罗振玉、王同愈、吴湖帆、潘静淑等题跋。</div>
+            {/*<BookCard colSpan={24} loading={loading} substance={substance} show={true} />*/}
           </Tabs.TabPane>
         </Tabs>
       </div>
