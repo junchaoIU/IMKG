@@ -55,22 +55,47 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 links.add(link);
             }
             System.out.println(links);
-            //责任者 李百药撰文，欧阳询楷书
+            //subject节点
             node = new EchartsNode();
-            link = new EchartsLink();
+            node.setId(subject);
+            node.setLabel(subject);
+            node.setCategory("碑帖作品");
+            nodes.add(node);
+            //责任者 李百药撰文，欧阳询楷书
+            String contributions = "";
             try {
-                String creator = jo.getString("creator");
-                System.out.println(creator);
-                node.setId(creator);
-                node.setLabel(creator);
-                node.setCategory("责任人");
-                link.setSource(subject);
-                link.setTarget(creator);
-                link.setCategory("责任人");
-                link.setLabel("责任人");
-                link.setSymbol(creator + ".jpg");
-                nodes.add(node);
-                links.add(link);
+                if (jo.get("contribution") instanceof Map) {
+                    contributions = String.valueOf("[" + jo.get("contribution") + "]");
+                } else {
+                    contributions = String.valueOf(jo.get("contribution"));
+                }
+                List<Map<String, Object>> contributionsList = JSONArray.fromObject(contributions);
+                for (Map<String, Object> contributionMap : contributionsList) {
+                    node = new EchartsNode();
+                    link = new EchartsLink();
+                    node.setId((String) contributionMap.get("agentLabel"));
+                    node.setLabel((String) contributionMap.get("agentLabel"));
+                    node.setCategory((String) contributionMap.get("role"));
+                    link.setSource(subject);
+                    link.setTarget((String) contributionMap.get("agentLabel"));
+                    link.setCategory((String) contributionMap.get("role"));
+                    link.setLabel((String) contributionMap.get("role"));
+                    link.setSymbol((String) contributionMap.get("agentLabel") + ".jpg");
+                    nodes.add(node);
+                    links.add(link);
+                }
+//                String creator = jo.getString("creator");
+//                System.out.println(creator);
+//                node.setId(creator);
+//                node.setLabel(creator);
+//                node.setCategory("责任人");
+//                link.setSource(subject);
+//                link.setTarget(creator);
+//                link.setCategory("责任人");
+//                link.setLabel("责任人");
+//                link.setSymbol(creator + ".jpg");
+//                nodes.add(node);
+//                links.add(link);
             } catch (Exception e) {
                 System.out.println(e);
             }
@@ -104,7 +129,7 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 System.out.println(temporalValue);
                 node.setId(temporalValue);
                 node.setLabel(temporalValue);
-                node.setCategory("刻历年代");
+                node.setCategory("时间");
                 link.setSource(subject);
                 link.setTarget(temporalValue);
                 link.setCategory("刻历年代");
@@ -185,7 +210,7 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 System.out.println(organization);
                 node.setId(organization);
                 node.setLabel(organization);
-                node.setCategory("馆藏地");
+                node.setCategory("地点");
                 link.setSource(subject);
                 link.setTarget(organization);
                 link.setCategory("馆藏地");

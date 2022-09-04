@@ -26,18 +26,23 @@ public class CelebritiesKnowledgeServiceImpl implements CelebritiesKnowledgeServ
         System.out.println(personJsonPath);
         String path = personJsonPath+celebritiesName+".json";
         System.out.println(path);
+        Set<EchartsNode> nodes = new HashSet<>();
+        Set<EchartsLink> links = new HashSet<>();
+        EchartsData data = new EchartsData();
+        EchartsNode node1 = new EchartsNode();
+        node1.setId(celebritiesName);
+        node1.setLabel(celebritiesName);
+        node1.setCategory("名家");
+        nodes.add(node1);
         try {
             String jsonStr = JsonUtils.readJsonFile(path);
             JSONObject person_ja = JSONObject.fromObject(jsonStr);
-            Set<EchartsNode> nodes = new HashSet<>();
-            Set<EchartsLink> links = new HashSet<>();
-            EchartsData data = new EchartsData();
+            //籍贯
             EchartsNode node = new EchartsNode();
             EchartsLink link = new EchartsLink();
-            //籍贯
             node.setId(person_ja.getString("provinceAbb"));
             node.setLabel(person_ja.getString("provinceAbb"));
-            node.setCategory("籍贯");
+            node.setCategory("地点");
             link.setSource(person);
             link.setTarget(person_ja.getString("provinceAbb"));
             link.setCategory("籍贯");

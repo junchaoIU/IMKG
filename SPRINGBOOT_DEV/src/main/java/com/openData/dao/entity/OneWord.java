@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class OneWord {
     private String id;
+
+    private String title;
     private String shelfMark;
     private String work;
     private String scriptForm;
@@ -15,8 +17,9 @@ public class OneWord {
 
     @Override
     public String toString() {
-        return "StoneOneWord{" +
+        return "OneWord{" +
                 "id='" + id + '\'' +
+                ", title='" + title + '\'' +
                 ", shelfMark='" + shelfMark + '\'' +
                 ", work='" + work + '\'' +
                 ", scriptForm='" + scriptForm + '\'' +
@@ -27,69 +30,75 @@ public class OneWord {
                 '}';
     }
 
+    public String getId() {
+        return id;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setShelfMark(String shelfMark) {
-        this.shelfMark = shelfMark;
+    public String getTitle() {
+        return title;
     }
 
-
-    public void setWork(String work) {
-        this.work = work;
-    }
-
-    public void setScriptForm(String scriptForm) {
-        this.scriptForm = scriptForm;
-    }
-
-    public void setCharactor(String charactor) {
-        this.charactor = charactor;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public void setContribution(Map contribution) {
-        this.contribution = contribution;
-    }
-
-    public void setPosInTextposInText(String posInTextposInText) {
-        this.posInTextposInText = posInTextposInText;
-    }
-
-    public String getId() {
-        return id;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getShelfMark() {
         return shelfMark;
     }
 
+    public void setShelfMark(String shelfMark) {
+        this.shelfMark = shelfMark;
+    }
 
     public String getWork() {
         return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
     }
 
     public String getScriptForm() {
         return scriptForm;
     }
 
+    public void setScriptForm(String scriptForm) {
+        this.scriptForm = scriptForm;
+    }
+
     public String getCharactor() {
         return charactor;
+    }
+
+    public void setCharactor(String charactor) {
+        this.charactor = charactor;
     }
 
     public String getImage() {
         return image;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public Map getContribution() {
         return contribution;
     }
 
+    public void setContribution(Map contribution) {
+        this.contribution = contribution;
+    }
+
     public String getPosInTextposInText() {
         return posInTextposInText;
+    }
+
+    public void setPosInTextposInText(String posInTextposInText) {
+        this.posInTextposInText = posInTextposInText;
     }
 }

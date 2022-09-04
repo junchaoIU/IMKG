@@ -21,7 +21,8 @@ public class OneWordKnowledgeController {
     @PostMapping("postStoneOneWord")
     @ApiOperation(value = "获取碑帖单字", notes = "传入freetext,")
     @ResponseBody
-    public List<OneWord> postStoneOneWord(@RequestParam("freetext") String freetext, @RequestParam(name = "facet",required = false,defaultValue = "{}") String facet) {
+    public List<OneWord> postStoneOneWord(@RequestParam("freetext") String freetext, @RequestParam(name = "CO",required = false,defaultValue = "") String CO,
+                                          @RequestParam(name = "scriptForm",required = false,defaultValue = "") String scriptForm, @RequestParam(name = "TI",required = false,defaultValue = "") String TI) {
         String key = "a04228e7acda94233da8afd453142430a8a3adee";
         String url = "https://data1.library.sh.cn/webapi/beitie/danzi/search?key=" + key;
         //String facetString = facet.toString();
@@ -32,11 +33,11 @@ public class OneWordKnowledgeController {
                 "     \"expression\": \"\", \n" +
                 "    \"cdtn\": [ \n" +
                 "    ], \n" +
-                "    \"facet\": "+facet+", \n" +
+                "    \"facet\": {\"CO\":\""+CO+"\",\"scriptForm\":\""+scriptForm+"\",\"TI\":\""+TI+"\"}, \n" +
                 "    \"secondCdtn\": \"\", \n" +
                 "    \"pager\": { \n" +
                 "        \"pageth\": 1, \n" +
-                "        \"pageSize\": 10 \n" +
+                "        \"pageSize\": 100 \n" +
                 "    }, \n" +
                 "    \"sorts\": { \n" +
                 "        \"score\": \"1\", \n" +

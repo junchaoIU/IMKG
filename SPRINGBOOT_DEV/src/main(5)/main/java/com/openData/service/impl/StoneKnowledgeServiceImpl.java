@@ -345,11 +345,11 @@ public class StoneKnowledgeServiceImpl implements StoneKnowledgeService {
                 jo.getJSONObject("titleChs").get("@value");
                 node.setId(String.valueOf(jo.getJSONObject("titleChs").get("@value")));
                 node.setLabel(String.valueOf(jo.getJSONObject("titleChs").get("@value")));
-                node.setCategory("碑帖作品");
+                node.setCategory("碑帖");
                 link.setSource(person);
                 link.setTarget(String.valueOf(jo.getJSONObject("titleChs").get("@value")));
                 link.setCategory(String.valueOf(jo.getJSONObject("titleChs").get("@value")));
-                link.setLabel("碑帖作品");
+                link.setLabel("碑帖");
                 link.setSymbol(String.valueOf(jo.getJSONObject("titleChs").get("@value")) + ".jpg");
                 nodes.add(node);
                 links.add(link);

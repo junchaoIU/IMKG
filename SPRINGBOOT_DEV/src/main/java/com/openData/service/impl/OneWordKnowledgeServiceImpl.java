@@ -27,6 +27,7 @@ public class OneWordKnowledgeServiceImpl implements OneWordKnowledgeService {
             System.out.println("jo" + jo);
             OneWord.setId(String.valueOf(jo.get("@id")));
             OneWord.setShelfMark(String.valueOf(jo.get("shelfMark")));
+            OneWord.setTitle(String.valueOf(jo.get("title")));
             OneWord.setWork(String.valueOf(jo.get("work")));
             OneWord.setScriptForm(String.valueOf(jo.get("scriptForm")));
             OneWord.setCharactor(String.valueOf(jo.get("charactor")));

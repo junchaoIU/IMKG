@@ -96,7 +96,7 @@ public class TimeSpaceServiceImpl implements TimeSpaceService {
     public List<List> getPeriodRecallDetail(String time1, String time2) {
         List<List> TimeRecallList = new ArrayList<>();
         for (int i = 0; i < timespacelist.length; i++) {
-            if(Integer.parseInt(time1) > Integer.parseInt(timespacelist[i][0]) && Integer.parseInt(time2) < Integer.parseInt(timespacelist[i][0])){
+            if(Integer.parseInt(time1) < Integer.parseInt(timespacelist[i][4]) && Integer.parseInt(time2) > Integer.parseInt(timespacelist[i][4])){
                 List item = new ArrayList<>();
                 item.add(timespacelist[i][3]+"--节点-->"+timespacelist[i][0]);
                 item.add(timespacelist[i][0]);
