@@ -1,0 +1,1 @@
+print('All the assignments and practices are listed under "Contests"!!!')

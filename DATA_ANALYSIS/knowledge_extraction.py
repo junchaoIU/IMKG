@@ -282,9 +282,23 @@ def textTransformer(txt):
                     date_list.append(x)
                 else:
                     pass
+
         date_list = list(set(date_list))
         for item in date_list:
             entitiesDic["DATE"].remove(item)
+
+        # 地点清洗
+        location_list = []
+        for x in entitiesDic["LOCATION"]:
+            for y in entitiesDic["LOCATION"]:
+                if x in y and x != y:
+                    location_list.append(x)
+                else:
+                    pass
+        location_list = list(set(location_list))
+        for item in location_list:
+            entitiesDic["LOCATION"].remove(item)
+
 
         allLineList, personLineListDic, eventLineListDic, organizationLineListDic = getTimeLine(entitiesDic, txt)
         personLineDic.update(personLineListDic)
