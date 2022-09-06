@@ -6,13 +6,11 @@
 # Date:   2021-11-30
 # -------------------------------------------------------------------------------
 # -*- coding: utf-8 -*-
-import datetime
 import json
 import os
 from flask import request
-from flask import Blueprint, url_for, render_template, session, redirect
-from model.KG_tramsformer import textTransformer, txtTransfer2JSON
-from werkzeug.utils import secure_filename
+from flask import Blueprint
+from model.KG_tramsformer import textTransformer
 
 # 创建了一个蓝图对象
 IEModule = Blueprint('KG', __name__)
@@ -36,6 +34,31 @@ def write():
     if request.method == "POST":
         json_data = request.data
         txt = json_data.decode('utf-8')
-    dataDic = textTransformer(txt)
-    return_dict['result'] = dataDic
-    return json.dumps(return_dict, ensure_ascii=False)
+        print(txt)
+
+        path = os.path.dirname(os.path.realpath(__file__)).split("controller")[0] + "\\data\\res_story"
+        print(path)
+        datanames = os.listdir(path)
+        name_list = []
+        for i in datanames:
+            name_list.append(i)
+
+        print(name_list)
+
+        name = txt+".txt"
+
+        print(name)
+
+        if name in name_list:
+
+            item_path = path + "\\" + name
+            print(item_path)
+            file = open(item_path, 'r', encoding="utf-8")
+            content = file.read()
+            file.close()
+
+            dataDic = textTransformer(content)
+            return_dict['result'] = dataDic
+            return json.dumps(return_dict, ensure_ascii=False)
+        else:
+            return json.dumps(return_dict, ensure_ascii=False)

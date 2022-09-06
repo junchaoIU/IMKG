@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import {Row, Col, message, Spin, Select, Card} from 'antd';
+import {Row, Col, message, Spin, Select, Card, Input, Button} from 'antd';
 import styles from '../index.less';
 import { connect } from 'dva';
 import Charts from './Charts';
@@ -29,9 +29,9 @@ class SearchResult extends PureComponent {
     }
   }
 
-  onChange = (value) => {
+  onChange = (e) => {
     this.setState({
-      searchValue: value,
+      searchValue: e.target.value,
     });
   };
 
@@ -89,7 +89,7 @@ class SearchResult extends PureComponent {
     const { loading } = this.props;
     const { chartsData, val, searchValue, propSearch, detailData } = this.state;
     const loadings = loading === undefined ? false : loading;
-    console.log(chartsData)
+    console.log(searchValue)
     return (
       <div>
         <div className={styles.search}>

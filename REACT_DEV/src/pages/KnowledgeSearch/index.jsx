@@ -58,9 +58,9 @@ class knowledgeSearch extends PureComponent {
     })
   }
 
-  onChange = (value) => {
+  onChange = (e) => {
     this.setState({
-      searchValue: value,
+      searchValue: e.target.value,
     });
   };
 

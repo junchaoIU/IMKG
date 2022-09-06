@@ -46,7 +46,7 @@ class kbqa extends Component {
             <Input
               size={'large'}
               className={styles.input}
-              placeholder={'请输入问题：如：孙中山的妻子的爸爸是谁？'}
+              placeholder={'请输入问题：'}
               allowClear
               onChange={this.onChange}
             />
@@ -55,20 +55,20 @@ class kbqa extends Component {
             </Button>
             <br/>
             <div key="c" style={{textAlign: 'center',paddingBottom:40}}>
-              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              <Button size="small" type="text" onClick={() => this.searchHot("王羲之写过什么碑帖？用的什么书体？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">王羲之写过什么碑帖？用的什么书体？</font>
               </Button>
-              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              <Button size="small" type="text" onClick={() => this.searchHot("王羲之的籍贯？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">王羲之的籍贯？</font>
               </Button>
-              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              <Button size="small" type="text" onClick={() => this.searchHot("十七帖是哪个朝代的？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">十七帖是哪个朝代的？</font>
               </Button>
-              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              <Button size="small" type="text" onClick={() => this.searchHot("十七帖现在收藏在哪？")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">十七帖现在收藏在哪？</font>
               </Button>
-              <Button size="small" type="text" onClick={() => this.searchHot("孙中山的妻子的父亲是谁？")}>
-                <FireTwoTone twoToneColor="#ffffff" /><font color="white">孙中山的妻子的父亲是谁？</font>
+              <Button size="small" type="text" onClick={() => this.searchHot("")}>
+                <FireTwoTone twoToneColor="#ffffff" /><font color="white">王羲之写过什么碑帖？</font>
               </Button>
             </div>
           </div>

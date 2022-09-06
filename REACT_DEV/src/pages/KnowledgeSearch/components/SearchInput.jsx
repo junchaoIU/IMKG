@@ -25,7 +25,9 @@ class SearchInput extends PureComponent {
           className={className}
           onChange={onChange}
           placeholder="试一试输入感兴趣的单字检索一下~"
+          displayRender={this.displayRender}
           size="large"
+          showSearch={{ filter: this.filter, matchInputWidth: false }}
           value={searchValue}
         />
         <Button type="primary" size={'large'} onClick={search}>

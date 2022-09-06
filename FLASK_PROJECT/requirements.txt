@@ -1,0 +1,9 @@
+requests~=2.28.1
+bert4vec~=0.1.0
+hanlp~=2.1.0b39
+lxml~=4.9.1
+pyhanlp~=0.1.84
+tqdm~=4.64.0
+torch~=1.12.1
+Flask~=2.0.2
+Werkzeug~=2.2.2

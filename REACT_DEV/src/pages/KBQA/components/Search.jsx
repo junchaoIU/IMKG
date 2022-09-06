@@ -15,7 +15,7 @@ const { Meta } = Card;
 class search extends PureComponent {
   state = {
     question: '',
-    answer:'',
+    answer:[[],[]],
     chartsData:{"nodes":[{"id":"宋庆龄","label":"宋庆龄","category":"人物"},{"id":"宋嘉树","label":"宋嘉树","category":"人物"},{"id":"孙中山","label":"孙中山","category":"人物"}],"links":[{"source":"宋庆龄","target":"宋嘉树","category":"父亲","label":"父亲","symbol":"http://localhost:2222/宋嘉树.jpg"},{"source":"孙中山","target":"宋庆龄","category":"妻子","label":"妻子","symbol":"http://localhost:2222/孙中山.jpg"},{"source":"宋庆龄","target":"孙中山","category":"丈夫","label":"丈夫","symbol":"http://localhost:2222/孙中山.jpg"},{"source":"孙中山","target":"宋嘉树","category":"丈人","label":"丈人","symbol":"http://localhost:2222/宋子安.jpg"}]},
     val: false,
   };
@@ -32,6 +32,7 @@ class search extends PureComponent {
 
   search = (v) => {
     if (v.length !== undefined) {
+      console.log(v)
       this.setState({
         searchValue: v,
       });
@@ -51,9 +52,11 @@ class search extends PureComponent {
       type: 'answer/getQuestion',
       payload: question,
       callback: (response) => {
-        if (response.code == 200) {
+        console.log(response.return_code)
+        console.log(response.result)
+        if (response.return_code == 200) {
           this.setState({
-            answer: response.data,
+            answer: response.result,
             val: true,
           });
           console.log(response)
@@ -71,13 +74,35 @@ class search extends PureComponent {
   };
 
   handleSearch = (value) => {
+    console.log(value)
     this.setState({answer:""})
     this.handleQuestion(value);
   };
 
+  getImageList = () => {
+    let list = []
+    this.state.answer[0].map((item) => {
+      let imageUrl = "http://image.gzknowledge.cn/beitie/" + item +".jpg"
+      list.push(
+        <Col span={6}>
+          <Card
+            style={{height:260}}
+            hoverable
+            cover={<img style={{height:160}} alt={item} src={imageUrl} />}
+          >
+            <Meta title={item}/>
+          </Card>
+        </Col>
+      )
+    })
+    return list
+  }
+
   render() {
+    console.log(this.state.question)
+    console.log(this.state.answer)
     const { loading } = this.props;
-    const { chartsData, val, question } = this.state;
+    const { chartsData, val, question, answer } = this.state;
     const loadings = loading === undefined ? false : loading;
 
     return (
@@ -101,11 +126,11 @@ class search extends PureComponent {
         <Spin spinning={loadings}>
           {val && this.state.question.length !== 0 ? (
             <Row className={styles.content}>
-              <Col span={12}>
-                <Charts chartsData={chartsData} propSearch={question} clickWord={this.search} />
-              </Col>
-              <Col span={1}/>
-              <Col span={11}>
+              {/*<Col span={12}>*/}
+              {/*  <Charts chartsData={chartsData} propSearch={question} clickWord={this.search} />*/}
+              {/*</Col>*/}
+              {/*<Col span={1}/>*/}
+              <Col span={24}>
                 <div className={styles.cardContainer}>
                   <Card
                     style={{padding:20, fontSize:18, textAlign:"left"}}
@@ -113,43 +138,44 @@ class search extends PureComponent {
                   >
                     <CodeTwoTone />{" 问题："+ this.state.question}
                     <br/><br/>
-                    <SecurityScanTwoTone />{" 回答：" + "宋嘉树"}
+                    <SecurityScanTwoTone />{" 回答：" + answer[1]}
                     <br/>
-                    <SoundTwoTone />{" 解析：" + this.state.answer}
-                    <br/>
+                    {/*<SoundTwoTone />{" 解析：" + answer}*/}
+                    {/*<br/>*/}
                     <Card
                       style={{ marginTop: 20 }}
                       type="inner"
                       title="更多"
                     >
                       <Row gutter={16}>
-                        <Col span={6}>
-                          <Card
-                            style={{height:260}}
-                            hoverable
-                            cover={<img style={{height:160}} alt="example" src="http://image.gzknowledge.cn/knowledge/%E5%AD%99%E4%B8%AD%E5%B1%B1.jpg" />}
-                          >
-                            <Meta title="孙中山" description="中国民主革命的伟大先驱" />
-                          </Card>
-                        </Col>
-                        <Col span={6}>
-                          <Card
-                            style={{height:260}}
-                            hoverable
-                            cover={<img style={{height:160}} alt="example" src="http://image.gzknowledge.cn/knowledge/%E5%AE%8B%E5%BA%86%E9%BE%84.jpg" />}
-                          >
-                            <Meta title="宋庆龄" description="举世闻名的二十世纪的伟大女性。" />
-                          </Card>
-                        </Col>
-                        <Col span={6}>
-                          <Card
-                            style={{height:260}}
-                            hoverable
-                            cover={<img style={{height:160}} alt="example" src="http://image.gzknowledge.cn/knowledge/%E5%AE%8B%E5%98%89%E6%A0%91.jpg" />}
-                          >
-                            <Meta title="宋嘉树" description="宋庆龄的父亲" />
-                          </Card>
-                        </Col>
+                        {this.getImageList()}
+                        {/*<Col span={6}>*/}
+                        {/*  <Card*/}
+                        {/*    style={{height:260}}*/}
+                        {/*    hoverable*/}
+                        {/*    cover={<img style={{height:160}} alt="example" src="http://image.gzknowledge.cn/knowledge/%E5%AD%99%E4%B8%AD%E5%B1%B1.jpg" />}*/}
+                        {/*  >*/}
+                        {/*    <Meta title="孙中山" description="中国民主革命的伟大先驱" />*/}
+                        {/*  </Card>*/}
+                        {/*</Col>*/}
+                        {/*<Col span={6}>*/}
+                        {/*  <Card*/}
+                        {/*    style={{height:260}}*/}
+                        {/*    hoverable*/}
+                        {/*    cover={<img style={{height:160}} alt="example" src="http://image.gzknowledge.cn/knowledge/%E5%AE%8B%E5%BA%86%E9%BE%84.jpg" />}*/}
+                        {/*  >*/}
+                        {/*    <Meta title="宋庆龄" description="举世闻名的二十世纪的伟大女性。" />*/}
+                        {/*  </Card>*/}
+                        {/*</Col>*/}
+                        {/*<Col span={6}>*/}
+                        {/*  <Card*/}
+                        {/*    style={{height:260}}*/}
+                        {/*    hoverable*/}
+                        {/*    cover={<img style={{height:160}} alt="example" src="http://image.gzknowledge.cn/knowledge/%E5%AE%8B%E5%98%89%E6%A0%91.jpg" />}*/}
+                        {/*  >*/}
+                        {/*    <Meta title="宋嘉树" description="宋庆龄的父亲" />*/}
+                        {/*  </Card>*/}
+                        {/*</Col>*/}
                       </Row>
                     </Card>
                   </Card>

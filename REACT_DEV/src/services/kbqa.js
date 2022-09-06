@@ -2,7 +2,7 @@ import request from '@/utils/request';
 
 export async function getQuestion(payload) {
   console.log(payload)
-  let url= '/api/kbqa/getQuestion';
+  let url= '/api2/KG_QA/QA_system';
   const data = {
     body: payload,
     method: "POST"
