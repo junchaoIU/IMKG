@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import styles from "@/pages/KBQA/index.less";
 import MainSearch from "@/components/MainSearch";
-import {CommentOutlined, FireOutlined, FireTwoTone, MessageTwoTone} from "@ant-design/icons";
+import {CommentOutlined, FireOutlined, FireTwoTone, MessageTwoTone, SearchOutlined} from "@ant-design/icons";
 import {Button, Input, Tag} from "antd";
 import Search from "@/pages/KBQA/components/Search";
 
@@ -50,7 +50,7 @@ class kbqa extends Component {
               allowClear
               onChange={this.onChange}
             />
-            <Button type="primary" className={styles.button} size={'large'} onClick={this.search}>
+            <Button icon={<SearchOutlined />} type="primary" className={styles.button} size={'large'} onClick={this.search}>
               知识问答
             </Button>
             <br/>

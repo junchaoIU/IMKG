@@ -13,8 +13,43 @@ public class EchartsLink {
   private String label;
   private String symbol;
 
+  private String value;
+
+	@Override
+	public String toString() {
+		return "EchartsLink{" +
+				"source='" + source + '\'' +
+				", target='" + target + '\'' +
+				", category='" + category + '\'' +
+				", label='" + label + '\'' +
+				", symbol='" + symbol + '\'' +
+				", value='" + value + '\'' +
+				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		EchartsLink that = (EchartsLink) o;
+		return Objects.equals(source, that.source) && Objects.equals(target, that.target) && Objects.equals(category, that.category) && Objects.equals(label, that.label) && Objects.equals(symbol, that.symbol) && Objects.equals(value, that.value);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(source, target, category, label, symbol, value);
+	}
+
 	public String getSource() {
 		return source;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
 	}
 
 	public void setSource(String source) {
@@ -53,31 +88,5 @@ public class EchartsLink {
 		this.symbol = symbol;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof EchartsLink)) return false;
-		EchartsLink that = (EchartsLink) o;
-		return Objects.equals(source, that.source) &&
-				Objects.equals(target, that.target) &&
-				Objects.equals(category, that.category) &&
-				Objects.equals(label, that.label) &&
-				Objects.equals(symbol, that.symbol);
-	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(source, target, category, label, symbol);
-	}
-
-	@Override
-	public String toString() {
-		return "EchartsLink{" +
-				"source='" + source + '\'' +
-				", target='" + target + '\'' +
-				", category='" + category + '\'' +
-				", label='" + label + '\'' +
-				", symbol='" + symbol + '\'' +
-				'}';
-	}
 }

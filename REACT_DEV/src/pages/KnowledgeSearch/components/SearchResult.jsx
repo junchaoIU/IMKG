@@ -113,6 +113,7 @@ class SearchResult extends PureComponent {
 
   getTable = () => {
     const tableList = []
+    console.log(this.state.chartsData)
     this.state.chartsData.map((item) => {
       let description = ""
       let kaishu = ""
@@ -166,7 +167,7 @@ class SearchResult extends PureComponent {
 
   render() {
     const { loading } = this.props;
-    const { chartsData, val, searchValue, propSearch, detailData } = this.state;
+    const { chartsData, val, searchValue } = this.state;
     const loadings = loading === undefined ? false : loading;
     return (
       <div>

@@ -79,7 +79,6 @@ class search extends PureComponent {
   };
 
   onInformation = (childEvent) => {
-    console.log(childEvent)
     const { loading } = this.props;
     const loadings = loading === undefined ? false : loading;
     return (
@@ -111,7 +110,6 @@ class search extends PureComponent {
       allEvent,
       back: { childEvent, people },
     } = this.props;
-    console.log(people)
     return (
       <div className={styles.search}>
         <Input
@@ -123,12 +121,13 @@ class search extends PureComponent {
           onChange={this.onChange}
         />
         <Button
+          icon={<SearchOutlined />}
           type="primary"
           className={styles.button}
           size={'large'}
           onClick={() => this.handleSearch(this.state.searchValue)}
         >
-          开始检索
+          时空演化
         </Button>
         {state === 'event' ? (
           <Row>

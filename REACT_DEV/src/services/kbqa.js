@@ -2,13 +2,13 @@ import request from '@/utils/request';
 
 export async function getQuestion(payload) {
   console.log(payload)
-  let url= '/api2/KG_QA/QA_system';
+  let url= '/api/postQASystem';
   const data = {
     body: payload,
     method: "POST"
   };
   if(payload != null) {
-    url += `?question=${payload}`;
+    url += `?que=${payload}`;
     return request(url,data);
   }
 }

@@ -217,7 +217,6 @@ class searchResult extends PureComponent {
   };
 
   render() {
-    console.log(this.state.information)
     const { mode, information, relation, page, value1, value2 } = this.state;
     const { loading1, loading2, loading3, loading4 } = this.props;
     const loadings2 = loading2 === undefined ? false : loading2;

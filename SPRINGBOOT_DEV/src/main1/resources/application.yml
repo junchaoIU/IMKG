@@ -1,0 +1,35 @@
+#???
+server:
+  port: 8010
+
+spring:
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 10MB
+      max-request-size: 100MB
+  #???
+  datasource:
+    url: jdbc:mysql://cdb-2m6kkrcx.gz.tencentcdb.com:10165/canton?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: 972113786@qq.com
+    driver-class-name: com.mysql.jdbc.Driver
+
+#mybatis??
+mybatis:
+  typeAliasesPackage: com.openData.dao.entity
+  mapperLocations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+#Swagger2
+swagger:
+  title: openDataApi
+  base-package: com.openData
+  base-path: /**

@@ -105,28 +105,37 @@ public class InscriptionsKnowledgeController {
             Set<EchartsLink> links = new HashSet<>();
             EchartsData data = new EchartsData();
             EchartsNode node1 = new EchartsNode();
-            node1.setId(freetext);
+            node1.setName(freetext);
             node1.setLabel(freetext);
-            if (freetext.contains("朝")){
+            List<String> list = Arrays.asList("汉","唐","宋","元","明","清") ;
+            if (list.contains(freetext)){
                 node1.setCategory("朝代");
+                node1.setId(freetext+"朝代");
+            }else if (freetext.contains("朝")){
+                node1.setCategory("朝代");
+                node1.setId(freetext+"朝代");
             }else if (freetext.contains("拓本")){
                 node1.setCategory("拓本");
+                node1.setId(freetext+"拓本");
             }else if (freetext.contains("书")){
                 node1.setCategory("书体");
+                node1.setId(freetext+"书体");
             }else{
                 node1.setCategory("地点");
+                node1.setId(freetext+"地点");
             }
             nodes.add(node1);
             for(int i = 0; i < listValue.size(); i++){
                 EchartsNode node = new EchartsNode();
                 EchartsLink link = new EchartsLink();
-                node.setId((String) ((JSONObject)listValue.get(i)).get("value"));
+                node.setName((String) ((JSONObject)listValue.get(i)).get("value"));
                 node.setLabel((String) ((JSONObject)listValue.get(i)).get("key"));
                 node.setCategory((String) ((JSONObject)listValue.get(i)).get("key"));
-                link.setSource(freetext);
-                link.setTarget((String) ((JSONObject)listValue.get(i)).get("value"));
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(node1.getId());
+                link.setTarget(node.getId());
                 link.setCategory((String) ((JSONObject)listValue.get(i)).get("key"));
-                link.setLabel((String) ((JSONObject)listValue.get(i)).get("key"));
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol((String) ((JSONObject)listValue.get(i)).get("value") + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -134,6 +143,7 @@ public class InscriptionsKnowledgeController {
             data.setNodes(nodes);
             data.setLinks(links);
             datas.add(data);
+            System.out.println(data);
 
             return datas;
         }else if(Arrays.asList(celebritiesList).contains(freetext)){

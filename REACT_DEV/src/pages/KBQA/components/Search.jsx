@@ -3,7 +3,7 @@ import {Input, Button, Card, Row, Col, Spin} from 'antd';
 import styles from '../index.less';
 import {connect} from "dva";
 import Empty from "@/components/Empty";
-import {CodeTwoTone, SecurityScanTwoTone, SoundTwoTone, TagsTwoTone} from "@ant-design/icons";
+import {CodeTwoTone, SearchOutlined, SecurityScanTwoTone, SoundTwoTone, TagsTwoTone} from "@ant-design/icons";
 import Charts from "@/pages/KnowledgeSearch/components/Charts";
 const { Meta } = Card;
 
@@ -14,8 +14,8 @@ const { Meta } = Card;
 
 class search extends PureComponent {
   state = {
-    question: '',
-    answer:[[],[]],
+    question: "",
+    answer:[[], ""],
     chartsData:{"nodes":[{"id":"宋庆龄","label":"宋庆龄","category":"人物"},{"id":"宋嘉树","label":"宋嘉树","category":"人物"},{"id":"孙中山","label":"孙中山","category":"人物"}],"links":[{"source":"宋庆龄","target":"宋嘉树","category":"父亲","label":"父亲","symbol":"http://localhost:2222/宋嘉树.jpg"},{"source":"孙中山","target":"宋庆龄","category":"妻子","label":"妻子","symbol":"http://localhost:2222/孙中山.jpg"},{"source":"宋庆龄","target":"孙中山","category":"丈夫","label":"丈夫","symbol":"http://localhost:2222/孙中山.jpg"},{"source":"孙中山","target":"宋嘉树","category":"丈人","label":"丈人","symbol":"http://localhost:2222/宋子安.jpg"}]},
     val: false,
   };
@@ -32,7 +32,6 @@ class search extends PureComponent {
 
   search = (v) => {
     if (v.length !== undefined) {
-      console.log(v)
       this.setState({
         searchValue: v,
       });
@@ -46,21 +45,17 @@ class search extends PureComponent {
   };
 
   handleQuestion(question) {
-    console.log(question)
     const {dispatch} = this.props;
+
     dispatch({
       type: 'answer/getQuestion',
       payload: question,
       callback: (response) => {
-        console.log(response.return_code)
-        console.log(response.result)
-        if (response.return_code == 200) {
-          this.setState({
-            answer: response.result,
-            val: true,
-          });
-          console.log(response)
-        }
+        let answer = response.replaceAll("[","").replaceAll("]","").replaceAll("'","").replaceAll(" ","").split(",")
+        this.setState({
+          answer: answer,
+          val: true,
+        });
       },
     });
   }
@@ -74,14 +69,13 @@ class search extends PureComponent {
   };
 
   handleSearch = (value) => {
-    console.log(value)
-    this.setState({answer:""})
+    this.setState({answer:[[], ""]})
     this.handleQuestion(value);
   };
 
   getImageList = () => {
     let list = []
-    this.state.answer[0].map((item) => {
+    this.state.answer.map((item) => {
       let imageUrl = "http://image.gzknowledge.cn/beitie/" + item +".jpg"
       list.push(
         <Col span={6}>
@@ -95,12 +89,11 @@ class search extends PureComponent {
         </Col>
       )
     })
+    list.pop()
     return list
   }
 
   render() {
-    console.log(this.state.question)
-    console.log(this.state.answer)
     const { loading } = this.props;
     const { chartsData, val, question, answer } = this.state;
     const loadings = loading === undefined ? false : loading;
@@ -116,14 +109,15 @@ class search extends PureComponent {
           onChange={this.onChange}
         />
         <Button
+          icon={<SearchOutlined />}
           type="primary"
           className={styles.button}
           size={'large'}
           onClick={() => this.handleSearch(this.state.question)}
         >
-          开始检索
+          知识问答
         </Button>
-        <Spin spinning={loadings}>
+        <Spin spinning={loadings} tip={"问题解析时间较久，可能需要7-10s的时间，请稍等"}>
           {val && this.state.question.length !== 0 ? (
             <Row className={styles.content}>
               {/*<Col span={12}>*/}
@@ -138,7 +132,7 @@ class search extends PureComponent {
                   >
                     <CodeTwoTone />{" 问题："+ this.state.question}
                     <br/><br/>
-                    <SecurityScanTwoTone />{" 回答：" + answer[1]}
+                    <SecurityScanTwoTone />{" 回答：" + answer[answer.length-1]}
                     <br/>
                     {/*<SoundTwoTone />{" 解析：" + answer}*/}
                     {/*<br/>*/}

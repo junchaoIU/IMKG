@@ -5,7 +5,7 @@ import { connect } from 'dva';
 import Charts from './Charts';
 import Empty from '../../../components/Empty/index';
 import Information from './Information';
-import SearchInput from '@/pages/KnowledgeSearch/components/SearchInput';
+import SearchInput from "@/pages/Welcome/components/SearchInput";
 import {UserOutlined} from "@ant-design/icons";
 const { Meta } = Card;
 
@@ -69,8 +69,9 @@ class SearchResult extends PureComponent {
       type: 'knowledge/getKeyword',
       payload: data,
       callback: (response) => {
-        if (response !== null || response.length === 0) {
-         response[0].nodes.splice(response[0].nodes.findIndex(item => item.target === "null"), 1)
+        if (response[0]!== null || response[0].length === 0) {
+          console.log(response)
+         // response[0].nodes.splice(response[0].nodes.findIndex(item => item.id === "null"), 1)
           this.setState({
             chartsData: response[0],
             detailData: response[0],
@@ -78,6 +79,7 @@ class SearchResult extends PureComponent {
             val: true,
           });
         }
+        console.log(response[0])
         if (response.links === null || response.length === 0) {
           message.warning('找不到您检索的知识点！');
         }
@@ -89,7 +91,8 @@ class SearchResult extends PureComponent {
     const { loading } = this.props;
     const { chartsData, val, searchValue, propSearch, detailData } = this.state;
     const loadings = loading === undefined ? false : loading;
-    console.log(searchValue)
+    console.log(chartsData)
+    console.log(detailData)
     return (
       <div>
         <div className={styles.search}>
@@ -100,7 +103,7 @@ class SearchResult extends PureComponent {
             searchValue={searchValue}
           />
           <Spin spinning={loadings}>
-            {val && chartsData.length !== 0 && detailData.length !== 0 ? (
+            {val && chartsData && detailData && chartsData.length !== 0 && detailData.length !== 0 ? (
               <Row className={styles.content} gutter={[32, 24]}>
                 <Col span={14}>
                   <Charts chartsData={chartsData} propSearch={propSearch} clickWord={this.search} />

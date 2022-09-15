@@ -23,13 +23,13 @@ export async function getProcessNum(payload) {
 }
 
 export async function txtExtraction(payload) {
-  let url = `/api2/KG_IE/KG_Extraction`;
+  let url = `/api/postKnowledgeExtracted`;
   const data = {
     body: payload,
     method: 'POST',
   };
   if (payload != null) {
-    // url += `?content=${payload}`;
+    url += `?bookContent=${payload}`;
     return request(url, data);
   }
 }

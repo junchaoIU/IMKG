@@ -9,6 +9,7 @@ import java.util.Objects;
  **/
 public class EchartsNode {
   private String id;
+  private String name;
   private String label;
   private String category;
 
@@ -18,6 +19,14 @@ public class EchartsNode {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getLabel() {
@@ -36,25 +45,20 @@ public class EchartsNode {
 		this.category = category;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof EchartsNode)) return false;
-		EchartsNode that = (EchartsNode) o;
-		return Objects.equals(id, that.id) &&
-				Objects.equals(label, that.label) &&
-				Objects.equals(category, that.category);
-	}
+	public EchartsNode(){}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, label, category);
+	public EchartsNode(String id, String name, String label, String category) {
+		this.id = id;
+		this.name = name;
+		this.label = label;
+		this.category = category;
 	}
 
 	@Override
 	public String toString() {
 		return "EchartsNode{" +
 				"id='" + id + '\'' +
+				", name='" + name + '\'' +
 				", label='" + label + '\'' +
 				", category='" + category + '\'' +
 				'}';

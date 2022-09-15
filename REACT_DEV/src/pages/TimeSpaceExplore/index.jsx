@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
-import styles from "@/pages/OpenAPI/index.less";
+import styles from "@/pages/OpenApi/index.less";
 import MainSearch from "@/components/MainSearch";
 import {ApiTwoTone, CommentOutlined, TagsOutlined, TwitterOutlined} from "@ant-design/icons";
 import { Map, Markers, InfoWindow } from 'react-amap';
@@ -22,10 +22,6 @@ class timeSpaceExplore extends Component {
   );
 
   markersEvents = {
-    created:(allMarkers) => {
-      console.log('All Markers Instance Are Below');
-      console.log(allMarkers);
-    },
     click: (e, marker) => {
       const extData = marker.getExtData();
       const index = extData.position["id"];
@@ -35,7 +31,6 @@ class timeSpaceExplore extends Component {
         };
       const info = extData.position;
       this.setState({index,IP,info})
-      console.log(1);
 
       this.showWindow(0)
       this.showWindow(1)
@@ -73,8 +68,6 @@ class timeSpaceExplore extends Component {
   }
 
   render() {
-    console.log(this.state.markers)
-
     return (
       <div>
         <div style={{width: '100vw', height: '93vh'}}>

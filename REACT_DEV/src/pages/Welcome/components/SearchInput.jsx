@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import catalogData from '@/pages/Welcome/components/catalog';
 import { Cascader, Button } from 'antd';
+import {SearchOutlined} from "@ant-design/icons";
 
 class SearchInput extends PureComponent {
   filter = (inputValue, path) => {
@@ -25,14 +26,14 @@ class SearchInput extends PureComponent {
           className={className}
           options={catalogData}
           onChange={onChange}
-          placeholder="试一试输入孙中山检索一下~"
+          placeholder="试一试输入感兴趣的碑帖知识检索一下~"
           displayRender={this.displayRender}
           size="large"
           showSearch={{ filter: this.filter, matchInputWidth: false }}
           value={searchValue}
         />
-        <Button type="primary" size={'large'} onClick={search}>
-          检索一下
+        <Button icon={<SearchOutlined />} type="primary" size={'large'} onClick={search}>
+          知识检索
         </Button>
       </div>
     );

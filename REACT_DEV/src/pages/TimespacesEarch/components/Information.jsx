@@ -44,7 +44,6 @@ class information extends PureComponent {
   // 实体信息
   onInformation = () => {
     const { detail, page, handleChangePage } = this.props;
-    console.log(detail)
     return (
       <Timeline className={styles.time} mode={'left'}>
         {detail.slice(page.minValue, page.maxValue).map((item, index) => {
@@ -169,7 +168,6 @@ class information extends PureComponent {
   };
 
   render() {
-    console.log(this.props.detail)
     const { detail, relation } = this.props;
     const { loading, substance, cardVisible } = this.state;
     return (

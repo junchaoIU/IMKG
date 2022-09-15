@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import * as echarts from 'echarts';
-import categories from '../../Common/chartsCategory';
+import React, { Component } from "react";
+import * as echarts from "echarts";
+import categories from "../../Common/chartsCategory";
 
 class charts extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class charts extends Component {
   }
 
   componentDidMount() {
-    const myChart = echarts.init(document.getElementById('main'));
+    const myChart = echarts.init(document.getElementById("main"));
     this.handleOptions(myChart);
   }
 
@@ -36,39 +36,33 @@ class charts extends Component {
       this.state.data.nodes.length > 0 &&
       this.state.data.links !== null
     ) {
-      this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === "数量"), 1)
-      this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.id === ''), 1)
-      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === "背景故事"), 1)
-      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.id === 'null'), 1)
-      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === '额题'), 1)
-      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.label === "数量"), 1)
-      // this.state.data.nodes.splice(this.state.data.nodes.findIndex(item => item.category === "首题"), 1)
-      // this.state.data.links.splice(this.state.data.links.findIndex(item => item.category === "数量"), 1)
-      this.state.data.links.splice(this.state.data.links.findIndex(item => item.category === "首题"), 1)
-      this.state.data.nodes.splice(this.state.data.links.findIndex(item => item.category === '额题'), 1)
-      // this.state.data.nodes.splice(this.state.data.links.findIndex(item => item.target === 'null'), 1)
+      console.log(this.state.data.nodes)
       this.state.data.nodes.forEach((node) => {
-        if(node.category === "背景故事" || node.category === "流传经历" || node.category === "题记" || node.label === "背景故事" || node.category === "额题" || node.category === "首题" || node.category === "null" || node.category === "名家小传"){
+        console.log(node)
+        if(node.category === "背景故事" || node.category === "数量" || node.category === "流传经历" || node.category === "题记" || node.label === "背景故事" || node.category === "额题" || node.category === "首题" || node.category === "null" || node.category === "名家小传"){
 
-        }else if(node.id === "null"){
+        }else if(node.id === "null" || node.id === "l"){
 
         }
         else{
+          console.log(node)
           this.state.nodes.push(node)
           console.log(this.state.nodes)
         }
       })
       this.state.data.links.forEach((link) => {
-        if(link.category === "背景故事" || link.target === "null"){
+        if(link.category === "背景故事" || link.target === "null" || link.category === "首题" || link.category === "额题"){
 
         }else{
           this.state.links.push(link)
         }
       })
+      let sta = this.state.data.nodes
+      console.log(sta)
       this.state.nodes.forEach((node) => {
-        if(['碑帖作品', '名家', '书体', '朝代', '版本', '地点'].includes(node.category)){
-          node.category = node.category
-        }else if(['楷书',"撰文","撰书"].includes(node.category)){
+        if(["碑帖作品", "名家", "书体", "朝代", "版本", "地点"].includes(node.category)){
+
+        }else if(["楷书","撰文","撰书"].includes(node.category)){
           node.category = "名家"
         }else{
           node.category = "其他"
@@ -78,8 +72,7 @@ class charts extends Component {
         node.label = {
           show: true,
         };
-        node.name = node.id;
-        node.value = node.id;
+        node.value = node.name;
         node.itemStyle = {
           opacity: 0.8,
         };
@@ -96,13 +89,13 @@ class charts extends Component {
           },
         };
         link.lineStyle = {
-          // color: 'source',
+          // color: "source",
           normal: {
             // curveness: Math.random()*0.3,
             opacity: 0.5,
           },
         };
-        link.symbol = ['circle', 'arrow'];
+        link.symbol = ["circle", "arrow"];
         // link.symbolSize = 10;
       });
       myChart.setOption({
@@ -110,9 +103,9 @@ class charts extends Component {
         // 图的标题
         // title: {
         //   text: "碑帖记忆",
-        //   subtext: '全局知识图谱',
-        //   top: 'center',
-        //   right: 'left',
+        //   subtext: "全局知识图谱",
+        //   top: "center",
+        //   right: "left",
         // },
         // 工具箱
         toolbox: {
@@ -129,13 +122,13 @@ class charts extends Component {
         },
         legend: {
           show: true,
-          data: ['碑帖作品', '名家', '书体', '朝代', '版本', '地点', '其他'],
+          data: ["碑帖作品", "名家", "书体", "朝代", "版本", "地点", "其他"],
         },
         series: [
           {
-            name: '实体',
-            type: 'graph', // 类型:关系图
-            layout: 'force', // 图的布局，类型为力导图
+            name: "实体",
+            type: "graph", // 类型:关系图
+            layout: "force", // 图的布局，类型为力导图
             force: {
               // 斥力因子
               repulsion: 500,
@@ -146,13 +139,13 @@ class charts extends Component {
               friction: 0.6,
             },
             label: {
-              position: 'bottom',
-              color :'black',
-              formatter: '{c}',
+              position: "bottom",
+              color :"black",
+              formatter: "{c}",
               fontSize: 13,
-              fontFamily: 'Microsoft YaHei',
-              fontStyle: 'oblique',
-              fontWeight:'bold'
+              fontFamily: "Microsoft YaHei",
+              fontStyle: "oblique",
+              fontWeight:"bold"
             },
             emphasis:{
               scale:1.3,
@@ -165,7 +158,7 @@ class charts extends Component {
             focusNodeAdjacency: true,
             edgeSymbolSize:8,
             lineStyle:{
-              color:'target',
+              color:"target",
             },
             zoom:1.7,
             // autoCurveness:true,
@@ -177,7 +170,7 @@ class charts extends Component {
           },
         ],
       });
-      myChart.on('click', (params) => {
+      myChart.on("click", (params) => {
         const word = [];
         word.push(params.name);
         this.props.clickWord(word);
@@ -190,7 +183,7 @@ class charts extends Component {
     console.log(this.state.links)
     return (
       <div>
-        <div id="main" style={{ width: '100%', height: '600px'}}></div>
+        <div id="main" style={{ width: "100%", height: "600px"}}></div>
       </div>
     );
   }

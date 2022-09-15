@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import catalogData from '@/pages/KnowledgeSearch/components/catalog';
 import { Input, Button } from 'antd';
+import {SearchOutlined} from "@ant-design/icons";
 
 class SearchInput extends PureComponent {
   filter = (inputValue, path) => {
@@ -30,8 +31,8 @@ class SearchInput extends PureComponent {
           showSearch={{ filter: this.filter, matchInputWidth: false }}
           value={searchValue}
         />
-        <Button type="primary" size={'large'} onClick={search}>
-          检索一下
+        <Button icon={<SearchOutlined />} type="primary" size={'large'} onClick={search}>
+          单字检索
         </Button>
       </div>
     );

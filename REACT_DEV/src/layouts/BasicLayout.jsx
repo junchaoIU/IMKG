@@ -41,25 +41,6 @@ const defaultFooterDom = (
   <DefaultFooter
     style={{ background: '#60c3ffa6', fontWeight:"bold", float:"left"}}
     copyright={`2019-${new Date().getFullYear()} CantonKG@BNUZ All Rights Reserved`}
-    links={[
-      {
-        key: 'github',
-        title: <GithubOutlined />,
-        href: 'https://github.com/CantonKG',
-        blankTarget: true,
-      },
-      {
-        key: 'team',
-        title: "Canton Knowledge Graph Development Team @Beijing Normal University,Zhuhai",
-        blankTarget: true,
-      },
-      {
-        key: 'email',
-        title: "Contact us: wujunchaoIU@outlook.com",
-        href: 'wujunchaoIU@outlook.com',
-        blankTarget: true,
-      },
-    ]}
   />
 );
 
@@ -105,7 +86,7 @@ const BasicLayout = (props) => {
     <ProLayout
       logo={<img src='https://image.gzknowledge.cn/logo_cn.png' style={{ height: '50px' }} />}
       formatMessage={formatMessage}
-      contentStyle={{margin: '0' }}
+      contentStyle={{margin: '0',backgroundColor:"white" }}
       {...props}
       {...settings}
       disableContentMargin={true}

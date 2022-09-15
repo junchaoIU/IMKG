@@ -1,13 +1,34 @@
 import styles from '@/pages/KnowledgeSearch/index.less';
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
-import {Tabs, message, Checkbox, Divider, Button, Drawer, Card, Row, Col, Image, Descriptions, Tag} from 'antd';
-import {DeploymentUnitOutlined, FileSearchOutlined} from '@ant-design/icons';
+import {
+  Tabs,
+  message,
+  Checkbox,
+  Divider,
+  Button,
+  Drawer,
+  Card,
+  Row,
+  Col,
+  Image,
+  Descriptions,
+  Tag,
+  Collapse, Timeline, Pagination, Spin
+} from 'antd';
+import {
+  CaretRightOutlined, ClockCircleTwoTone, CloudTwoTone,
+  DeploymentUnitOutlined, EnvironmentTwoTone,
+  FileSearchOutlined,
+  PushpinTwoTone,
+  TagsOutlined
+} from '@ant-design/icons';
 import Information from '@/pages/Common/Information';
 import BookCard from '@/components/BookCard';
 import LineDrawer from '@/pages/Common/LineDrawer';
 import {forEach} from "lodash";
 const { Meta } = Card;
+const { Panel } = Collapse;
 
 @connect(({ information, loading }) => ({
   information,
@@ -30,13 +51,10 @@ class information extends PureComponent {
     loading: true,
     loading2: true,
     changeCard:false,
-    txtKGDic:{"return_code": 500, "return_info": "暂无请求",
-      "result":{"allLine": [],
-        "entitiesDic": {"ORGANIZATION": [], "PERSON": [], "LOCATION": [], "DATE": [], "EVENT": [], "名家": [], "碑帖": [], "拓本": []},
-        "personLineDic": {},
-        "eventLineDic": {},
-        "organizationLineDic": {}
-      }},
+    txtKGDic:{},
+    collapseState:false,
+    peopleBg:"",
+
   }
 
   componentDidMount() {
@@ -57,14 +75,16 @@ class information extends PureComponent {
     chartsData.links.length>0
       ? chartsData.links.map((item) => {
         if (item.category === '背景故事') {
-          this.setState({bg:item.target})
+          this.setState({bg:item.value})
         } else if (item.category === '流传经历') {
-          this.setState({process:item.target})
-        } else if (item.category === '题记') {
-          this.setState({note:item.target})
+          this.setState({process:item.value})
+        } else if (item.category === '名家小传') {
+          this.setState({peopleBg: item.value})
+        }else if (item.category === '题记') {
+          this.setState({note:item.value})
         } else if (item.target === 'null'){}else{
           cardData.push(<Col span={5}>{item.category}:</Col>)
-          cardData.push(<Col span={19}>{item.target}</Col>)
+          cardData.push(<Col span={19}>{item.value}</Col>)
         }
       })
       : '';
@@ -79,17 +99,16 @@ class information extends PureComponent {
     });
     console.log(this.state.changeCard)
     const {dispatch} = this.props;
-    // this.setState({txtKGDic:{"return_code": 500, "return_info": "正在知识抽取中，请稍等...."}})
+    this.setState({txtKGDic:{"return_code": 500, "return_info": "正在知识抽取中，请稍等...."}})
     dispatch({
       type: 'information/getTxtExtraction',
       payload: contentValue,
       callback: (response) => {
         console.log( response)
-        if (response["return_code"] === 200){
-          this.setState({
-            txtKGDic: response,
-          });
-        }
+        this.setState({
+          txtKGDic: response,
+          collapseState:true
+        });
       },
     });
   }
@@ -98,21 +117,120 @@ class information extends PureComponent {
     this.setState({changeCard:false})
   }
 
-  // getNewTxt = () =>{
-  //   console.log(this.state.txtKGDic)
-  //
-  //   if (this.state.changeCard){
-  //     const data = this.state.txtKGDic["result"]
-  //     const list  = []
-  //     if(data["entitiesDic"]["PERSON"].size>0){
-  //       data["entitiesDic"]["PERSON"].forEach((item) => {
-  //         list.push(<Tag color="magenta">item</Tag>)
-  //       })
-  //     }
-  //     console.log(list)
-  //     return list
-  //   }
-  // }
+  getNewTxt = () =>{
+    console.log(this.state.txtKGDic)
+
+    if (this.state.txtKGDic){
+      const data = this.state.txtKGDic
+      console.log(data)
+      const list  = []
+      const PERSON = []
+      console.log(data["entitiesDic"]["PERSON"].length>0)
+      if(data["entitiesDic"]["PERSON"].length>0){
+        data["entitiesDic"]["PERSON"].map((item) => {
+          PERSON.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const ORGANIZATION = []
+      if(data["entitiesDic"]["ORGANIZATION"].length>0){
+        data["entitiesDic"]["ORGANIZATION"].map((item) => {
+          ORGANIZATION.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const DATE = []
+      if(data["entitiesDic"]["DATE"].length>0){
+        data["entitiesDic"]["DATE"].map((item) => {
+          DATE.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const EVENT = []
+      if(data["entitiesDic"]["EVENT"].length>0){
+        data["entitiesDic"]["EVENT"].map((item) => {
+          EVENT.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const mingjia = []
+      if(data["entitiesDic"]["名家"].length>0){
+        data["entitiesDic"]["名家"].map((item) => {
+          mingjia.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const beitie = []
+      if(data["entitiesDic"]["碑帖"].length>0){
+        data["entitiesDic"]["碑帖"].map((item) => {
+          beitie.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const tuoben = []
+      if(data["entitiesDic"]["拓本"].length>0){
+        data["entitiesDic"]["拓本"].map((item) => {
+          tuoben.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const ziti = []
+      if(data["entitiesDic"]["字体"].length>0){
+        data["entitiesDic"]["字体"].map((item) => {
+          ziti.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const chaodai = []
+      if(data["entitiesDic"]["朝代"].length>0){
+        data["entitiesDic"]["朝代"].map((item) => {
+          chaodai.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      const jiguan = []
+      if(data["entitiesDic"]["籍贯"].length>0){
+        data["entitiesDic"]["籍贯"].map((item) => {
+          jiguan.push(<Tag color="blue">{item}</Tag>)
+        })
+      }
+      list.push(mingjia,beitie,tuoben,ziti,chaodai,jiguan,ORGANIZATION,PERSON,EVENT,DATE)
+      console.log(list)
+      return list
+    }
+  }
+
+  onInformation = () => {
+    const detail = this.state.txtKGDic['allLine']
+    return (
+      <Timeline className={styles.time} mode={'left'}>
+        {detail.map((item, index) => {
+          return (
+            <Timeline.Item key={index} dot={<TagsOutlined style={{ fontSize: '20px' }} />}>
+              {/*<p>*/}
+              {/*  <PushpinTwoTone twoToneColor="#eb2f96" className={styles.icon} />*/}
+              {/*  {item[0]}*/}
+              {/*</p>*/}
+              <p>
+                <ClockCircleTwoTone twoToneColor="#52c41a" className={styles.icon} />
+                {item[0]}
+              </p>
+              <p>
+                <EnvironmentTwoTone twoToneColor="#adc6ff" className={styles.icon} />
+                {item[1]}
+              </p>
+              <p className={styles.detail} >
+                <CloudTwoTone twoToneColor="#87e8de" className={styles.icon} />
+                {item[2]}
+              </p>
+              {/*<Tooltip*/}
+              {/*  color={'#ff969f'}*/}
+              {/*  placement="topLeft"*/}
+              {/*  title="点击事件语料关联"*/}
+              {/*  arrowPointAtCenter*/}
+              {/*>*/}
+              {/*  <p className={styles.detail} onClick={() => this.onBack(item[3])}>*/}
+              {/*    <CloudTwoTone twoToneColor="#87e8de" className={styles.icon} />*/}
+              {/*    {item[3]}*/}
+              {/*  </p>*/}
+              {/*</Tooltip>*/}
+            </Timeline.Item>
+          );
+        })}
+      </Timeline>
+    );
+  };
 
   render() {
     return (
@@ -154,13 +272,62 @@ class information extends PureComponent {
                   {this.state.changeCard?<Button icon={<DeploymentUnitOutlined />}type="primary" size={"large"} style={{width:"80%"}}
                                                  onClick={() => this.cardChange()}>返回</Button>:
                     <Button icon={<DeploymentUnitOutlined />}type="primary" size={"large"} style={{width:"80%"}}
-                            onClick={() => this.handleTxtKGExtraction(this.state.bg)}>知识抽取</Button>}
+                            onClick={() => this.handleTxtKGExtraction(this.props.propSearch)}>知识抽取</Button>}
                 </div><br/>
                 {this.state.changeCard?
-                  <div>1</div>:
                   <div>
-                    {this.state.bg}
+                    <Spin tip="知识抽取需要时间，请稍等5-7s..." spinning={!this.state.collapseState}>
+                      {this.state.collapseState?
+                        <Collapse
+                          bordered={false}
+                          defaultActiveKey={['1']}
+                          expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+                          className="site-collapse-custom-collapse"
+                        >
+                          <Panel header="名家" key="1" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[0]}</p>
+                          </Panel>
+                          <Panel header="碑帖" key="2" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[1]}</p>
+                          </Panel>
+                          <Panel header="拓本" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[2]}</p>
+                          </Panel>
+                          <Panel header="字体" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[3]}</p>
+                          </Panel>
+                          <Panel header="朝代" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[4]}</p>
+                          </Panel>
+                          <Panel header="籍贯" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[5]}</p>
+                          </Panel>
+                          <Panel header="组织机构" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[6]}</p>
+                          </Panel>
+                          <Panel header="其他人物" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[7]}</p>
+                          </Panel>
+                          <Panel header="事件" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[8]}</p>
+                          </Panel>
+                          <Panel header="时间点" key="3" className="site-collapse-custom-panel">
+                            <p>{this.getNewTxt()[9]}</p>
+                          </Panel>
+                          <Panel header="时空线" key="3" className="site-collapse-custom-panel">
+                            <p>{this.onInformation()}</p>
+                          </Panel>
+                        </Collapse>:null}
+                    </Spin>
+                  </div>:
+                  <div dangerouslySetInnerHTML={
+                    {__html:this.state.bg}
+                  }>
                   </div>}</div>
+            </Tabs.TabPane>:null}
+          {this.state.peopleBg?
+            <Tabs.TabPane tab="名家小传" key="4" className={styles.book}>
+              <div style={{margin:8}}>{this.state.peopleBg}</div>
             </Tabs.TabPane>:null}
           {this.state.process?
             <Tabs.TabPane tab="流传经历" key="2" className={styles.book}>

@@ -43,13 +43,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             System.out.println(bfTitle);
             subject = String.valueOf(bfTitle.get(bfTitle.size() - 1).get("label"));
             for (Map<String, Object> title : bfTitle) {
-                node.setId((String) title.get("label"));
+                node.setName((String) title.get("label"));
                 node.setLabel((String) title.get("label"));
                 node.setCategory((String) title.get("variantType"));
-                link.setSource(subject);
-                link.setTarget((String) title.get("label"));
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory((String) title.get("variantType"));
-                link.setLabel((String) title.get("variantType"));
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol((String) title.get("label") + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -57,9 +58,10 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             System.out.println(links);
             //subject节点
             node = new EchartsNode();
-            node.setId(subject);
+            node.setName(subject);
             node.setLabel(subject);
             node.setCategory("碑帖作品");
+            node.setId(node.getName()+node.getCategory());
             nodes.add(node);
             //责任者 李百药撰文，欧阳询楷书
             String contributions = "";
@@ -73,13 +75,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 for (Map<String, Object> contributionMap : contributionsList) {
                     node = new EchartsNode();
                     link = new EchartsLink();
-                    node.setId((String) contributionMap.get("agentLabel"));
+                    node.setName((String) contributionMap.get("agentLabel"));
                     node.setLabel((String) contributionMap.get("agentLabel"));
                     node.setCategory((String) contributionMap.get("role"));
-                    link.setSource(subject);
-                    link.setTarget((String) contributionMap.get("agentLabel"));
+                    node.setId(node.getName()+node.getCategory());
+                    link.setSource(subject+"碑帖作品");
+                    link.setTarget(node.getId());
                     link.setCategory((String) contributionMap.get("role"));
-                    link.setLabel((String) contributionMap.get("role"));
+                    link.setLabel(node.getName());link.setValue(node.getName());
                     link.setSymbol((String) contributionMap.get("agentLabel") + ".jpg");
                     nodes.add(node);
                     links.add(link);
@@ -107,13 +110,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
 
                 String scriptForm = jo.getJSONObject("scriptForm").getString("label");
                 System.out.println(scriptForm);
-                node.setId(scriptForm);
+                node.setName(scriptForm);
                 node.setLabel(scriptForm);
                 node.setCategory("书体");
-                link.setSource(subject);
-                link.setTarget(scriptForm);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("书体");
-                link.setLabel("书体");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(scriptForm + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -127,13 +131,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             try {
                 String temporalValue = jo.getString("temporalValue");
                 System.out.println(temporalValue);
-                node.setId(temporalValue);
+                node.setName(temporalValue);
                 node.setLabel(temporalValue);
                 node.setCategory("时间");
-                link.setSource(subject);
-                link.setTarget(temporalValue);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("刻历年代");
-                link.setLabel("刻历年代");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(temporalValue + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -147,13 +152,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             try {
                 String binding = String.valueOf(instance.get(1).get("binding"));
                 System.out.println(binding);
-                node.setId(binding);
+                node.setName(binding);
                 node.setLabel(binding);
                 node.setCategory("数量");
-                link.setSource(subject);
-                link.setTarget(binding);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("数量");
-                link.setLabel("数量");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(binding + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -167,13 +173,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             try {
                 String dimensions = String.valueOf(instance.get(1).get("dimensions"));
                 System.out.println(dimensions);
-                node.setId(dimensions);
+                node.setName(dimensions);
                 node.setLabel(dimensions);
                 node.setCategory("尺寸");
-                link.setSource(subject);
-                link.setTarget(dimensions);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("尺寸");
-                link.setLabel("尺寸");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(dimensions + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -187,13 +194,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             try {
                 String edition = String.valueOf(instance.get(1).get("edition"));
                 System.out.println(edition);
-                node.setId(edition);
+                node.setName(edition);
                 node.setLabel(edition);
                 node.setCategory("版本");
-                link.setSource(subject);
-                link.setTarget(edition);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("版本");
-                link.setLabel("版本");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(edition + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -208,13 +216,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 Map organizationM = (Map) instance.get(1).get("item");
                 String organization = String.valueOf(organizationM.get("organization"));
                 System.out.println(organization);
-                node.setId(organization);
+                node.setName(organization);
                 node.setLabel(organization);
                 node.setCategory("地点");
-                link.setSource(subject);
-                link.setTarget(organization);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("馆藏地");
-                link.setLabel("馆藏地");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(organization + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -228,13 +237,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             try {
                 String noteOfSource = String.valueOf(instance.get(1).get("noteOfSource"));
                 System.out.println(noteOfSource);
-                node.setId(noteOfSource);
+                node.setName(noteOfSource);
                 node.setLabel(noteOfSource);
                 node.setCategory("来源数目");
-                link.setSource(subject);
-                link.setTarget(noteOfSource);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("来源数目");
-                link.setLabel("来源数目");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(noteOfSource + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -251,13 +261,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
                 Map notes = (Map) (organizationM.get("note"));
                 String note = String.valueOf(notes.get("label"));
                 System.out.println(note);
-                node.setId(note);
+                node.setName(note);
                 node.setLabel(note);
                 node.setCategory("流传经历");
-                link.setSource(subject);
-                link.setTarget(note);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("流传经历");
-                link.setLabel("流传经历");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(note + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -270,13 +281,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             try {
                 String prefaceAndPostscript = String.valueOf(instance.get(1).get("prefaceAndPostscript"));
                 System.out.println(prefaceAndPostscript);
-                node.setId(prefaceAndPostscript);
+                node.setName(prefaceAndPostscript);
                 node.setLabel(prefaceAndPostscript);
                 node.setCategory("题记");
-                link.setSource(subject);
-                link.setTarget(prefaceAndPostscript);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("题记");
-                link.setLabel("题记");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(prefaceAndPostscript + ".jpg");
                 nodes.add(node);
                 links.add(link);
@@ -290,13 +302,14 @@ public class InscriptionsKnowledgeServiceImpl implements InscriptionsKnowledgeSe
             try {
                 String annotation = jo.getJSONObject("hasAnnotation").getString("hasBody");
                 System.out.println(annotation);
-                node.setId(annotation);
+                node.setName(annotation);
                 node.setLabel(annotation);
                 node.setCategory("背景故事");
-                link.setSource(subject);
-                link.setTarget(annotation);
+                node.setId(node.getName()+node.getCategory());
+                link.setSource(subject+"碑帖作品");
+                link.setTarget(node.getId());
                 link.setCategory("背景故事");
-                link.setLabel("背景故事");
+                link.setLabel(node.getName());link.setValue(node.getName());
                 link.setSymbol(annotation + ".jpg");
                 nodes.add(node);
                 links.add(link);

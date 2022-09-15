@@ -138,13 +138,13 @@ export default [
                 component: './OpenApi',
                 // headerRender:false,
               },
-              {
-                path: '/about',
-                name: 'about',
-                icon: 'instagram',
-                component: './About',
-                // headerRender:false,
-              },
+              // {
+              //   path: '/about',
+              //   name: 'about',
+              //   icon: 'instagram',
+              //   component: './About',
+              //   // headerRender:false,
+              // },
               {
                 component: './404',
               },
