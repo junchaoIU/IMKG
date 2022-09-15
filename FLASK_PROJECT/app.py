@@ -2,6 +2,7 @@ from flask import Flask
 from flask_cors import *
 from controller.IE_controller import IEModule
 from controller.QA_controller import QAModule
+from gevent import pywsgi
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -15,4 +16,6 @@ def hello_world():
     return 'flask_test is running!!!'
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    # app.run(port=5000)
+    server = pywsgi.WSGIServer(('0.0.0.0', 5000), app)
+    server.serve_forever()

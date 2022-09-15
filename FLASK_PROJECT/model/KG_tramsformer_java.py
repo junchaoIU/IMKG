@@ -2,6 +2,8 @@ import json
 import os
 import re
 import copy
+import sys
+
 from tqdm import tqdm
 import hanlp
 from pyhanlp import HanLP as pyHanlp
@@ -40,7 +42,7 @@ def textProcess(txt):
     data = txt.strip().replace(' ', '').replace('\r', '').replace(".", "。").replace("<br/>", "").replace("\n","")
     # 按换行来做切分
     dataList = re.split('\n', data)
-    print(dataList)
+    #print(dataList)
     return dataList
 
 
@@ -141,7 +143,7 @@ def nerProcess(txt):
 def getTimeLine(entitiesDic, txt):
     # 时空线抽取
     lineList = []
-    print(entitiesDic.keys())
+    #print(entitiesDic.keys())
     dateList = entitiesDic["DATE"]
     locationList = entitiesDic["LOCATION"]
     textList = txt.split("。")
@@ -204,9 +206,9 @@ def fileTransformer(book_url):
     eventLineDic = {}
     organizationLineDic = {}
     allLine = []
-    print("正在文本清洗....请稍等")
+    #print("正在文本清洗....请稍等")
     txtList = bookContentProcess(book_url)
-    print("正在实体抽取....请稍等")
+    #print("正在实体抽取....请稍等")
     for txt in tqdm(txtList):
         try:
             pNer = nerProcess(txt)
@@ -239,17 +241,17 @@ def fileTransformer(book_url):
             pass
 
     allLine = list(set(allLine)),
-    print("全部类别实体entitiesDic:{}".format(entitiesDic))
-    print("实体抽取完毕，共抽取ORGANIZATION:{}，PERSON：{}，LOCATION：{}，DATE：{}，EVENT:{}"
-          .format(len(entitiesDic["ORGANIZATION"]), len(entitiesDic["PERSON"]), len(entitiesDic["LOCATION"]),
-                  len(entitiesDic["DATE"]), len(entitiesDic["EVENT"])))
-    print("personLineDic:{}".format(personLineDic))
-    print("总时空线:{}".format(allLine)),
-    print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items()))),
-    print("eventLineDic:{}".format(eventLineDic)),
-    print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items()))),
-    print("organizationLineDic:{}".format(organizationLineDic)),
-    print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items()))),
+    # print("全部类别实体entitiesDic:{}".format(entitiesDic))
+    # print("实体抽取完毕，共抽取ORGANIZATION:{}，PERSON：{}，LOCATION：{}，DATE：{}，EVENT:{}"
+    #       .format(len(entitiesDic["ORGANIZATION"]), len(entitiesDic["PERSON"]), len(entitiesDic["LOCATION"]),
+    #               len(entitiesDic["DATE"]), len(entitiesDic["EVENT"])))
+    # print("personLineDic:{}".format(personLineDic))
+    # print("总时空线:{}".format(allLine)),
+    # print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items()))),
+    # print("eventLineDic:{}".format(eventLineDic)),
+    # print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items()))),
+    # print("organizationLineDic:{}".format(organizationLineDic)),
+    # print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items()))),
     dataDic = {"allLine": allLine,
                "entitiesDic": entitiesDic,
                "personLineDic": personLineDic,
@@ -266,9 +268,9 @@ def textTransformer(txt):
     eventLineDic = {}
     organizationLineDic = {}
     allLine = []
-    print("正在文本清洗....请稍等")
+    #print("正在文本清洗....请稍等")
     txtList = textProcess(str(txt))
-    print("正在实体抽取....请稍等")
+    #print("正在实体抽取....请稍等")
     for txt in tqdm(txtList):
         pNer = nerProcess(txt)
         for entity in pNer:
@@ -314,18 +316,18 @@ def textTransformer(txt):
         allLine = allLine + allLineList
 
     # allLine = list(set(allLine)),
-    print("全部类别实体entitiesDic:{}".format(entitiesDic))
-    print("实体抽取完毕，共抽取ORGANIZATION:{}，PERSON：{}，LOCATION：{}，DATE：{}，EVENT:{}，名家:{}，碑帖:{}，拓本:{}".format(
-        len(entitiesDic["ORGANIZATION"]), len(entitiesDic["PERSON"]), len(entitiesDic["LOCATION"]),
-        len(entitiesDic["DATE"]), len(entitiesDic["EVENT"]), len(entitiesDic["名家"]), len(entitiesDic["碑帖"]),
-        len(entitiesDic["拓本"])))
-    print("personLineDic:{}".format(personLineDic))
-    print("总时空线:{}".format(allLine)),
-    print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items()))),
-    print("eventLineDic:{}".format(eventLineDic)),
-    print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items()))),
-    print("organizationLineDic:{}".format(organizationLineDic)),
-    print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items()))),
+    # print("全部类别实体entitiesDic:{}".format(entitiesDic))
+    # print("实体抽取完毕，共抽取ORGANIZATION:{}，PERSON：{}，LOCATION：{}，DATE：{}，EVENT:{}，名家:{}，碑帖:{}，拓本:{}".format(
+    #     len(entitiesDic["ORGANIZATION"]), len(entitiesDic["PERSON"]), len(entitiesDic["LOCATION"]),
+    #     len(entitiesDic["DATE"]), len(entitiesDic["EVENT"]), len(entitiesDic["名家"]), len(entitiesDic["碑帖"]),
+    #     len(entitiesDic["拓本"])))
+    # print("personLineDic:{}".format(personLineDic))
+    # print("总时空线:{}".format(allLine)),
+    # print("人物时空线抽取完毕，共涉及:{}个人物实体，{}条时空线".format(len(personLineDic.keys()), len(personLineDic.items()))),
+    # print("eventLineDic:{}".format(eventLineDic)),
+    # print("大事件时空线抽取完毕，共涉及:{}个大事件实体，{}条时空线".format(len(eventLineDic.keys()), len(eventLineDic.items()))),
+    # print("organizationLineDic:{}".format(organizationLineDic)),
+    # print("组织机构时空线抽取完毕，共涉及:{}个组织机构实体，{}条时空线".format(len(organizationLineDic.keys()), len(eventLineDic.items()))),
     dataDic = {"allLine": allLine,
                "entitiesDic": entitiesDic,
                "personLineDic": personLineDic,
@@ -340,12 +342,12 @@ def bookTransfer2JSON(bookName, dataDic):
     path = r"D:\AutoKG\BOOK2KG\JsonCenter\\" + bookName + '_BookData.json'
     with open(path, 'w', encoding='utf-8') as json_file:
         json_file.write(json_str)
-    print("{}知识数据已持久化为json，路径为：{}".format(bookName, path))
+    #print("{}知识数据已持久化为json，路径为：{}".format(bookName, path))
 
 
 def txtTransfer2JSON(dataDic):
     json_str = json.dumps(dataDic, indent=4, ensure_ascii=False)
-    print("返回的json：{}".format(json_str))
+    print("{}".format(json_str))
     return json_str
     # path = r"D:\AutoKG\BOOK2KG\JsonCenter\\" + bookName+ '_BookData.json'
     # with open(path, 'w', encoding='utf-8') as json_file:
@@ -354,30 +356,29 @@ def txtTransfer2JSON(dataDic):
 
 
 if __name__ == '__main__':
-    while True:
-        bookContent = input('请输入要抽取的文本：')
-        path = os.path.dirname(os.path.realpath(__file__)).split("model")[0] + "\\data\\res_story"
-        print(path)
-        datanames = os.listdir(path)
-        name_list = []
-        for i in datanames:
-            name_list.append(i)
+    bookContent = sys.argv[1]
+    path = os.path.dirname(os.path.realpath(__file__)).split("model")[0] + "\\data\\res_story"
+    datanames = os.listdir(path)
+    name_list = []
+    for i in datanames:
+        name_list.append(i)
 
-        print(name_list)
 
-        name = bookContent + ".txt"
+    name = bookContent + ".txt"
 
-        print(name)
 
-        if name in name_list:
+    if name in name_list:
 
-            item_path = path + "\\" + name
-            print(item_path)
-            file = open(item_path, 'r', encoding="utf-8")
-            content = file.read()
-            file.close()
+        item_path = path + "\\" + name
+        file = open(item_path, 'r', encoding="utf-8")
+        content = file.read()
+        file.close()
 
-            dataDic = textTransformer(content)
-            txtTransfer2JSON(dataDic)
-        else:
-            txtTransfer2JSON(dataDic)
+        dataDic = textTransformer(content)
+        txtTransfer2JSON(dataDic)
+    else:
+        dataDic = textTransformer(name)
+        txtTransfer2JSON(dataDic)
+
+    # dataDic = textTransformer(bookContent)
+    # txtTransfer2JSON(dataDic)
