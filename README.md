@@ -1,4 +1,4 @@
-# 2022上图开放数据竞赛 —— “碑帖记忆”知识图谱系统(IM-KG)
+# 2022上图开放数据竞赛 — “碑帖记忆”知识图谱系统(IM-KG)
 
 ![](https://img.shields.io/badge/language-python3.7-blue.svg)
 ![](https://img.shields.io/badge/license-Apache_2.0-green.svg)
