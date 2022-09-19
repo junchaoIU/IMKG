@@ -5,7 +5,9 @@
 
 <div align=center><img src="https://image.gzknowledge.cn/logo_cn.png"/></div>
 
-<p align="center">团队：忆见芳华</p>
+<p align="center">以AI知识图谱作为核心引擎,对碑帖及碑帖名家知识进行深层开发</p>
+<p align="center">通过高度知识映射、关联化、时空化，进行历史文明的见证 —— 碑帖 的沉浸式探索体验</p>
+
 
 ### 作品简介
 
