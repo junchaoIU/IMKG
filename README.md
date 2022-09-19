@@ -3,7 +3,7 @@
 ![](https://img.shields.io/badge/language-python3.7-blue.svg)
 ![](https://img.shields.io/badge/license-Apache_2.0-green.svg)
 
-<div align=center><img width="230" height="230" src="https://image.gzknowledge.cn/logo_cn.png"/></div>
+<div align=center><img src="https://image.gzknowledge.cn/logo_cn.png"/></div>
 
 <p align="center">团队：忆见芳华</p>
 
