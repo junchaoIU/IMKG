@@ -15,5 +15,5 @@
     |-- FLASK_PROJECT   基于py的后端，提供知识抽取和知识问答功能
     |-- REACT_DEV       基于JAVASCRIPT的前端可视化平台系统
     |-- SPRINGBOOT_DEV  基于JAVA的后端系统，提供知识检索、单字检索、时空检索和时空演化功能
-    |--README.md
+    |-- README.md
 ```
