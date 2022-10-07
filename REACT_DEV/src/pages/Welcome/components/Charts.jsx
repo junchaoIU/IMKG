@@ -41,7 +41,7 @@ class charts extends Component {
         console.log(node)
         if(node.category === "背景故事" || node.category === "数量" || node.category === "流传经历" || node.category === "题记" || node.label === "背景故事" || node.category === "额题" || node.category === "首题" || node.category === "null" || node.category === "名家小传"){
 
-        }else if(node.id === "null" || node.id === "l"){
+        }else if(node.id.includes("null") || node.id === "l"){
 
         }
         else{
@@ -51,7 +51,7 @@ class charts extends Component {
         }
       })
       this.state.data.links.forEach((link) => {
-        if(link.category === "背景故事" || link.target === "null" || link.category === "首题" || link.category === "额题"){
+        if(link.category === "背景故事" || link.target.includes("null") || link.category === "首题" || link.category === "额题"){
 
         }else{
           this.state.links.push(link)

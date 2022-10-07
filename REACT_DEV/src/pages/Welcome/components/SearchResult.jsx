@@ -30,8 +30,9 @@ class SearchResult extends PureComponent {
   }
 
   onChange = (e) => {
+    console.log(e)
     this.setState({
-      searchValue: e.target.value,
+      searchValue: e,
     });
   };
 

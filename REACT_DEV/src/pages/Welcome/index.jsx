@@ -139,11 +139,11 @@ class home extends Component {
                 <Button size="small" type="text" onClick={() => this.searchHot("楷书")}>
                   <FireOutlined/>楷书
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("王")}>
-                  <FireOutlined/>王
+                <Button size="small" type="text" onClick={() => this.searchHot("宋朝")}>
+                  <FireOutlined/>宋朝
                 </Button>
-                <Button size="small" type="text" onClick={() => this.searchHot("欧阳询楷书 魏征撰文")}>
-                  <FireOutlined/>欧阳询楷书 魏征撰文
+                <Button size="small" type="text" onClick={() => this.searchHot("隋柱国弘义明公皇甫府君碑")}>
+                  <FireOutlined/>隋柱国弘义明公皇甫府君碑
                 </Button>
                 <Button size="small" type="text" onClick={() => this.searchHot("化度寺邕禅师舍利塔铭")}>
                   <FireOutlined/>化度寺邕禅师舍利塔铭

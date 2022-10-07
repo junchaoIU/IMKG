@@ -82,7 +82,7 @@ class information extends PureComponent {
           this.setState({peopleBg: item.value})
         }else if (item.category === '题记') {
           this.setState({note:item.value})
-        } else if (item.target === 'null'){}else{
+        } else if (item.target.includes("null")){}else{
           cardData.push(<Col span={5}>{item.category}:</Col>)
           cardData.push(<Col span={19}>{item.value}</Col>)
         }
